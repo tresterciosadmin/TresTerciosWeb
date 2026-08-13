@@ -1,0 +1,6 @@
+# Documentos internos: no se publican en GitHub Pages
+DISEÑO.md
+premortem-*
+*.docx
+.DS_Store
+Thumbs.db
