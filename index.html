@@ -234,6 +234,23 @@ textarea{min-height:118px;resize:vertical}
 .nl-form input{flex:1;min-width:220px;background:var(--surface)}
 .nl-legal{font-size:12.5px;color:var(--muted);margin-top:12px}
 
+/* ---------- aviso de privacidad (modal) ---------- */
+dialog{border:0;padding:0;background:transparent;max-width:min(660px,92vw)}
+dialog::backdrop{background:rgba(25,24,23,.55);backdrop-filter:blur(3px)}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:var(--s4);max-height:82vh;overflow:auto}
+.modal h2{font-size:24px;margin-bottom:6px}
+.modal h3{font-family:var(--sans);font-size:14px;font-weight:600;margin:var(--s3) 0 4px}
+.modal p{font-size:14.5px;color:var(--muted)}
+.modal .upd{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.modal-x{position:sticky;top:0;float:right;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);
+  background:var(--bg);color:var(--text);font-size:18px;line-height:1;cursor:pointer;transition:background var(--t) var(--ease)}
+.modal-x:hover{background:var(--bordo);color:#fff;border-color:var(--bordo)}
+.modal-x:focus-visible{outline:2px solid var(--bordo);outline-offset:2px}
+.linkish{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.linkish:hover{color:var(--bordo)}
+.linkish:focus-visible{outline:2px solid var(--bordo);outline-offset:3px;border-radius:3px}
+
 /* ---------- footer ---------- */
 footer{padding:var(--s4) 0;background:var(--bg-2);border-top:1px solid var(--border)}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
@@ -464,7 +481,8 @@ footer a:hover{color:var(--bordo)}
         <input id="nl-email" name="_replyto" type="email" required autocomplete="email" placeholder="nombre@empresa.com">
       </div>
       <button class="btn btn-primary" type="submit" id="nl-send" style="margin-top:25px" data-i18n="nl.cta">Suscribirme</button>
-      <p class="nl-legal" style="width:100%" data-i18n="nl.legal">Un envío por semana. Podés darte de baja cuando quieras.</p>
+      <p class="nl-legal" style="width:100%"><span data-i18n="nl.legal">Un envío por semana. Podés darte de baja cuando quieras.</span>
+        <button type="button" class="linkish" onclick="openPriv()" data-i18n="priv.link">Cómo tratamos tus datos</button></p>
       <p class="form-msg" id="nl-status" role="status" style="width:100%"></p>
     </form>
   </div>
@@ -473,10 +491,34 @@ footer a:hover{color:var(--bordo)}
 <footer>
   <div class="wrap">
     <span>© 2026 Tres Tercios · Buenos Aires</span>
-    <!-- Crear la página de LinkedIn de la firma el día del lanzamiento (premortem #2) y enlazarla acá -->
-    <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    <span style="display:flex;gap:20px;align-items:center">
+      <button type="button" class="linkish" onclick="openPriv()" data-i18n="priv.link">Cómo tratamos tus datos</button>
+      <!-- Crear la página de LinkedIn de la firma y reemplazar este enlace (premortem #2) -->
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
   </div>
 </footer>
+
+<!-- Aviso de privacidad. Redactado para una web sin cookies ni perfilado;
+     si más adelante se suman analítica con cookies, remarketing o un CRM, hay que actualizarlo.
+     Conviene que lo revise un abogado antes de operar con clientes. -->
+<dialog id="priv" aria-labelledby="priv-t">
+  <div class="modal">
+    <button class="modal-x" onclick="document.getElementById('priv').close()" aria-label="Cerrar">×</button>
+    <h2 id="priv-t" data-i18n="priv.h">Cómo tratamos tus datos</h2>
+    <p class="upd" data-i18n="priv.upd">Actualizado: agosto 2026</p>
+    <h3 data-i18n="priv.h1">Qué recolectamos</h3>
+    <p data-i18n="priv.p1">Solo lo que nos dejás en los formularios: en el de contacto, tu nombre, empresa, email y mensaje; en el newsletter, tu email. Nada más. No usamos cookies ni construimos perfiles de navegación.</p>
+    <h3 data-i18n="priv.h2">Para qué lo usamos</h3>
+    <p data-i18n="priv.p2">Los datos del formulario de contacto se usan únicamente para responderte y evaluar un eventual trabajo en conjunto. El email del newsletter se usa solo para enviarte nuestros informes y novedades. No vendemos ni cedemos datos a terceros con fines comerciales.</p>
+    <h3 data-i18n="priv.h3">Quién los procesa</h3>
+    <p data-i18n="priv.p3">Los formularios se procesan a través de Formspree, que reenvía los mensajes a nuestro correo, y el sitio se aloja en GitHub Pages. Ambos proveedores acceden a los datos solo para prestar ese servicio.</p>
+    <h3 data-i18n="priv.h4">Cuánto los conservamos</h3>
+    <p data-i18n="priv.p4">Las consultas, mientras dure la relación o el interés comercial. La suscripción al newsletter, hasta que pidas la baja: cada envío incluye el enlace para hacerlo en un clic.</p>
+    <h3 data-i18n="priv.h5">Tus derechos</h3>
+    <p data-i18n="priv.p5">Podés pedirnos en cualquier momento acceder a tus datos, corregirlos o eliminarlos, escribiéndonos por el formulario de contacto. En Argentina, la Ley 25.326 de Protección de los Datos Personales garantiza esos derechos y la Agencia de Acceso a la Información Pública es el organismo de control.</p>
+  </div>
+</dialog>
 
 <script>
 /* ============================================================
@@ -576,6 +618,25 @@ const I18N = {
   'nl.legal':{es:'Un envío por semana. Podés darte de baja cuando quieras.', en:'One email a week. Unsubscribe whenever you like.'},
   'nl.ok':{es:'Listo. Te sumamos a la lista.', en:"You're on the list."},
   'nl.err':{es:'No se pudo completar la suscripción. Probá de nuevo en un rato.', en:'Subscription failed. Please try again shortly.'},
+
+  'priv.link':{es:'Cómo tratamos tus datos', en:'How we handle your data'},
+  'priv.h':{es:'Cómo tratamos tus datos', en:'How we handle your data'},
+  'priv.upd':{es:'Actualizado: agosto 2026', en:'Updated: August 2026'},
+  'priv.h1':{es:'Qué recolectamos', en:'What we collect'},
+  'priv.p1':{es:'Solo lo que nos dejás en los formularios: en el de contacto, tu nombre, empresa, email y mensaje; en el newsletter, tu email. Nada más. No usamos cookies ni construimos perfiles de navegación.',
+             en:'Only what you give us in the forms: name, company, email and message in the contact form; your email in the newsletter. Nothing else. We use no cookies and build no browsing profiles.'},
+  'priv.h2':{es:'Para qué lo usamos', en:'What we use it for'},
+  'priv.p2':{es:'Los datos del formulario de contacto se usan únicamente para responderte y evaluar un eventual trabajo en conjunto. El email del newsletter se usa solo para enviarte nuestros informes y novedades. No vendemos ni cedemos datos a terceros con fines comerciales.',
+             en:'Contact form data is used only to reply to you and assess possible work together. Newsletter emails are used only to send you our reports and updates. We neither sell nor share data with third parties for commercial purposes.'},
+  'priv.h3':{es:'Quién los procesa', en:'Who processes it'},
+  'priv.p3':{es:'Los formularios se procesan a través de Formspree, que reenvía los mensajes a nuestro correo, y el sitio se aloja en GitHub Pages. Ambos proveedores acceden a los datos solo para prestar ese servicio.',
+             en:'Forms are processed through Formspree, which forwards messages to our inbox, and the site is hosted on GitHub Pages. Both providers access the data solely to provide that service.'},
+  'priv.h4':{es:'Cuánto los conservamos', en:'How long we keep it'},
+  'priv.p4':{es:'Las consultas, mientras dure la relación o el interés comercial. La suscripción al newsletter, hasta que pidas la baja: cada envío incluye el enlace para hacerlo en un clic.',
+             en:'Enquiries, for as long as the relationship or commercial interest lasts. Newsletter subscriptions, until you unsubscribe: every email includes a one-click link.'},
+  'priv.h5':{es:'Tus derechos', en:'Your rights'},
+  'priv.p5':{es:'Podés pedirnos en cualquier momento acceder a tus datos, corregirlos o eliminarlos, escribiéndonos por el formulario de contacto. En Argentina, la Ley 25.326 de Protección de los Datos Personales garantiza esos derechos y la Agencia de Acceso a la Información Pública es el organismo de control.',
+             en:'You may ask us at any time to access, correct or delete your data through the contact form. In Argentina, Personal Data Protection Act 25.326 guarantees these rights and the Agency for Access to Public Information is the supervisory authority.'},
 };
 
 let LANG = 'es';
@@ -664,14 +725,23 @@ function prefillNowcast(){
   if(t && !t.value) t.value = I18N['ct.prefill'][LANG];
 }
 
+/* ---- aviso de privacidad ---- */
+function openPriv(){ document.getElementById('priv').showModal(); }
+
 /* ---- envío de formularios: éxito SOLO si el servidor responde OK (premortem #4) ---- */
 function wireForm(formId, btnId, statusId, okKey, errKey, sendKey){
-  document.getElementById(formId).addEventListener('submit', async function(e){
+  const f = document.getElementById(formId);
+  if(f.action.includes('TU_ID')){
+    console.warn('[Tres Tercios] El formulario "'+formId+'" todavía apunta al endpoint de ejemplo. '+
+                 'Reemplazá TU_ID / TU_ID_NEWSLETTER por los IDs reales de Formspree — hasta entonces no se envía nada.');
+  }
+  f.addEventListener('submit', async function(e){
     e.preventDefault();
     const form = e.target, btn = document.getElementById(btnId), msg = document.getElementById(statusId);
     msg.className = 'form-msg';
     btn.disabled = true; btn.textContent = I18N['ct.enviando'][LANG];
     try{
+      if(form.action.includes('TU_ID')) throw new Error('endpoint sin configurar');
       const r = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
       if(r.ok){ msg.textContent = I18N[okKey][LANG]; msg.classList.add('ok'); form.reset(); }
       else { throw new Error('status '+r.status); }
@@ -685,5 +755,18 @@ function wireForm(formId, btnId, statusId, okKey, errKey, sendKey){
 wireForm('contact-form','f-send','f-status','ct.ok','ct.err','ct.enviar');
 wireForm('nl-form','nl-send','nl-status','nl.ok','nl.err','nl.cta');
 </script>
+
+<!-- ============================================================
+     ANALÍTICA — sin cookies, no requiere banner de consentimiento.
+     Para activarla: crear el sitio en Cloudflare Web Analytics (gratis),
+     pegar el token abajo y descomentar el bloque.
+     Alternativa equivalente: GoatCounter.
+     Si alguna vez se pasa a una herramienta con cookies (Google Analytics,
+     píxeles de remarketing), hay que actualizar el aviso de privacidad.
+     ============================================================ -->
+<!--
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "PEGAR_TOKEN_ACA"}'></script>
+-->
 </body>
 </html>
