@@ -13,7 +13,8 @@
         "tt-link"
       ],
       "path": "/design-system/components/button/",
-      "example": "button/example.html"
+      "example": "button/example.html",
+      "group": "Acciones"
     },
     {
       "name": "section-header",
@@ -25,7 +26,8 @@
         "tt-lead"
       ],
       "path": "/design-system/components/section-header/",
-      "example": "section-header/example.html"
+      "example": "section-header/example.html",
+      "group": "Contenido"
     },
     {
       "name": "card",
@@ -36,7 +38,8 @@
         "tt-h3"
       ],
       "path": "/design-system/components/card/",
-      "example": "card/example.html"
+      "example": "card/example.html",
+      "group": "Contenido"
     },
     {
       "name": "feature-card",
@@ -48,7 +51,8 @@
         "tt-h3"
       ],
       "path": "/design-system/components/feature-card/",
-      "example": "feature-card/example.html"
+      "example": "feature-card/example.html",
+      "group": "Contenido"
     },
     {
       "name": "stat",
@@ -60,7 +64,8 @@
         "tt-stat__l"
       ],
       "path": "/design-system/components/stat/",
-      "example": "stat/example.html"
+      "example": "stat/example.html",
+      "group": "Datos"
     },
     {
       "name": "panel",
@@ -72,7 +77,8 @@
         "tt-live"
       ],
       "path": "/design-system/components/panel/",
-      "example": "panel/example.html"
+      "example": "panel/example.html",
+      "group": "Datos"
     },
     {
       "name": "form-field",
@@ -84,7 +90,8 @@
         "tt-msg"
       ],
       "path": "/design-system/components/form-field/",
-      "example": "form-field/example.html"
+      "example": "form-field/example.html",
+      "group": "Formularios"
     },
     {
       "name": "nav",
@@ -95,7 +102,8 @@
         "tt-brand"
       ],
       "path": "/design-system/components/nav/",
-      "example": "nav/example.html"
+      "example": "nav/example.html",
+      "group": "Navegación"
     },
     {
       "name": "divider",
@@ -106,7 +114,9 @@
         "tt-divider--out"
       ],
       "path": "/design-system/components/divider/",
-      "example": "divider/example.html"
+      "example": "divider/example.html",
+      "group": "Estructura"
     }
-  ]
+  ],
+  "cardMarker": "<!-- @dsCard group=\"…\" --> en la primera línea de cada .html"
 }

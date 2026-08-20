@@ -1,0 +1,48 @@
+<!-- @dsCard group="Fundamentos" -->
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../components/components.css">
+<style>
+ .f{font-family:var(--sans);color:var(--text);padding:28px}
+ .f h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 4px}
+ .f p.d{color:var(--muted);font-size:13.5px;margin:0 0 22px}
+ .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+ .c span{display:block;height:40px;border-radius:8px;border:1px solid;margin-bottom:7px}
+ .c b{display:block;font-size:13px}
+ .c code{display:block;font-family:var(--mono);font-size:11px;color:var(--bordo)}
+ .c i{display:block;font-family:var(--mono);font-size:10px;color:var(--muted);font-style:normal}
+ .c u{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-top:2px}
+ .dk{background:var(--dk-bg);border-radius:var(--radius);padding:22px;margin-top:8px}
+ .dk .c b{color:var(--dk-text)} .dk .c code{color:var(--dk-acento)} .dk .c i,.dk .c u{color:var(--dk-muted)}
+ .rule{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:20px;
+   border-top:1px solid var(--border);padding-top:12px}
+</style>
+<div class="f">
+ <h2>Color</h2>
+ <p class="d">Proporción de uso — 60% papel · 30% tinta y grises · 10% bordó. El bordó es acento: nunca fondo de bloques grandes.</p>
+ <div class="g">
+  <div class="c"><span style="background:var(--bordo);border-color:var(--border)"></span><b>Bordó Tres Tercios</b><code>#7D1F30</code><i>--bordo</i><u>Acento principal</u></div>
+  <div class="c"><span style="background:var(--bordo-oscuro);border-color:var(--border)"></span><b>Bordó profundo</b><code>#5E1724</code><i>--bordo-oscuro</i><u>Hover</u></div>
+  <div class="c"><span style="background:var(--bordo-claro);border-color:var(--border)"></span><b>Bordó claro</b><code>#C4526A</code><i>--bordo-claro</i><u>Acento intermedio</u></div>
+  <div class="c"><span style="background:var(--bordo-tinte);border-color:var(--border)"></span><b>Tinte</b><code>#F4EAEB</code><i>--bordo-tinte</i><u>Halo y foco</u></div>
+  <div class="c"><span style="background:var(--bg);border-color:var(--border)"></span><b>Papel</b><code>#F7F3EC</code><i>--bg</i><u>Fondo base</u></div>
+  <div class="c"><span style="background:var(--bg-2);border-color:var(--border)"></span><b>Arena</b><code>#EFE9DF</code><i>--bg-2</i><u>Zona de cierre</u></div>
+  <div class="c"><span style="background:var(--surface);border-color:var(--border)"></span><b>Superficie</b><code>#FDFBF7</code><i>--surface</i><u>Tarjetas</u></div>
+  <div class="c"><span style="background:var(--border);border-color:var(--border)"></span><b>Borde</b><code>#E0D8CB</code><i>--border</i><u>Filetes</u></div>
+  <div class="c"><span style="background:var(--text);border-color:var(--border)"></span><b>Tinta</b><code>#191817</code><i>--text</i><u>Texto principal</u></div>
+  <div class="c"><span style="background:var(--muted);border-color:var(--border)"></span><b>Gris texto</b><code>#5C564D</code><i>--muted</i><u>Texto secundario</u></div>
+ </div>
+ <div class="dk"><div class="g">
+  <div class="c"><span style="background:var(--dk-bg);border-color:var(--dk-border)"></span><b>Noche</b><code>#0E1219</code><i>--dk-bg</i><u>Fondo de producto</u></div>
+  <div class="c"><span style="background:var(--dk-surface);border-color:var(--dk-border)"></span><b>Panel</b><code>#161C27</code><i>--dk-surface</i><u>Panel</u></div>
+  <div class="c"><span style="background:var(--dk-surface2);border-color:var(--dk-border)"></span><b>Panel elevado</b><code>#1E2634</code><i>--dk-surface2</i><u>2º nivel</u></div>
+  <div class="c"><span style="background:var(--dk-acento);border-color:var(--dk-border)"></span><b>Bordó iluminado</b><code>#D4677F</code><i>--dk-acento</i><u>Único acento sobre oscuro</u></div>
+  <div class="c"><span style="background:var(--dk-text);border-color:var(--dk-border)"></span><b>Texto claro</b><code>#EDF1F7</code><i>--dk-text</i><u>Texto principal</u></div>
+  <div class="c"><span style="background:var(--dk-muted);border-color:var(--dk-border)"></span><b>Texto secundario</b><code>#94A1B5</code><i>--dk-muted</i><u>Texto de apoyo</u></div>
+ </div></div>
+ <div class="g" style="margin-top:14px">
+  <div class="c"><span style="background:var(--ok-bg);border-color:var(--border)"></span><b>Éxito</b><code>#E9F1DC</code><i>--ok-bg</i><u>Fondo de confirmación</u></div>
+  <div class="c"><span style="background:var(--err-bg);border-color:var(--border)"></span><b>Error</b><code>#F8E3E3</code><i>--err-bg</i><u>Fondo de error</u></div>
+  <div class="c"><span style="background:var(--live);border-color:var(--border)"></span><b>Live</b><code>#6FD08C</code><i>--live</i><u>Dato en vivo</u></div>
+ </div>
+ <p class="rule">Un solo acento por pieza · #FFF puro nunca como fondo · cero hex fuera de los tokens</p>
+</div>

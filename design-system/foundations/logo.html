@@ -1,0 +1,32 @@
+<!-- @dsCard group="Fundamentos" -->
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../components/components.css">
+<style>
+ .f{font-family:var(--sans);color:var(--text);padding:28px}
+ .f h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 4px}
+ .f p.d{color:var(--muted);font-size:13.5px;margin:0 0 22px}
+ .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+ .c span{display:block;height:40px;border-radius:8px;border:1px solid;margin-bottom:7px}
+ .c b{display:block;font-size:13px}
+ .c code{display:block;font-family:var(--mono);font-size:11px;color:var(--bordo)}
+ .c i{display:block;font-family:var(--mono);font-size:10px;color:var(--muted);font-style:normal}
+ .c u{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-top:2px}
+ .dk{background:var(--dk-bg);border-radius:var(--radius);padding:22px;margin-top:8px}
+ .dk .c b{color:var(--dk-text)} .dk .c code{color:var(--dk-acento)} .dk .c i,.dk .c u{color:var(--dk-muted)}
+ .rule{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:20px;
+   border-top:1px solid var(--border);padding-top:12px}
+</style>
+<div class="f">
+ <h2>Logotipo</h2>
+ <p class="d">Abanico de tres tercios iguales. La geometría es parte de la marca: no se redibuja a ojo.</p>
+ <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+  <img src="../assets/logo.svg" width="110" alt="Principal">
+  <img src="../assets/logo-tercio-1.svg" width="110" alt="Tercio izquierdo">
+  <img src="../assets/logo-tercio-2.svg" width="110" alt="Tercio central">
+  <img src="../assets/logo-tercio-3.svg" width="110" alt="Tercio derecho">
+  <span style="background:var(--dk-bg);padding:13px;border-radius:10px">
+    <img src="../assets/logo-negativo.svg" width="110" alt="Negativo"></span>
+ </div>
+ <p class="rule">46,67° por tercio · separaciones de 10° · apertura 160° · radios 100/38<br>
+ Mínimo 28 px · resguardo = ½ del alto · sin deformar, rotar, sombrear ni degradar</p>
+</div>

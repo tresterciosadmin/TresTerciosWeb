@@ -10,7 +10,8 @@
   "paths": {
     "tokens": "/design-system/tokens/design-tokens.json",
     "components": "/design-system/components/",
-    "assets": "/design-system/assets/"
+    "assets": "/design-system/assets/",
+    "foundations": "/design-system/foundations/"
   },
   "componentManifest": "/design-system/components/manifest.json",
   "stylesheets": [
@@ -22,9 +23,35 @@
   "typography": {
     "source": "google-fonts",
     "families": [
-      { "role": "serif", "family": "Source Serif 4", "weights": [400, 600], "usage": "Títulos de sección" },
-      { "role": "sans",  "family": "Inter",           "weights": [400, 500, 600, 700], "usage": "Texto, interfaz y títulos display en mayúsculas" },
-      { "role": "mono",  "family": "IBM Plex Mono",   "weights": [400, 500], "usage": "Cifras, antetítulos y etiquetas de datos" }
+      {
+        "role": "serif",
+        "family": "Source Serif 4",
+        "weights": [
+          400,
+          600
+        ],
+        "usage": "Títulos de sección"
+      },
+      {
+        "role": "sans",
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600,
+          700
+        ],
+        "usage": "Texto, interfaz y títulos display en mayúsculas"
+      },
+      {
+        "role": "mono",
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "usage": "Cifras, antetítulos y etiquetas de datos"
+      }
     ],
     "embedUrl": "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
   },
@@ -34,5 +61,18 @@
     "iconography": "SVG de trazo único. Prohibidos los emojis como íconos.",
     "motion": "150-300 ms, solo transform y opacity, respetar prefers-reduced-motion",
     "accessibility": "WCAG AA: contraste de texto >= 4.5:1, foco visible, objetivos táctiles >= 44 px"
+  },
+  "cards": {
+    "marker": "<!-- @dsCard group=\"…\" -->",
+    "position": "primera línea del archivo .html",
+    "groups": [
+      "Fundamentos",
+      "Acciones",
+      "Contenido",
+      "Datos",
+      "Formularios",
+      "Navegación",
+      "Estructura"
+    ]
   }
 }
