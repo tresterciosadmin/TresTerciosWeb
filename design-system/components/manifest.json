@@ -1,0 +1,112 @@
+{
+  "$comment": "Índice de componentes de Tres Tercios. Cada entrada apunta a su carpeta.",
+  "stylesheet": "components.css",
+  "components": [
+    {
+      "name": "button",
+      "title": "Botón",
+      "description": "Acción principal. Un solo botón primario por pantalla; el resto va como enlace.",
+      "classes": [
+        "tt-btn",
+        "tt-btn--primary",
+        "tt-btn--dark",
+        "tt-link"
+      ],
+      "path": "/design-system/components/button/",
+      "example": "button/example.html"
+    },
+    {
+      "name": "section-header",
+      "title": "Encabezado de sección",
+      "description": "Antetítulo en monoespaciada, título en serif y bajada. Abre toda sección de contenido.",
+      "classes": [
+        "tt-kicker",
+        "tt-h2",
+        "tt-lead"
+      ],
+      "path": "/design-system/components/section-header/",
+      "example": "section-header/example.html"
+    },
+    {
+      "name": "card",
+      "title": "Tarjeta de servicio",
+      "description": "Unidad repetible de una grilla de servicios o capacidades.",
+      "classes": [
+        "tt-card",
+        "tt-h3"
+      ],
+      "path": "/design-system/components/card/",
+      "example": "card/example.html"
+    },
+    {
+      "name": "feature-card",
+      "title": "Tarjeta insignia",
+      "description": "Destaca la oferta principal por encima del resto. Una sola por página.",
+      "classes": [
+        "tt-feature",
+        "tt-tag",
+        "tt-h3"
+      ],
+      "path": "/design-system/components/feature-card/",
+      "example": "feature-card/example.html"
+    },
+    {
+      "name": "stat",
+      "title": "Cifra",
+      "description": "Dato duro sobre clima oscuro. Siempre en monoespaciada con cifras tabulares.",
+      "classes": [
+        "tt-stat",
+        "tt-stat__n",
+        "tt-stat__l"
+      ],
+      "path": "/design-system/components/stat/",
+      "example": "stat/example.html"
+    },
+    {
+      "name": "panel",
+      "title": "Panel de datos",
+      "description": "Contenedor de cifras y visualizaciones dentro del clima oscuro.",
+      "classes": [
+        "tt-panel",
+        "tt-panel__label",
+        "tt-live"
+      ],
+      "path": "/design-system/components/panel/",
+      "example": "panel/example.html"
+    },
+    {
+      "name": "form-field",
+      "title": "Campo de formulario",
+      "description": "Etiqueta visible más campo. Nunca placeholder como etiqueta.",
+      "classes": [
+        "tt-label",
+        "tt-input",
+        "tt-msg"
+      ],
+      "path": "/design-system/components/form-field/",
+      "example": "form-field/example.html"
+    },
+    {
+      "name": "nav",
+      "title": "Navegación",
+      "description": "Pastilla flotante, más angosta que el contenido para que la marca domine.",
+      "classes": [
+        "tt-nav",
+        "tt-brand"
+      ],
+      "path": "/design-system/components/nav/",
+      "example": "nav/example.html"
+    },
+    {
+      "name": "divider",
+      "title": "Transición de clima",
+      "description": "Degradé entre el clima claro y el oscuro. Se usan siempre en par.",
+      "classes": [
+        "tt-divider",
+        "tt-divider--out"
+      ],
+      "path": "/design-system/components/divider/",
+      "example": "divider/example.html"
+    }
+  ]
+}

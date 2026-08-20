@@ -1,0 +1,388 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Tres Tercios — sistema de diseño. Fuente de verdad: el bloque :root de index.html.",
+  "color": {
+    "brand": {
+      "bordo": {
+        "$type": "color",
+        "$value": "#7D1F30",
+        "$description": "Color principal de marca, tomado del logotipo. Acento único del clima claro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--bordo"
+        }
+      },
+      "bordoOscuro": {
+        "$type": "color",
+        "$value": "#5E1724",
+        "$description": "Estado hover y presión de los elementos en bordó.",
+        "$extensions": {
+          "tresTercios.cssVar": "--bordo-oscuro"
+        }
+      },
+      "bordoClaro": {
+        "$type": "color",
+        "$value": "#C4526A",
+        "$description": "Acento intermedio para bordes y detalles.",
+        "$extensions": {
+          "tresTercios.cssVar": "--bordo-claro"
+        }
+      },
+      "bordoTinte": {
+        "$type": "color",
+        "$value": "#F4EAEB",
+        "$description": "Tinte suave: halo del hero, anillo de foco, tarjeta insignia.",
+        "$extensions": {
+          "tresTercios.cssVar": "--bordo-tinte"
+        }
+      },
+      "bordoBorde": {
+        "$type": "color",
+        "$value": "#E4CFD2",
+        "$description": "Borde de las superficies tintadas.",
+        "$extensions": {
+          "tresTercios.cssVar": "--bordo-borde"
+        }
+      }
+    },
+    "surface": {
+      "papel": {
+        "$type": "color",
+        "$value": "#F7F3EC",
+        "$description": "Fondo base de todo el clima claro. No cambia entre secciones.",
+        "$extensions": {
+          "tresTercios.cssVar": "--bg"
+        }
+      },
+      "arena": {
+        "$type": "color",
+        "$value": "#EFE9DF",
+        "$description": "Arena. Reservado a la zona de cierre (newsletter y footer).",
+        "$extensions": {
+          "tresTercios.cssVar": "--bg-2"
+        }
+      },
+      "elevada": {
+        "$type": "color",
+        "$value": "#FDFBF7",
+        "$description": "Superficie de tarjetas y formularios.",
+        "$extensions": {
+          "tresTercios.cssVar": "--surface"
+        }
+      },
+      "borde": {
+        "$type": "color",
+        "$value": "#E0D8CB",
+        "$description": "Filetes y separadores.",
+        "$extensions": {
+          "tresTercios.cssVar": "--border"
+        }
+      },
+      "bordeFuerte": {
+        "$type": "color",
+        "$value": "#CFC5B4",
+        "$description": "Bordes de campos de formulario y controles.",
+        "$extensions": {
+          "tresTercios.cssVar": "--border-fuerte"
+        }
+      }
+    },
+    "text": {
+      "tinta": {
+        "$type": "color",
+        "$value": "#191817",
+        "$description": "Texto principal sobre clima claro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--text"
+        }
+      },
+      "gris": {
+        "$type": "color",
+        "$value": "#5C564D",
+        "$description": "Texto secundario sobre clima claro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--muted"
+        }
+      }
+    },
+    "dark": {
+      "noche": {
+        "$type": "color",
+        "$value": "#0E1219",
+        "$description": "Fondo del clima oscuro (sección de producto).",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-bg"
+        }
+      },
+      "panel": {
+        "$type": "color",
+        "$value": "#161C27",
+        "$description": "Panel sobre fondo oscuro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-surface"
+        }
+      },
+      "panelElevado": {
+        "$type": "color",
+        "$value": "#1E2634",
+        "$description": "Segundo nivel de elevación sobre oscuro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-surface2"
+        }
+      },
+      "borde": {
+        "$type": "color",
+        "$value": "rgba(255,255,255,.10)",
+        "$description": "Borde sobre oscuro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-border"
+        }
+      },
+      "grilla": {
+        "$type": "color",
+        "$value": "rgba(255,255,255,.045)",
+        "$description": "Grilla técnica de fondo.",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-grid"
+        }
+      },
+      "texto": {
+        "$type": "color",
+        "$value": "#EDF1F7",
+        "$description": "Texto principal sobre oscuro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-text"
+        }
+      },
+      "textoSecundario": {
+        "$type": "color",
+        "$value": "#94A1B5",
+        "$description": "Texto secundario sobre oscuro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-muted"
+        }
+      },
+      "acento": {
+        "$type": "color",
+        "$value": "#D4677F",
+        "$description": "Bordó iluminado. Único acento válido sobre fondo oscuro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-acento"
+        }
+      },
+      "acentoHover": {
+        "$type": "color",
+        "$value": "#E07A91",
+        "$description": "Hover del acento sobre oscuro.",
+        "$extensions": {
+          "tresTercios.cssVar": "--dk-acento-hover"
+        }
+      },
+      "sobreAcento": {
+        "$type": "color",
+        "$value": "#170A0E",
+        "$description": "Texto sobre el acento iluminado. Contraste verificado.",
+        "$extensions": {
+          "tresTercios.cssVar": "--sobre-acento"
+        }
+      }
+    },
+    "feedback": {
+      "okFondo": {
+        "$type": "color",
+        "$value": "#E9F1DC",
+        "$description": "Fondo del mensaje de éxito.",
+        "$extensions": {
+          "tresTercios.cssVar": "--ok-bg"
+        }
+      },
+      "okBorde": {
+        "$type": "color",
+        "$value": "#B3D189",
+        "$description": "Borde del mensaje de éxito.",
+        "$extensions": {
+          "tresTercios.cssVar": "--ok-borde"
+        }
+      },
+      "okTexto": {
+        "$type": "color",
+        "$value": "#2C4E10",
+        "$description": "Texto del mensaje de éxito.",
+        "$extensions": {
+          "tresTercios.cssVar": "--ok-text"
+        }
+      },
+      "errorFondo": {
+        "$type": "color",
+        "$value": "#F8E3E3",
+        "$description": "Fondo del mensaje de error.",
+        "$extensions": {
+          "tresTercios.cssVar": "--err-bg"
+        }
+      },
+      "errorBorde": {
+        "$type": "color",
+        "$value": "#E2A0A0",
+        "$description": "Borde del mensaje de error.",
+        "$extensions": {
+          "tresTercios.cssVar": "--err-borde"
+        }
+      },
+      "errorTexto": {
+        "$type": "color",
+        "$value": "#751919",
+        "$description": "Texto del mensaje de error.",
+        "$extensions": {
+          "tresTercios.cssVar": "--err-text"
+        }
+      },
+      "live": {
+        "$type": "color",
+        "$value": "#6FD08C",
+        "$description": "Indicador de dato en actualización continua.",
+        "$extensions": {
+          "tresTercios.cssVar": "--live"
+        }
+      }
+    }
+  },
+  "typography": {
+    "family": {
+      "serif": {
+        "$type": "fontFamily",
+        "$value": "'Source Serif 4',Georgia,serif",
+        "$description": "Títulos de sección. Source Serif 4.",
+        "$extensions": {
+          "tresTercios.cssVar": "--serif"
+        }
+      },
+      "sans": {
+        "$type": "fontFamily",
+        "$value": "'Inter',-apple-system,'Segoe UI',sans-serif",
+        "$description": "Texto, interfaz y títulos display en mayúsculas. Inter.",
+        "$extensions": {
+          "tresTercios.cssVar": "--sans"
+        }
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": "'IBM Plex Mono',ui-monospace,monospace",
+        "$description": "Cifras, antetítulos y etiquetas de datos. IBM Plex Mono.",
+        "$extensions": {
+          "tresTercios.cssVar": "--mono"
+        }
+      }
+    }
+  },
+  "dimension": {
+    "space": {
+      "1": {
+        "$type": "dimension",
+        "$value": "8px",
+        "$description": "8 px. Unidad base de la escala.",
+        "$extensions": {
+          "tresTercios.cssVar": "--s1"
+        }
+      },
+      "2": {
+        "$type": "dimension",
+        "$value": "16px",
+        "$description": "16 px.",
+        "$extensions": {
+          "tresTercios.cssVar": "--s2"
+        }
+      },
+      "3": {
+        "$type": "dimension",
+        "$value": "24px",
+        "$description": "24 px. Padding estándar de tarjeta.",
+        "$extensions": {
+          "tresTercios.cssVar": "--s3"
+        }
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "40px",
+        "$description": "40 px. Padding de tarjeta grande.",
+        "$extensions": {
+          "tresTercios.cssVar": "--s4"
+        }
+      },
+      "5": {
+        "$type": "dimension",
+        "$value": "64px",
+        "$description": "64 px.",
+        "$extensions": {
+          "tresTercios.cssVar": "--s5"
+        }
+      },
+      "6": {
+        "$type": "dimension",
+        "$value": "96px",
+        "$description": "96 px. Padding vertical de sección.",
+        "$extensions": {
+          "tresTercios.cssVar": "--s6"
+        }
+      }
+    },
+    "radius": {
+      "default": {
+        "$type": "dimension",
+        "$value": "14px",
+        "$description": "Radio de tarjetas y paneles. Pastillas y botones usan 99px.",
+        "$extensions": {
+          "tresTercios.cssVar": "--radius"
+        }
+      }
+    },
+    "layout": {
+      "contenido": {
+        "$type": "dimension",
+        "$value": "1080px",
+        "$description": "Ancho máximo del contenido.",
+        "$extensions": {
+          "tresTercios.cssVar": "--maxw"
+        }
+      },
+      "nav": {
+        "$type": "dimension",
+        "$value": "780px",
+        "$description": "Ancho de la pastilla de navegación. Deliberadamente menor que el contenido.",
+        "$extensions": {
+          "tresTercios.cssVar": "--navw"
+        }
+      }
+    }
+  },
+  "shadow": {
+    "default": {
+      "$type": "shadow",
+      "$value": "0 1px 2px rgba(25,24,23,.04),0 10px 30px rgba(25,24,23,.07)",
+      "$description": "Sombra única del sistema. No existen otros niveles.",
+      "$extensions": {
+        "tresTercios.cssVar": "--shadow"
+      }
+    }
+  },
+  "motion": {
+    "easing": {
+      "default": {
+        "$type": "cubicBezier",
+        "$value": "cubic-bezier(.2,.7,.3,1)",
+        "$description": "Curva única para toda micro-interacción.",
+        "$extensions": {
+          "tresTercios.cssVar": "--ease"
+        }
+      }
+    },
+    "duration": {
+      "default": {
+        "$type": "duration",
+        "$value": "220ms",
+        "$description": "Duración única: 220 ms.",
+        "$extensions": {
+          "tresTercios.cssVar": "--t"
+        }
+      }
+    }
+  }
+}

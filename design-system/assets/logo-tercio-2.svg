@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -6 208 112" role="img" aria-label="Tres Tercios — datos y tecnología">
+  <title>Tres Tercios — tercio central</title>
+  <g stroke="#7D1F30" stroke-width="5" stroke-linejoin="round">
+    <path fill="rgba(125,31,48,.15)" d="M1.5,82.6 A100,100 0 0 1 45.0,16.5 L79.1,68.3 A38,38 0 0 0 62.6,93.4 Z"/>
+    <path fill="#7D1F30" d="M60.4,8.2 A100,100 0 0 1 139.6,8.2 L115.1,65.1 A38,38 0 0 0 84.9,65.1 Z"/>
+    <path fill="rgba(125,31,48,.15)" d="M155.0,16.5 A100,100 0 0 1 198.5,82.6 L137.4,93.4 A38,38 0 0 0 120.9,68.3 Z"/>
+  </g>
+</svg>

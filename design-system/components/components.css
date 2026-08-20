@@ -1,0 +1,92 @@
+/* ============================================================
+   Tres Tercios — biblioteca de componentes
+   Depende de tokens/tokens.css. Ningún valor literal: todo var().
+   Regla del sistema: si un componente necesita un color que no
+   está en los tokens, el error está en el componente.
+   ============================================================ */
+
+/* --- base --- */
+.tt-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.tt-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s3)}
+.tt-section{padding:var(--s6) 0}
+
+/* --- antetítulo (kicker) --- */
+.tt-kicker{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--bordo);margin-bottom:var(--s2)}
+.tt-dark .tt-kicker{color:var(--dk-acento)}
+
+/* --- títulos --- */
+.tt-display{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:-.005em;
+  line-height:1.08;font-size:clamp(28px,3.9vw,45px)}
+.tt-h2{font-family:var(--serif);font-weight:600;line-height:1.14;letter-spacing:-.015em;
+  font-size:clamp(27px,3.4vw,38px);margin-bottom:14px}
+.tt-h3{font-family:var(--serif);font-weight:600;line-height:1.14;letter-spacing:-.015em;font-size:18px}
+.tt-lead{font-size:16.5px;color:var(--muted);max-width:44em}
+
+/* --- botones --- */
+.tt-btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;
+  border-radius:99px;padding:13px 26px;min-height:44px;border:1px solid transparent;cursor:pointer;
+  transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),background var(--t) var(--ease)}
+.tt-btn--primary{background:var(--bordo);color:#fff;border-color:var(--bordo)}
+.tt-btn--primary:hover{background:var(--bordo-oscuro);transform:translateY(-1px);box-shadow:var(--shadow)}
+.tt-btn--primary:focus-visible{outline:2px solid var(--bordo);outline-offset:3px}
+.tt-btn--dark{background:var(--dk-acento);border-color:var(--dk-acento);color:var(--sobre-acento)}
+.tt-btn--dark:hover{background:var(--dk-acento-hover);transform:translateY(-1px)}
+.tt-btn[disabled]{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.tt-link{font-weight:600;font-size:15px;text-decoration:none;color:var(--bordo);padding:10px 4px;border-radius:6px}
+.tt-link:hover{text-decoration:underline;text-underline-offset:4px}
+.tt-link:focus-visible{outline:2px solid var(--bordo);outline-offset:3px}
+
+/* --- tarjeta de servicio --- */
+.tt-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s3);
+  transition:border-color var(--t) var(--ease),transform var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+.tt-card:hover{border-color:var(--bordo-claro);transform:translateY(-2px);box-shadow:var(--shadow)}
+.tt-card p{font-size:14.5px;color:var(--muted);margin-top:6px}
+
+/* --- tarjeta insignia (un solo uso por página) --- */
+.tt-feature{background:linear-gradient(120deg,var(--bordo-tinte),var(--surface) 78%);
+  border:1px solid var(--bordo-borde);border-radius:var(--radius);padding:var(--s4);
+  display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:center}
+.tt-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:#fff;background:var(--bordo);border-radius:99px;padding:5px 12px}
+
+/* --- clima oscuro --- */
+.tt-dark{background:var(--dk-bg);color:var(--dk-text)}
+.tt-panel{background:var(--dk-surface);border:1px solid var(--dk-border);border-radius:var(--radius);padding:var(--s3)}
+.tt-panel__label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dk-muted)}
+.tt-stat{background:var(--dk-surface2);border:1px solid var(--dk-border);border-radius:10px;padding:16px 14px}
+.tt-stat__n{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:500;
+  font-size:clamp(20px,2.4vw,28px);letter-spacing:-.01em}
+.tt-stat__l{font-size:12.5px;color:var(--dk-muted);margin-top:5px}
+.tt-pipe{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--mono);
+  font-size:11.5px;letter-spacing:.06em;color:var(--dk-muted)}
+.tt-pipe span{background:var(--dk-surface);border:1px solid var(--dk-border);border-radius:99px;padding:7px 14px}
+.tt-pipe b{color:var(--dk-acento);font-weight:500}
+.tt-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--dk-muted)}
+.tt-live i{width:7px;height:7px;border-radius:50%;background:var(--live);animation:tt-pulse 2.4s infinite}
+@keyframes tt-pulse{0%{box-shadow:0 0 0 0 rgba(111,208,140,.55)}70%{box-shadow:0 0 0 8px rgba(111,208,140,0)}100%{box-shadow:0 0 0 0 rgba(111,208,140,0)}}
+
+/* --- transiciones entre climas: siempre en par --- */
+.tt-divider{height:104px;background:linear-gradient(to bottom,var(--bg),var(--dk-bg))}
+.tt-divider--out{height:104px;background:linear-gradient(to bottom,var(--dk-bg),var(--bg))}
+
+/* --- formularios --- */
+.tt-label{font-size:13px;font-weight:600;display:block;margin-bottom:6px}
+.tt-input{width:100%;font-family:var(--sans);font-size:15px;padding:12px 14px;border:1px solid var(--border-fuerte);
+  border-radius:10px;background:var(--bg);color:var(--text);
+  transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+.tt-input:focus{outline:none;border-color:var(--bordo);box-shadow:0 0 0 3px var(--bordo-tinte)}
+.tt-msg{font-size:14.5px;padding:12px 16px;border-radius:10px}
+.tt-msg--ok{background:var(--ok-bg);border:1px solid var(--ok-borde);color:var(--ok-text)}
+.tt-msg--err{background:var(--err-bg);border:1px solid var(--err-borde);color:var(--err-text)}
+
+/* --- navegación --- */
+.tt-nav{max-width:var(--navw);margin:0 auto;padding:8px 8px 8px 18px;display:flex;align-items:center;gap:var(--s2);
+  background:rgba(253,251,247,.88);backdrop-filter:blur(12px);border:1px solid var(--border);
+  border-radius:99px;box-shadow:var(--shadow)}
+.tt-brand{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:15px;
+  letter-spacing:.09em;text-decoration:none;white-space:nowrap}
+
+/* --- accesibilidad --- */
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

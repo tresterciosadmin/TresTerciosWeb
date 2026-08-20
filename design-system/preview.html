@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tres Tercios — Sistema de diseño</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens/tokens.css">
+<link rel="stylesheet" href="components/components.css">
+<style>
+body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--text)}
+.page{max-width:1080px;margin:0 auto;padding:56px 24px 96px}
+.head{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:48px}
+.head img{width:56px}
+h1{font-family:var(--serif);font-weight:600;font-size:26px;margin:0}
+.head p{margin:2px 0 0;color:var(--muted);font-size:14px}
+section{margin-bottom:56px}
+.sec-t{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bordo);
+  border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.sw{display:flex;gap:12px;align-items:center}
+.chip{width:44px;height:44px;border-radius:8px;border:1px solid;flex:none}
+.sw b{display:block;font-size:13px}
+.sw code{display:block;font-family:var(--mono);font-size:11.5px;color:var(--bordo)}
+.sw span{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.dark-block{background:var(--dk-bg);border-radius:var(--radius);padding:24px;color:var(--dk-text)}
+.dark-block .sw b{color:var(--dk-text)} .dark-block .sw code{color:var(--dk-acento)}
+.dark-block .sw span{color:var(--dk-muted)}
+.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.spec{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:8px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:800px){.three{grid-template-columns:1fr}}
+</style></head>
+<body><div class="page">
+
+<div class="head">
+  <img src="assets/logo.svg" alt="Tres Tercios">
+  <div><h1>Sistema de diseño</h1><p>Tres Tercios · v1.0.0 · vista de componentes</p></div>
+</div>
+
+<section><div class="sec-t">Color · clima claro</div>
+  <div class="grid"><div class="sw"><div class="chip" style="background:var(--bordo);border-color:var(--border)"></div><div><b>Bordó Tres Tercios</b><code>#7D1F30</code><span>--bordo</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--bordo-oscuro);border-color:var(--border)"></div><div><b>Bordó profundo</b><code>#5E1724</code><span>--bordo-oscuro</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--bordo-claro);border-color:var(--border)"></div><div><b>Bordó claro</b><code>#C4526A</code><span>--bordo-claro</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--bordo-tinte);border-color:var(--border)"></div><div><b>Tinte</b><code>#F4EAEB</code><span>--bordo-tinte</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--bordo-borde);border-color:var(--border)"></div><div><b>Borde tintado</b><code>#E4CFD2</code><span>--bordo-borde</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--bg);border-color:var(--border)"></div><div><b>Papel</b><code>#F7F3EC</code><span>--bg</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--bg-2);border-color:var(--border)"></div><div><b>Arena</b><code>#EFE9DF</code><span>--bg-2</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--surface);border-color:var(--border)"></div><div><b>Superficie</b><code>#FDFBF7</code><span>--surface</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--border);border-color:var(--border)"></div><div><b>Borde</b><code>#E0D8CB</code><span>--border</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--border-fuerte);border-color:var(--border)"></div><div><b>Borde fuerte</b><code>#CFC5B4</code><span>--border-fuerte</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--text);border-color:var(--border)"></div><div><b>Tinta</b><code>#191817</code><span>--text</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--muted);border-color:var(--border)"></div><div><b>Gris texto</b><code>#5C564D</code><span>--muted</span></div></div>
+</div>
+  <p class="spec">Proporción de uso — 60% papel · 30% tinta y grises · 10% bordó.</p>
+</section>
+
+<section><div class="sec-t">Color · clima oscuro</div>
+  <div class="dark-block"><div class="grid"><div class="sw"><div class="chip" style="background:var(--dk-bg);border-color:var(--dk-border)"></div><div><b>Noche</b><code>#0E1219</code><span>--dk-bg</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--dk-surface);border-color:var(--dk-border)"></div><div><b>Panel</b><code>#161C27</code><span>--dk-surface</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--dk-surface2);border-color:var(--dk-border)"></div><div><b>Panel elevado</b><code>#1E2634</code><span>--dk-surface2</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--dk-text);border-color:var(--dk-border)"></div><div><b>Texto claro</b><code>#EDF1F7</code><span>--dk-text</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--dk-muted);border-color:var(--dk-border)"></div><div><b>Texto secundario</b><code>#94A1B5</code><span>--dk-muted</span></div></div>
+<div class="sw"><div class="chip" style="background:var(--dk-acento);border-color:var(--dk-border)"></div><div><b>Bordó iluminado</b><code>#D4677F</code><span>--dk-acento</span></div></div>
+</div></div>
+</section>
+
+<section><div class="sec-t">Tipografía</div>
+  <p style="font-family:var(--serif);font-weight:600;font-size:34px;margin:0">Source Serif 4 — títulos de sección</p>
+  <p class="spec">--serif · 600</p>
+  <p class="tt-display" style="margin:24px 0 0">Inter — títulos display</p>
+  <p class="spec">--sans · 700 · mayúsculas</p>
+  <p style="font-family:var(--mono);font-size:22px;margin:24px 0 0">1.016.632 · 6.231 · 2001–2026</p>
+  <p class="spec">--mono · cifras tabulares</p>
+</section>
+
+<section><div class="sec-t">Botones</div>
+  <div class="row">
+    <a class="tt-btn tt-btn--primary" href="#">Conversemos</a>
+    <a class="tt-link" href="#">Conocer Nowcast Legislativo →</a>
+    <button class="tt-btn tt-btn--primary" disabled>Enviando…</button>
+  </div>
+  <div class="dark-block" style="margin-top:16px"><a class="tt-btn tt-btn--dark" href="#">Quiero acceso anticipado</a></div>
+</section>
+
+<section><div class="sec-t">Encabezado de sección</div>
+  <p class="tt-kicker">Servicios</p>
+  <h2 class="tt-h2">Una oferta con centro</h2>
+  <p class="tt-lead">Inteligencia legislativa y regulatoria en el centro; alrededor, las capacidades para convertirla en decisiones.</p>
+</section>
+
+<section><div class="sec-t">Tarjeta insignia y tarjetas</div>
+  <div class="tt-feature">
+    <img src="assets/logo.svg" alt="" width="70">
+    <div><span class="tt-tag">Oferta insignia</span>
+      <h3 class="tt-h3" style="font-size:25px;margin:12px 0 8px">Inteligencia legislativa y regulatoria</h3>
+      <p style="color:var(--muted);margin:0">Qué proyectos avanzan, qué normas cambian y cómo te afectan — antes de que sea noticia.</p></div>
+  </div>
+  <div class="three" style="margin-top:16px">
+    <div class="tt-card"><h3 class="tt-h3">Asuntos públicos</h3><p>Mapeo de actores y gestión de agenda ante el sector público.</p></div>
+    <div class="tt-card"><h3 class="tt-h3">Análisis político y macro</h3><p>Coyuntura y macroeconomía integradas para tus decisiones.</p></div>
+    <div class="tt-card"><h3 class="tt-h3">Comunicación estratégica</h3><p>Posicionamiento y mensajes para reguladores y prensa.</p></div>
+  </div>
+</section>
+
+<section><div class="sec-t">Transición de clima</div>
+  <div class="tt-divider"></div>
+  <div class="tt-dark" style="padding:32px 24px">
+    <p class="tt-kicker">Producto propio · en construcción</p>
+    <div class="tt-panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+        <span class="tt-panel__label">Nuestra Base de Datos</span>
+        <span class="tt-live"><i></i>actualización continua</span></div>
+      <div class="three">
+        <div class="tt-stat"><div class="tt-stat__n">1.016.632</div><div class="tt-stat__l">votos analizados</div></div>
+        <div class="tt-stat"><div class="tt-stat__n">6.231</div><div class="tt-stat__l">votaciones</div></div>
+        <div class="tt-stat"><div class="tt-stat__n">2001–2026</div><div class="tt-stat__l">años de historia</div></div>
+      </div>
+    </div>
+    <div class="tt-pipe" style="margin-top:24px">
+      <span>monitoreo continuo</span><b>→</b><span>análisis propio</span><b>→</b>
+      <span>alerta temprana</span><b>→</b><span>recomendación</span></div>
+  </div>
+  <div class="tt-divider--out"></div>
+</section>
+
+<section><div class="sec-t">Formulario</div>
+  <div style="max-width:420px;display:grid;gap:14px">
+    <div><label class="tt-label" for="d1">Nombre</label><input class="tt-input" id="d1" type="text"></div>
+    <div><label class="tt-label" for="d2">Email</label><input class="tt-input" id="d2" type="email"></div>
+    <p class="tt-msg tt-msg--ok" style="margin:0">Recibido. Te respondemos a la brevedad.</p>
+    <p class="tt-msg tt-msg--err" style="margin:0">No se pudo enviar el formulario.</p>
+  </div>
+</section>
+
+<section><div class="sec-t">Logotipo</div>
+  <div class="row" style="gap:32px">
+    <img src="assets/logo.svg" width="120" alt="Principal">
+    <img src="assets/logo-tercio-1.svg" width="120" alt="Tercio 1">
+    <img src="assets/logo-tercio-2.svg" width="120" alt="Tercio 2">
+    <img src="assets/logo-tercio-3.svg" width="120" alt="Tercio 3">
+    <span style="background:var(--dk-bg);padding:14px;border-radius:10px"><img src="assets/logo-negativo.svg" width="120" alt="Negativo"></span>
+  </div>
+  <p class="spec">Tres tercios de 46,67° · separaciones de 10° · mínimo 28 px · resguardo = ½ del alto</p>
+</section>
+
+</div></body></html>

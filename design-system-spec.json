@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "systemName": "Tres Tercios Design System",
+  "description": "Sistema de diseño de Tres Tercios, consultora de asuntos públicos. Dos climas (claro institucional y oscuro de producto) sobre un único set de tokens.",
+  "version": "1.0.0",
+  "repositoryUrl": "https://github.com/tresterciosadmin/TresTerciosWeb",
+  "homepage": "https://tresterciosadmin.github.io/TresTerciosWeb/",
+  "framework": "html",
+  "language": "es",
+  "paths": {
+    "tokens": "/design-system/tokens/design-tokens.json",
+    "components": "/design-system/components/",
+    "assets": "/design-system/assets/"
+  },
+  "componentManifest": "/design-system/components/manifest.json",
+  "stylesheets": [
+    "/design-system/tokens/tokens.css",
+    "/design-system/components/components.css"
+  ],
+  "documentation": "/design-system/README.md",
+  "preview": "/design-system/preview.html",
+  "typography": {
+    "source": "google-fonts",
+    "families": [
+      { "role": "serif", "family": "Source Serif 4", "weights": [400, 600], "usage": "Títulos de sección" },
+      { "role": "sans",  "family": "Inter",           "weights": [400, 500, 600, 700], "usage": "Texto, interfaz y títulos display en mayúsculas" },
+      { "role": "mono",  "family": "IBM Plex Mono",   "weights": [400, 500], "usage": "Cifras, antetítulos y etiquetas de datos" }
+    ],
+    "embedUrl": "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+  },
+  "constraints": {
+    "colorPolicy": "strict-tokens",
+    "allowedAccent": "--bordo (clima claro) / --dk-acento (clima oscuro)",
+    "iconography": "SVG de trazo único. Prohibidos los emojis como íconos.",
+    "motion": "150-300 ms, solo transform y opacity, respetar prefers-reduced-motion",
+    "accessibility": "WCAG AA: contraste de texto >= 4.5:1, foco visible, objetivos táctiles >= 44 px"
+  }
+}
