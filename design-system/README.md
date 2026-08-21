@@ -93,4 +93,4 @@ No hay familia de íconos, ni fuente de íconos, ni sprite. **Si una pieza nueva
 
 Al agregar un componente: crear su carpeta con `example.html` y `README.md`, sumar sus clases a `components.css` y registrarlo en `components/manifest.json`.
 
-**Versión 1.1.0** · agosto 2026
+**Versión 1.3.0** · agosto 2026

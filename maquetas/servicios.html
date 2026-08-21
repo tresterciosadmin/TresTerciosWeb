@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tres Tercios — Servicios</title>
 <meta name="robots" content="noindex">
@@ -57,37 +58,81 @@
     <h2 class="tt-h2" data-i18n="h">Qué hacemos</h2>
     <p class="tt-lead" data-i18n="lead">Inteligencia legislativa y regulatoria en el centro; alrededor, las capacidades para convertirla en decisiones.</p>
 
-    <div class="tt-feature" style="margin-top:var(--s4)">
-      <img class="tt-logo" src="../design-system/assets/logo.svg" alt="" width="70">
+    <div class="tt-insignia" data-insignia>
+      <img class="tt-logo" src="../design-system/assets/logo.svg" alt="" width="150">
       <div>
-        <span class="tt-tag" data-i18n="tag">Oferta insignia</span>
-        <h3 class="tt-h3" style="font-size:var(--fs-insignia);margin:12px 0 8px" data-i18n="f.h">Inteligencia legislativa y regulatoria</h3>
-        <p style="color:var(--muted)" data-i18n="f.p">Seguimos todos los días lo que se mueve en el Congreso y en los organismos que regulan tu actividad, y te avisamos cuando algo te toca.</p>
-        <div class="tt-inc">
-          <p class="tt-inc__t" data-i18n="inc.t">Incluye</p>
-          <ul>
-            <li data-i18n="inc.1">Monitoreo de proyectos de ley y de normativa relevante para tu sector</li>
-            <li data-i18n="inc.2">Alertas cuando un expediente cambia de estado o entra en agenda</li>
-            <li data-i18n="inc.3">Informe periódico con lo que se movió, lo que se frenó y lo que viene</li>
-            <li data-i18n="inc.4">Lectura de escenarios: qué probabilidad real tiene de avanzar y qué actores lo definen</li>
-          </ul>
+        <span class="tt-insignia__tag" data-i18n="ins.tag">Oferta insignia</span>
+        <h3 class="tt-insignia__h" data-i18n="a1.h">Inteligencia legislativa y regulatoria</h3>
+        <div class="tt-insignia__body">
+        <div class="tt-insignia__inner">
+<p class="tt-insignia__p" data-i18n="a1.d">Seguimos todos los días lo que se mueve en el Congreso y en los organismos que regulan tu actividad, y te avisamos cuando algo te toca.</p>
+                  <p class="tt-serv__sub" style="margin-top:0" data-i18n="ins.of">Qué ofrecemos</p>
+                  <ul class="tt-serv__list">
+                    <li data-i18n="a1.of1">Monitoreo de proyectos de ley y de normativa relevante para tu sector</li>
+                    <li data-i18n="a1.of2">Alertas cuando un expediente cambia de estado o entra en agenda</li>
+                    <li data-i18n="a1.of3">Lectura de escenarios: qué probabilidad real tiene de avanzar y qué actores lo definen</li>
+                    <li data-i18n="a1.of4">Consultas con el equipo cuando algo se acelera</li>
+                  </ul>
         </div>
       </div>
+      </div>
     </div>
-
-    <div class="tt-grid-3" style="margin-top:var(--s3)">
-      <div class="tt-card">
-        <h3 class="tt-h3" data-i18n="s1.h">Asuntos públicos</h3>
-        <p data-i18n="s1.p">Mapeo de actores, estrategia de relacionamiento y gestión de agenda ante el sector público. Quién decide, quién influye, quién te conviene escuchar y en qué orden.</p>
-      </div>
-      <div class="tt-card">
-        <h3 class="tt-h3" data-i18n="s2.h">Análisis político y macro</h3>
-        <p data-i18n="s2.p">Coyuntura política y macroeconomía integradas en un solo informe, porque las decisiones de inversión no se toman mirando una sola de las dos.</p>
-      </div>
-      <div class="tt-card">
-        <h3 class="tt-h3" data-i18n="s3.h">Comunicación estratégica</h3>
-        <p data-i18n="s3.p">Posicionamiento y mensajes para audiencias públicas, reguladores y prensa. Qué decir, cuándo y en qué términos cuando tu tema entra en agenda.</p>
-      </div>
+    
+    <div class="tt-servicios" style="margin-top:var(--s3)">
+      <article class="tt-serv" data-serv data-abierto="0" tabindex="0">
+        <div class="tt-serv__head">
+          <h3 class="tt-serv__h" data-i18n="a2.h">Asuntos públicos</h3>
+          <span class="tt-serv__ind" aria-hidden="true"></span>
+        </div>
+        <div class="tt-serv__body">
+          <div class="tt-serv__inner">
+            <p class="tt-serv__p" data-i18n="a2.d">Quién decide, quién influye, quién te conviene escuchar y en qué orden. Mapeo de actores, estrategia de relacionamiento y gestión de agenda ante el sector público.</p>
+            <p class="tt-serv__sub" data-i18n="a2.sub">Qué ofrecemos</p>
+            <ul class="tt-serv__list">
+              <li data-i18n="a2.of1">Mapa de actores con su posición, su interés y su capacidad de decidir</li>
+              <li data-i18n="a2.of2">Estrategia de relacionamiento con organismos, legisladores y cámaras</li>
+              <li data-i18n="a2.of3">Preparación de reuniones y documentos de posición</li>
+              <li data-i18n="a2.of4">Acompañamiento en audiencias públicas y consultas regulatorias</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="tt-serv" data-serv data-abierto="0" tabindex="0">
+        <div class="tt-serv__head">
+          <h3 class="tt-serv__h" data-i18n="a3.h">Análisis político y macro</h3>
+          <span class="tt-serv__ind" aria-hidden="true"></span>
+        </div>
+        <div class="tt-serv__body">
+          <div class="tt-serv__inner">
+            <p class="tt-serv__p" data-i18n="a3.d">Coyuntura política y macroeconomía integradas en un solo informe, porque las decisiones de inversión no se toman mirando una sola de las dos.</p>
+            <p class="tt-serv__sub" data-i18n="a3.sub">Qué ofrecemos</p>
+            <ul class="tt-serv__list">
+              <li data-i18n="a3.of1">Informe de coyuntura con los hechos políticos que mueven variables económicas</li>
+              <li data-i18n="a3.of2">Escenarios con sus supuestos explícitos y qué los haría cambiar</li>
+              <li data-i18n="a3.of3">Lectura de riesgo político para decisiones de inversión</li>
+              <li data-i18n="a3.of4">Análisis a pedido sobre un hecho puntual</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="tt-serv" data-serv data-abierto="0" tabindex="0">
+        <div class="tt-serv__head">
+          <h3 class="tt-serv__h" data-i18n="a4.h">Comunicación estratégica</h3>
+          <span class="tt-serv__ind" aria-hidden="true"></span>
+        </div>
+        <div class="tt-serv__body">
+          <div class="tt-serv__inner">
+            <p class="tt-serv__p" data-i18n="a4.d">Qué decir, cuándo y en qué términos cuando tu tema entra en agenda. Posicionamiento y mensajes para audiencias públicas, reguladores y prensa.</p>
+            <p class="tt-serv__sub" data-i18n="a4.sub">Qué ofrecemos</p>
+            <ul class="tt-serv__list">
+              <li data-i18n="a4.of1">Definición de posición y mensajes por audiencia</li>
+              <li data-i18n="a4.of2">Documentos de posición y materiales para reguladores</li>
+              <li data-i18n="a4.of3">Preparación de voceros para exposición pública</li>
+              <li data-i18n="a4.of4">Plan de respuesta para cuando el tema escala</li>
+            </ul>
+          </div>
+        </div>
+      </article>
     </div>
 
     <div class="cierre">
@@ -126,33 +171,40 @@ const I18N = {
   'nav.contacto':{es:'Contacto', en:'Contact'},
 
   'k':   {es:'Servicios', en:'Services'},
+  'ins.tag': {es:'Oferta insignia', en:'Flagship'},
+  'ins.of':  {es:'Qué ofrecemos', en:'What we offer'},
+  'a1.h': {es:'Inteligencia legislativa y regulatoria', en:'Legislative & regulatory intelligence'},
+  'a1.d': {es:'Seguimos todos los días lo que se mueve en el Congreso y en los organismos que regulan tu actividad, y te avisamos cuando algo te toca.', en:'Every day we follow what moves in Congress and in the bodies that regulate your activity, and we flag what touches you.'},
+  'a1.of1': {es:'Monitoreo de proyectos de ley y de normativa relevante para tu sector', en:'Monitoring of bills and regulation relevant to your sector'},
+  'a1.of2': {es:'Alertas cuando un expediente cambia de estado o entra en agenda', en:'Alerts when a bill changes status or reaches the agenda'},
+  'a1.of3': {es:'Lectura de escenarios: qué probabilidad real tiene de avanzar y qué actores lo definen', en:'Scenario reading: how likely it really is to advance and which actors decide it'},
+  'a1.of4': {es:'Consultas con el equipo cuando algo se acelera', en:'Access to the team when something speeds up'},
+  'a2.h':   {es:'Asuntos públicos', en:'Public affairs'},
+  'a2.d':   {es:'Quién decide, quién influye, quién te conviene escuchar y en qué orden. Mapeo de actores, estrategia de relacionamiento y gestión de agenda ante el sector público.', en:'Who decides, who influences, who is worth listening to and in what order. Stakeholder mapping, engagement strategy and agenda management before the public sector.'},
+  'a2.sub': {es:'Qué ofrecemos', en:'What we offer'},
+  'a2.of1': {es:'Mapa de actores con su posición, su interés y su capacidad de decidir', en:"Stakeholder map with each actor's position, interest and power to decide"},
+  'a2.of2': {es:'Estrategia de relacionamiento con organismos, legisladores y cámaras', en:'Engagement strategy with agencies, legislators and business chambers'},
+  'a2.of3': {es:'Preparación de reuniones y documentos de posición', en:'Meeting preparation and position papers'},
+  'a2.of4': {es:'Acompañamiento en audiencias públicas y consultas regulatorias', en:'Support in public hearings and regulatory consultations'},
+  'a3.h':   {es:'Análisis político y macro', en:'Political & macro analysis'},
+  'a3.d':   {es:'Coyuntura política y macroeconomía integradas en un solo informe, porque las decisiones de inversión no se toman mirando una sola de las dos.', en:'Political and macroeconomic analysis in a single report, because investment decisions are not made looking at only one of the two.'},
+  'a3.sub': {es:'Qué ofrecemos', en:'What we offer'},
+  'a3.of1': {es:'Informe de coyuntura con los hechos políticos que mueven variables económicas', en:'Situation report on the political events that move economic variables'},
+  'a3.of2': {es:'Escenarios con sus supuestos explícitos y qué los haría cambiar', en:'Scenarios with explicit assumptions and what would change them'},
+  'a3.of3': {es:'Lectura de riesgo político para decisiones de inversión', en:'Political risk reading for investment decisions'},
+  'a3.of4': {es:'Análisis a pedido sobre un hecho puntual', en:'On-demand analysis of a specific event'},
+  'a4.h':   {es:'Comunicación estratégica', en:'Strategic communications'},
+  'a4.d':   {es:'Qué decir, cuándo y en qué términos cuando tu tema entra en agenda. Posicionamiento y mensajes para audiencias públicas, reguladores y prensa.', en:'What to say, when and in what terms when your issue reaches the agenda. Positioning and messaging for public audiences, regulators and the press.'},
+  'a4.sub': {es:'Qué ofrecemos', en:'What we offer'},
+  'a4.of1': {es:'Definición de posición y mensajes por audiencia', en:'Positioning and messages defined audience by audience'},
+  'a4.of2': {es:'Documentos de posición y materiales para reguladores', en:'Position papers and materials for regulators'},
+  'a4.of3': {es:'Preparación de voceros para exposición pública', en:'Spokesperson preparation for public exposure'},
+  'a4.of4': {es:'Plan de respuesta para cuando el tema escala', en:'A response plan for when the issue escalates'},
   'h':   {es:'Qué hacemos', en:'What we do'},
   'lead':{es:'Inteligencia legislativa y regulatoria en el centro; alrededor, las capacidades para convertirla en decisiones.',
           en:'Legislative and regulatory intelligence at the core; around it, the capabilities to turn it into decisions.'},
 
-  'tag': {es:'Oferta insignia', en:'Flagship'},
-  'f.h': {es:'Inteligencia legislativa y regulatoria', en:'Legislative & regulatory intelligence'},
-  'f.p': {es:'Seguimos todos los días lo que se mueve en el Congreso y en los organismos que regulan tu actividad, y te avisamos cuando algo te toca.',
-          en:'Every day we follow what moves in Congress and in the bodies that regulate your activity, and we flag what touches you.'},
-  'inc.t':{es:'Incluye', en:'Includes'},
-  'inc.1':{es:'Monitoreo de proyectos de ley y de normativa relevante para tu sector',
-           en:'Monitoring of bills and regulation relevant to your sector'},
-  'inc.2':{es:'Alertas cuando un expediente cambia de estado o entra en agenda',
-           en:'Alerts when a bill changes status or reaches the agenda'},
-  'inc.3':{es:'Informe periódico con lo que se movió, lo que se frenó y lo que viene',
-           en:'Regular report on what moved, what stalled and what comes next'},
-  'inc.4':{es:'Lectura de escenarios: qué probabilidad real tiene de avanzar y qué actores lo definen',
-           en:'Scenario reading: how likely it really is to advance, and which actors decide it'},
 
-  's1.h':{es:'Asuntos públicos', en:'Public affairs'},
-  's1.p':{es:'Mapeo de actores, estrategia de relacionamiento y gestión de agenda ante el sector público. Quién decide, quién influye, quién te conviene escuchar y en qué orden.',
-          en:'Stakeholder mapping, engagement strategy and agenda management before the public sector. Who decides, who influences, who is worth listening to and in what order.'},
-  's2.h':{es:'Análisis político y macro', en:'Political & macro analysis'},
-  's2.p':{es:'Coyuntura política y macroeconomía integradas en un solo informe, porque las decisiones de inversión no se toman mirando una sola de las dos.',
-          en:'Political and macroeconomic analysis in a single report, because investment decisions are not made looking at only one of the two.'},
-  's3.h':{es:'Comunicación estratégica', en:'Strategic communications'},
-  's3.p':{es:'Posicionamiento y mensajes para audiencias públicas, reguladores y prensa. Qué decir, cuándo y en qué términos cuando tu tema entra en agenda.',
-          en:'Positioning and messaging for public audiences, regulators and the press. What to say, when and in what terms when your issue reaches the agenda.'},
 
   'c.h': {es:'Cómo trabajamos con vos', en:'How we work with you'},
   'p1.h':{es:'Diagnóstico.', en:'Diagnosis.'},
@@ -177,5 +229,6 @@ function setLang(l){
   });
 }
 </script>
+<script src="../design-system/components/servicios.js" defer></script>
 </body>
 </html>

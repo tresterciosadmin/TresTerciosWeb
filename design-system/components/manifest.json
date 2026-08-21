@@ -64,6 +64,23 @@
       "group": "Contenido"
     },
     {
+      "name": "insignia",
+      "title": "Oferta insignia",
+      "group": "Contenido",
+      "description": "El servicio que vende, solo y con el abanico. Arranca cerrada y se abre al llegar a ella con el scroll.",
+      "classes": [
+        "tt-insignia",
+        "tt-insignia__tag",
+        "tt-insignia__h",
+        "tt-insignia__p",
+        "tt-insignia__body",
+        "tt-insignia__inner"
+      ],
+      "path": "/design-system/components/insignia/",
+      "example": "insignia/example.html",
+      "script": "/design-system/components/servicios.js"
+    },
+    {
       "name": "lista-alcance",
       "title": "Lista de alcance",
       "group": "Contenido",
@@ -74,6 +91,21 @@
       ],
       "path": "/design-system/components/lista-alcance/",
       "example": "lista-alcance/example.html"
+    },
+    {
+      "name": "novedad",
+      "title": "Tarjeta de novedad",
+      "group": "Contenido",
+      "description": "Un análisis o informe publicado: fecha, tipo, título y dos líneas de por qué importa.",
+      "classes": [
+        "tt-novedad",
+        "tt-novedad__meta",
+        "tt-novedad__t",
+        "tt-novedad__p",
+        "tt-vacio"
+      ],
+      "path": "/design-system/components/novedad/",
+      "example": "novedad/example.html"
     },
     {
       "name": "pasos",
@@ -117,6 +149,27 @@
       "path": "/design-system/components/section-header/",
       "example": "section-header/example.html",
       "group": "Contenido"
+    },
+    {
+      "name": "servicio",
+      "title": "Tarjeta de servicio que se abre",
+      "group": "Contenido",
+      "description": "Los servicios que acompañan a la insignia: se muestran por título y revelan su detalle al pasar el cursor o al tocarlas.",
+      "classes": [
+        "tt-servicios",
+        "tt-serv",
+        "tt-serv__head",
+        "tt-serv__h",
+        "tt-serv__ind",
+        "tt-serv__body",
+        "tt-serv__inner",
+        "tt-serv__p",
+        "tt-serv__sub",
+        "tt-serv__list"
+      ],
+      "path": "/design-system/components/servicio/",
+      "example": "servicio/example.html",
+      "script": "/design-system/components/servicios.js"
     },
     {
       "name": "coverage-bars",

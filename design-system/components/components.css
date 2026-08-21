@@ -263,3 +263,79 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 .tt-dark .tt-card{background:var(--dk-surface);border-color:var(--dk-border)}
 .tt-dark .tt-card:hover{border-color:var(--dk-acento)}
 .tt-dark .tt-card p{color:var(--dk-muted)}
+
+/* ============================================================
+   Novedades — tarjetas de artículo (queda lista, se activa al publicar)
+   ============================================================ */
+.tt-novedad{display:grid;gap:10px;padding:var(--s3) 0;border-top:1px solid var(--border)}
+.tt-novedad__meta{font-family:var(--mono);font-size:var(--fs-nano);letter-spacing:var(--ls-tag);
+  text-transform:uppercase;color:var(--muted)}
+.tt-novedad__t{font-family:var(--serif);font-weight:600;font-size:var(--fs-h3);line-height:var(--lh-titulo)}
+.tt-novedad__p{font-size:var(--fs-sm);color:var(--muted)}
+.tt-vacio{border:1px dashed var(--border-fuerte);border-radius:var(--radius);padding:var(--s4);
+  text-align:center;color:var(--muted);font-size:var(--fs-sm)}
+
+/* ============================================================
+   Servicios — oferta insignia + tres tarjetas que se abren
+   La insignia va sola arriba, con el abanico, porque es la que
+   vende. Las otras tres van lado a lado: se muestran por título
+   y revelan el detalle al pasar el cursor o al tocarlas.
+   ============================================================ */
+
+/* --- la insignia --- */
+.tt-insignia{background:linear-gradient(120deg,var(--bordo-tinte),var(--surface) 78%);
+  border:1px solid var(--bordo-borde);border-radius:var(--radius);padding:var(--s5) var(--s4);
+  display:grid;grid-template-columns:auto 1fr;gap:var(--s5);align-items:center}
+.tt-insignia > img,.tt-insignia > svg{width:150px;height:auto}
+.tt-insignia__tag{display:inline-block;font-family:var(--mono);font-size:var(--fs-nano);font-weight:500;
+  letter-spacing:var(--ls-tag);text-transform:uppercase;color:#fff;background:var(--bordo);
+  border-radius:99px;padding:5px 12px;margin-bottom:var(--s2)}
+.tt-insignia__h{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3vw,34px);
+  line-height:var(--lh-titulo);letter-spacing:var(--ls-titulo);margin-bottom:12px}
+.tt-insignia__p{font-size:var(--fs-lead);color:var(--muted);max-width:44em;margin-bottom:var(--s3)}
+@media(max-width:840px){
+  .tt-insignia{grid-template-columns:1fr;gap:var(--s3);padding:var(--s4)}
+  .tt-insignia > img,.tt-insignia > svg{width:96px}
+}
+
+/* --- las tres tarjetas que se abren --- */
+.tt-servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);align-items:start}
+@media(max-width:840px){.tt-servicios{grid-template-columns:1fr}}
+.tt-serv{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:var(--s3);cursor:pointer;
+  transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+.tt-serv:hover,.tt-serv:focus-within,.tt-serv[data-abierto="1"]{border-color:var(--bordo-claro);box-shadow:var(--shadow)}
+.tt-serv:focus-within{outline:2px solid var(--bordo);outline-offset:3px}
+.tt-serv__head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s2)}
+.tt-serv__h{font-family:var(--serif);font-weight:600;font-size:var(--fs-h3);line-height:var(--lh-titulo)}
+/* la flecha gira: es el único indicio de que hay algo más */
+.tt-serv__ind{flex:none;width:14px;height:14px;position:relative;transition:transform var(--t) var(--ease)}
+.tt-serv__ind::before{content:"";position:absolute;left:2px;top:3px;width:8px;height:8px;
+  border-right:2px solid var(--bordo);border-bottom:2px solid var(--bordo);transform:rotate(45deg)}
+.tt-serv:hover .tt-serv__ind,.tt-serv[data-abierto="1"] .tt-serv__ind{transform:rotate(-180deg)}
+.tt-serv__body{display:grid;grid-template-rows:0fr;opacity:0;
+  transition:grid-template-rows var(--t) var(--ease),opacity var(--t) var(--ease)}
+.tt-serv:hover .tt-serv__body,.tt-serv:focus-within .tt-serv__body,.tt-serv[data-abierto="1"] .tt-serv__body{grid-template-rows:1fr;opacity:1}
+.tt-serv__inner{overflow:hidden;min-height:0}
+.tt-serv__p{font-size:var(--fs-sm);color:var(--muted);padding-top:var(--s2)}
+.tt-serv__sub{font-family:var(--mono);font-size:var(--fs-nano);font-weight:500;letter-spacing:var(--ls-tag);
+  text-transform:uppercase;color:var(--bordo);margin:var(--s3) 0 10px}
+.tt-serv__list{list-style:none;display:grid;gap:9px;margin:0;padding:0}
+.tt-serv__list li{font-size:var(--fs-sm);color:var(--muted);padding-left:18px;position:relative}
+.tt-serv__list li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--bordo-claro)}
+/* sin cursor —lector de pantalla o teclado— el detalle está siempre disponible */
+@media(prefers-reduced-motion:reduce){.tt-serv__body{transition:none}}
+
+/* --- la insignia se revela al llegar a ella ---
+   Por defecto está ABIERTA: si el JavaScript no corre, el contenido
+   está igual. La clase .js en <html> es la que habilita el estado
+   cerrado, y así no hay parpadeo al cargar. */
+.tt-insignia__body{display:grid;grid-template-rows:1fr;opacity:1;
+  transition:grid-template-rows var(--t) var(--ease),opacity var(--t) var(--ease)}
+.tt-insignia__inner{overflow:hidden;min-height:0}
+.js .tt-insignia[data-abierto="0"] .tt-insignia__body{grid-template-rows:0fr;opacity:0}
+.js .tt-insignia[data-abierto="0"] .tt-insignia__h{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){
+  .tt-insignia__body{transition:none}
+  .js .tt-insignia[data-abierto="0"] .tt-insignia__body{grid-template-rows:1fr;opacity:1}
+}
