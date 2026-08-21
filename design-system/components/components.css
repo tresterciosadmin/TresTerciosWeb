@@ -5,8 +5,15 @@
    está en los tokens, el error está en el componente.
    ============================================================ */
 
-/* --- base --- */
+/* --- base ---
+   Reglas mínimas que TODA página que use el sistema necesita.
+   Vivían solo en index.html: sin ellas, los enlaces heredan el azul
+   del navegador y la marca aparece en color de link visitado. */
 .tt-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de componente
+                      (.tt-btn--primary, .tt-link) debe poder ganarle el color */
+.tt-body img{max-width:100%}
+.tt-body h1,.tt-body h2,.tt-body h3{line-height:1.14;letter-spacing:-.015em}
 .tt-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s3)}
 .tt-section{padding:var(--s6) 0}
 
@@ -46,7 +53,8 @@
 /* --- tarjeta insignia (un solo uso por página) --- */
 .tt-feature{background:linear-gradient(120deg,var(--bordo-tinte),var(--surface) 78%);
   border:1px solid var(--bordo-borde);border-radius:var(--radius);padding:var(--s4);
-  display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:center}
+  display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+.tt-feature > img,.tt-feature > svg{margin-top:6px}
 .tt-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;
   text-transform:uppercase;color:#fff;background:var(--bordo);border-radius:99px;padding:5px 12px}
 
@@ -90,3 +98,78 @@
 
 /* --- accesibilidad --- */
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ============================================================
+   Componentes incorporados al reconciliar con Claude Design
+   (existían como CSS en el sitio y no estaban documentados)
+   ============================================================ */
+
+/* --- selector de idioma --- */
+.tt-lang{display:flex;border:1px solid var(--border);border-radius:99px;overflow:hidden;background:var(--bg)}
+.tt-lang button{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;padding:7px 10px;
+  border:0;background:transparent;color:var(--muted);cursor:pointer;
+  transition:background var(--t) var(--ease),color var(--t) var(--ease)}
+.tt-lang button[aria-pressed="true"]{background:var(--bordo);color:#fff}
+.tt-lang button:focus-visible{outline:2px solid var(--bordo);outline-offset:-2px}
+
+/* --- flecha circular --- */
+.tt-arrow{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;cursor:pointer;
+  background:var(--surface);border:1px solid var(--border-fuerte);
+  transition:background var(--t) var(--ease),border-color var(--t) var(--ease),transform var(--t) var(--ease)}
+.tt-arrow svg{width:19px;height:19px;fill:none;stroke:var(--bordo);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tt-arrow:hover{background:var(--bordo);border-color:var(--bordo);transform:translateY(-1px)}
+.tt-arrow:hover svg{stroke:#fff}
+.tt-arrow:focus-visible{outline:2px solid var(--bordo);outline-offset:3px}
+
+/* --- indicadores de carrusel --- */
+.tt-dots{display:flex;gap:8px}
+.tt-dots button{width:36px;height:4px;border:0;padding:0;border-radius:99px;background:var(--border-fuerte);
+  cursor:pointer;transition:background var(--t) var(--ease)}
+.tt-dots button[aria-selected="true"]{background:var(--bordo)}
+.tt-dots button:focus-visible{outline:2px solid var(--bordo);outline-offset:4px}
+
+/* --- barras de cobertura (clima oscuro) --- */
+.tt-cov{display:flex;gap:3px;align-items:flex-end;height:56px}
+.tt-cov span{flex:1;border-radius:2px 2px 0 0;opacity:.85;transition:opacity var(--t) var(--ease);
+  background:linear-gradient(to top,color-mix(in srgb,var(--dk-acento) 35%,transparent),var(--dk-acento))}
+.tt-cov:hover span{opacity:.55}
+.tt-cov span:hover{opacity:1}
+.tt-cov-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;
+  color:var(--dk-muted);margin-top:8px}
+
+/* --- medidor (clima oscuro) --- */
+.tt-gauge{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%}
+.tt-gauge svg{width:150px;height:auto}
+.tt-gauge__val{font-family:var(--mono);font-size:30px;font-weight:500;margin-top:14px;letter-spacing:-.02em}
+.tt-gauge__cap{font-size:12.5px;color:var(--dk-muted);margin-top:4px;max-width:20em}
+.tt-gauge__note{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dk-muted);opacity:.7;margin-top:10px}
+
+/* --- logotipo: el mínimo lo hace cumplir el componente --- */
+.tt-logo{display:block;min-width:28px;height:auto}
+
+/* ============================================================
+   Incorporados al portear la maqueta de Servicios (Claude Design)
+   ============================================================ */
+
+/* --- grilla de tres, colapsa a una --- */
+.tt-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+@media(max-width:840px){.tt-grid-3{grid-template-columns:1fr}}
+
+/* --- lista de alcance: qué incluye un servicio --- */
+.tt-inc{margin-top:var(--s3);border-top:1px solid var(--bordo-borde);padding-top:var(--s3)}
+.tt-inc__t{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--bordo);margin-bottom:12px}
+.tt-inc ul{list-style:none;display:grid;gap:10px;max-width:50em;margin:0;padding:0}
+.tt-inc li{font-size:14.5px;color:var(--muted);padding-left:18px;position:relative}
+.tt-inc li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--bordo-claro)}
+
+/* --- pasos numerados: secuencia, no opciones --- */
+/* Sin caja ni hover a propósito: un paso no es clickeable y no debe
+   parecerse a una Card, que sí lo insinúa con su elevación. */
+.tt-pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+@media(max-width:840px){.tt-pasos{grid-template-columns:1fr;gap:var(--s3)}}
+.tt-paso{border-top:2px solid var(--bordo);padding-top:14px}
+.tt-paso__n{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;font-weight:500;
+  letter-spacing:.1em;color:var(--bordo);display:block;margin-bottom:10px}
+.tt-paso p{font-size:14.5px;color:var(--muted);margin-top:6px}

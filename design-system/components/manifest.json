@@ -3,6 +3,17 @@
   "stylesheet": "components.css",
   "components": [
     {
+      "name": "arrow-button",
+      "title": "Flecha circular",
+      "group": "Acciones",
+      "description": "Avance y retroceso de un carrusel. 44×44 px por accesibilidad.",
+      "classes": [
+        "tt-arrow"
+      ],
+      "path": "/design-system/components/arrow-button/",
+      "example": "arrow-button/example.html"
+    },
+    {
       "name": "button",
       "title": "Botón",
       "description": "Acción principal. Un solo botón primario por pantalla; el resto va como enlace.",
@@ -17,17 +28,15 @@
       "group": "Acciones"
     },
     {
-      "name": "section-header",
-      "title": "Encabezado de sección",
-      "description": "Antetítulo en monoespaciada, título en serif y bajada. Abre toda sección de contenido.",
+      "name": "dots",
+      "title": "Indicadores de carrusel",
+      "group": "Acciones",
+      "description": "Posición dentro de una secuencia. Navegables, no decorativos.",
       "classes": [
-        "tt-kicker",
-        "tt-h2",
-        "tt-lead"
+        "tt-dots"
       ],
-      "path": "/design-system/components/section-header/",
-      "example": "section-header/example.html",
-      "group": "Contenido"
+      "path": "/design-system/components/dots/",
+      "example": "dots/example.html"
     },
     {
       "name": "card",
@@ -55,17 +64,68 @@
       "group": "Contenido"
     },
     {
-      "name": "stat",
-      "title": "Cifra",
-      "description": "Dato duro sobre clima oscuro. Siempre en monoespaciada con cifras tabulares.",
+      "name": "lista-alcance",
+      "title": "Lista de alcance",
+      "group": "Contenido",
+      "description": "Qué incluye un servicio. Vive dentro de FeatureCard pero también suelta, en propuestas y en la plantilla de informe.",
       "classes": [
-        "tt-stat",
-        "tt-stat__n",
-        "tt-stat__l"
+        "tt-inc",
+        "tt-inc__t"
       ],
-      "path": "/design-system/components/stat/",
-      "example": "stat/example.html",
-      "group": "Datos"
+      "path": "/design-system/components/lista-alcance/",
+      "example": "lista-alcance/example.html"
+    },
+    {
+      "name": "pasos",
+      "title": "Pasos numerados",
+      "group": "Contenido",
+      "description": "Una secuencia de tres o cuatro pasos. Es el hermano en clima claro del componente recorrido.",
+      "classes": [
+        "tt-pasos",
+        "tt-paso",
+        "tt-paso__n"
+      ],
+      "path": "/design-system/components/pasos/",
+      "example": "pasos/example.html"
+    },
+    {
+      "name": "section-header",
+      "title": "Encabezado de sección",
+      "description": "Antetítulo en monoespaciada, título en serif y bajada. Abre toda sección de contenido.",
+      "classes": [
+        "tt-kicker",
+        "tt-h2",
+        "tt-lead"
+      ],
+      "path": "/design-system/components/section-header/",
+      "example": "section-header/example.html",
+      "group": "Contenido"
+    },
+    {
+      "name": "coverage-bars",
+      "title": "Barras de cobertura",
+      "group": "Datos",
+      "description": "Muestra continuidad temporal de un conjunto de datos. Clima oscuro.",
+      "classes": [
+        "tt-cov",
+        "tt-cov-ax"
+      ],
+      "path": "/design-system/components/coverage-bars/",
+      "example": "coverage-bars/example.html"
+    },
+    {
+      "name": "gauge",
+      "title": "Medidor",
+      "group": "Datos",
+      "description": "Una probabilidad, construida con el propio abanico de la marca.",
+      "classes": [
+        "tt-gauge",
+        "tt-gauge__val",
+        "tt-gauge__cap",
+        "tt-gauge__note"
+      ],
+      "path": "/design-system/components/gauge/",
+      "example": "gauge/example.html"
     },
     {
       "name": "panel",
@@ -81,6 +141,53 @@
       "group": "Datos"
     },
     {
+      "name": "recorrido",
+      "title": "Recorrido del método",
+      "group": "Datos",
+      "description": "Los pasos del método en pastillas monoespaciadas. Clima oscuro.",
+      "classes": [
+        "tt-pipe"
+      ],
+      "path": "/design-system/components/recorrido/",
+      "example": "recorrido/example.html"
+    },
+    {
+      "name": "stat",
+      "title": "Cifra",
+      "description": "Dato duro sobre clima oscuro. Siempre en monoespaciada con cifras tabulares.",
+      "classes": [
+        "tt-stat",
+        "tt-stat__n",
+        "tt-stat__l"
+      ],
+      "path": "/design-system/components/stat/",
+      "example": "stat/example.html",
+      "group": "Datos"
+    },
+    {
+      "name": "divider",
+      "title": "Transición de clima",
+      "description": "Degradé entre el clima claro y el oscuro. Se usan siempre en par.",
+      "classes": [
+        "tt-divider",
+        "tt-divider--out"
+      ],
+      "path": "/design-system/components/divider/",
+      "example": "divider/example.html",
+      "group": "Estructura"
+    },
+    {
+      "name": "grid-3",
+      "title": "Grilla de tres",
+      "group": "Estructura",
+      "description": "Utilidad de layout: tres columnas que colapsan a una en 840px.",
+      "classes": [
+        "tt-grid-3"
+      ],
+      "path": "/design-system/components/grid-3/",
+      "example": "grid-3/example.html"
+    },
+    {
       "name": "form-field",
       "title": "Campo de formulario",
       "description": "Etiqueta visible más campo. Nunca placeholder como etiqueta.",
@@ -94,6 +201,41 @@
       "group": "Formularios"
     },
     {
+      "name": "form-message",
+      "title": "Mensaje de formulario",
+      "group": "Formularios",
+      "description": "Resultado de un envío. Separado del campo porque tiene su propio ciclo de vida.",
+      "classes": [
+        "tt-msg",
+        "tt-msg--ok",
+        "tt-msg--err"
+      ],
+      "path": "/design-system/components/form-message/",
+      "example": "form-message/example.html"
+    },
+    {
+      "name": "logo",
+      "title": "Logotipo",
+      "group": "Marca",
+      "description": "Envoltorio del abanico. Hace cumplir el mínimo de 28 px.",
+      "classes": [
+        "tt-logo"
+      ],
+      "path": "/design-system/components/logo/",
+      "example": "logo/example.html"
+    },
+    {
+      "name": "lang-toggle",
+      "title": "Selector de idioma",
+      "group": "Navegación",
+      "description": "Alterna ES/EN. Vive en la navegación pero puede usarse suelto en superficies de producto.",
+      "classes": [
+        "tt-lang"
+      ],
+      "path": "/design-system/components/lang-toggle/",
+      "example": "lang-toggle/example.html"
+    },
+    {
       "name": "nav",
       "title": "Navegación",
       "description": "Pastilla flotante, más angosta que el contenido para que la marca domine.",
@@ -104,18 +246,6 @@
       "path": "/design-system/components/nav/",
       "example": "nav/example.html",
       "group": "Navegación"
-    },
-    {
-      "name": "divider",
-      "title": "Transición de clima",
-      "description": "Degradé entre el clima claro y el oscuro. Se usan siempre en par.",
-      "classes": [
-        "tt-divider",
-        "tt-divider--out"
-      ],
-      "path": "/design-system/components/divider/",
-      "example": "divider/example.html",
-      "group": "Estructura"
     }
   ],
   "cardMarker": "<!-- @dsCard group=\"…\" --> en la primera línea de cada .html"

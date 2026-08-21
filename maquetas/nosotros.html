@@ -1,0 +1,90 @@
+<!-- @dsCard group="Sitio institucional" viewport="1280x1600" name="Página Nosotros" subtitle="Tres perfiles como los tres tercios del método, con marcadores de foto" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Tres Tercios — Nosotros</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../styles.css">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+.perfiles{margin-top:var(--s5);display:grid;gap:0}
+.perfil{display:grid;grid-template-columns:120px 200px 1fr;gap:var(--s4);align-items:start;padding:var(--s5) 0;border-top:1px solid var(--border)}
+.foto{aspect-ratio:1;background:var(--surface);border:1px solid var(--border-fuerte);border-radius:var(--radius-sm)}
+.tercio{font-family:var(--mono);font-size:var(--fs-tag);font-weight:500;letter-spacing:var(--ls-tag);text-transform:uppercase;color:var(--bordo);margin-bottom:12px}
+.nombre{font-family:var(--serif);font-weight:600;font-size:27px;line-height:var(--lh-titulo);letter-spacing:var(--ls-titulo)}
+.rol{font-size:var(--fs-lead);color:var(--muted);margin-top:4px}
+.meta{margin-top:var(--s3);display:grid;gap:14px;max-width:44em}
+.meta dt{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:var(--ls-tag);text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.meta dd{font-size:var(--fs-card);color:var(--text)}
+.linea{font-family:var(--serif);font-size:17px;line-height:var(--lh-lead);color:var(--text);max-width:34em;margin-top:var(--s3);padding-left:var(--s2);border-left:2px solid var(--bordo-borde)}
+.perfil a{margin-top:var(--s1)}
+.cierre{margin-top:var(--s6);padding:var(--s6) 0 0;border-top:1px solid var(--border);display:grid;grid-template-columns:.5fr 1fr;gap:var(--s5)}
+.cierre p{font-family:var(--serif);font-size:22px;line-height:1.45;max-width:30em}
+.cta{margin-top:var(--s6)}
+@media(max-width:900px){.perfil{grid-template-columns:1fr;gap:var(--s3)}.foto{max-width:200px}.cierre{grid-template-columns:1fr;gap:var(--s3)}}
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const {Nav,SectionHeader,Logo,Button,LinkArrow}=window.TresTerciosDesignSystem_3774d5;
+const LINKS={es:[{label:'Servicios',href:'#servicios'},{label:'Nowcast',href:'#nowcast'},{label:'Nosotros',href:'#nosotros'},{label:'Contacto',href:'#contacto'}],
+             en:[{label:'Services',href:'#servicios'},{label:'Nowcast',href:'#nowcast'},{label:'About',href:'#nosotros'},{label:'Contact',href:'#contacto'}]};
+const PERFILES=[
+ {fan:'tercio-1',tercio:'Análisis político',nombre:'Thiago Paradela',rol:'Asuntos públicos y riesgo regulatorio',
+  formacion:'Lic. en Relaciones Internacionales',
+  trayectoria:'Especialista en asuntos públicos y corporativos, con paso por la Fundación Libertad y Progreso. Cursa la Especialización en Compras y Contrataciones Públicas de la OEA y la Universidad Nacional de San Martín.',
+  linea:'Lee el proceso desde adentro: quién firma, qué comisión traba y qué se negocia antes de que el expediente llegue al recinto.',
+  li:'https://www.linkedin.com/in/thiago-paradela-252936194/'},
+ {fan:'tercio-2',tercio:'Datos y tecnología',nombre:'Franco Marconi',rol:'Datos y mercados',
+  formacion:'Universidad del CEMA · Universidad de Buenos Aires',
+  trayectoria:'Analista de políticas públicas y mercados en Fundación Libertad y Progreso y en SBT Valores. Profesor adjunto en UCEMA. Especializado en renta fija y riesgo político.',
+  linea:'Construye la base de datos del Congreso y convierte la política en probabilidades.',
+  li:'https://www.linkedin.com/in/francomarconi/'},
+ {fan:'tercio-3',tercio:'Estrategia',nombre:'Agustín García De Abreau',rol:'Economía y estrategia',
+  formacion:'MSc in Economics, Pontificia Universidad Católica Argentina',
+  trayectoria:'Analista Semi Senior de Pricing & Profitability en Mercado Libre.',
+  linea:'Pone el número: qué le cuesta o qué le rinde a una empresa cada escenario.',
+  li:'https://www.linkedin.com/in/agustingarciadeabreau/'}];
+
+function Perfil({p}){
+  return (
+    <article className="perfil">
+      <Logo variant={p.fan} width={120} basePath="../../assets" alt=""/>
+      <div className="foto" role="img" aria-label={`Foto de ${p.nombre}, pendiente`}></div>
+      <div>
+        <p className="tercio">{p.tercio}</p>
+        <h3 className="nombre">{p.nombre}</h3>
+        <p className="rol">{p.rol}</p>
+        <dl className="meta">
+          <div><dt>Formación</dt><dd>{p.formacion}</dd></div>
+          <div><dt>Trayectoria</dt><dd>{p.trayectoria}</dd></div>
+        </dl>
+        <p className="linea">{p.linea}</p>
+        <LinkArrow href={p.li} target="_blank" rel="noopener">LinkedIn</LinkArrow>
+      </div>
+    </article>
+  );
+}
+
+function Nosotros(){
+  const [lang,setLang]=React.useState('es');
+  React.useEffect(()=>{document.documentElement.lang=lang},[lang]);
+  return (
+    <div className="tt-body">
+      <Nav links={LINKS[lang]} lang={lang} onLang={setLang} basePath="../../assets"/>
+      <section className="tt-section" id="nosotros">
+        <div className="tt-wrap">
+          <SectionHeader kicker="Nosotros" title="Tres tercios, un método"
+            lead="El nombre no es una metáfora. Es cómo trabajamos: cada decisión pública se lee desde tres ángulos que se exigen entre sí. Ninguno alcanza solo, y por eso somos tres."/>
+          <div className="perfiles">{PERFILES.map(p=><Perfil key={p.nombre} p={p}/>)}</div>
+          <div className="cierre">
+            <h2 className="tt-h2">Sin humo</h2>
+            <p>Decimos lo que sabemos y también lo que no. Si un escenario es incierto, lo decimos incierto: un pronóstico con falsa precisión es peor que ninguno, porque se toman decisiones sobre él.</p>
+          </div>
+          <div className="cta"><Button as="a" href="#contacto">Conversemos</Button></div>
+        </div>
+      </section>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Nosotros/>);
+</script></body></html>

@@ -61,13 +61,27 @@ design-system/
 | Tamaño mínimo del logo: 28 px | Por debajo, las separaciones se cierran y se lee como una mancha |
 | Área de resguardo: ½ del alto del logo | En los cuatro lados, libre de texto y de bordes |
 
-## Registro y lenguaje
+## Voz y contenido
 
-Castellano rioplatense, **voseo**: *tu empresa, contanos, necesitás*. Nunca trato formal ni español neutro.
+**Castellano rioplatense, voseo.** *Tu empresa, contanos, necesitás, podés darte de baja.* Nunca trato formal ni español neutro. La primera persona es plural y sobria: *leemos la política argentina, te avisamos*.
 
-Registro comercial, no técnico. En textos de cara al público se dice *Base de Datos*, *votos analizados*, *monitoreo continuo*, *alerta temprana*. Nunca *base canónica*, *votos nominales*, *embudo* ni *expediente* como término técnico.
+**Registro comercial, no técnico.** Se dice *Base de Datos, votos analizados, monitoreo continuo, alerta temprana, proyecto*. No se dice *base canónica, votos nominales, embudo, pipeline* ni *expediente* como término técnico. Por eso el componente de los pasos del método se llama `recorrido` y no `pipeline`.
 
-Todo texto existe en español e inglés, y se edita en la misma pasada. En el sitio ambos idiomas viven lado a lado en un único diccionario justamente para que sea imposible actualizar uno y olvidar el otro.
+**Frases cortas con un dato adentro.** El patrón es promesa + prueba: *"Un sistema que estima la probabilidad de que un proyecto se convierta en ley. No es una promesa: la base ya existe."* O beneficio + momento: *"qué proyectos avanzan, qué normas cambian y cómo te afectan — antes de que sea noticia."*
+
+**Casing.** Los títulos display se escriben en oración normal y las mayúsculas las pone el CSS. Los títulos de sección van en capitalización de oración: *"Una oferta con centro"*, no *"Una Oferta Con Centro"*. Las pastillas del método van en minúscula.
+
+**Sin emojis, sin signos de exclamación, sin superlativos vacíos.** La autoridad se transmite con espacio, no con volumen. El CTA dice *Suscribirme*, no *"¡Suscribite ahora!"*.
+
+**Honestidad sobre el estado del producto.** Nowcast se presenta como *"en construcción"* y el medidor lleva *"esquema ilustrativo"*. El sistema no muestra cifras que no puede sostener.
+
+**Bilingüe en la misma pasada.** Todo texto existe en ES y EN, clave por clave, en un único diccionario. El inglés es igual de sobrio, no una traducción literal: *"Otra forma de ver el Congreso" → "A new way to see Congress"*.
+
+## Iconografía
+
+**El sistema casi no tiene íconos, y es una decisión.** El inventario completo es: el logotipo y sus variantes, dos flechas de carrusel (trazo de 2 px, extremos redondeados), la flecha `→` y la `×` como caracteres tipográficos, y el punto de 7 px del indicador en vivo. Nada más.
+
+No hay familia de íconos, ni fuente de íconos, ni sprite. **Si una pieza nueva necesita un ícono que no está en esta lista, la respuesta por defecto es no usar ícono:** una etiqueta en monoespaciada, una cifra o espacio en blanco resuelven casi siempre. Si es imprescindible, se dibuja con trazo de 2 px y extremos redondeados para que combine con las flechas existentes, y se anota acá. No se mezclan familias ni se pega un set entero.
 
 ---
 
