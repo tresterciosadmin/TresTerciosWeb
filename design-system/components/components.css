@@ -9,29 +9,29 @@
    Reglas mínimas que TODA página que use el sistema necesita.
    Vivían solo en index.html: sin ellas, los enlaces heredan el azul
    del navegador y la marca aparece en color de link visitado. */
-.tt-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.tt-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:var(--lh-body);font-size:var(--fs-base)}
 a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de componente
                       (.tt-btn--primary, .tt-link) debe poder ganarle el color */
 .tt-body img{max-width:100%}
-.tt-body h1,.tt-body h2,.tt-body h3{line-height:1.14;letter-spacing:-.015em}
+.tt-body h1,.tt-body h2,.tt-body h3{line-height:var(--lh-titulo);letter-spacing:var(--ls-titulo)}
 .tt-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s3)}
 .tt-section{padding:var(--s6) 0}
 
 /* --- antetítulo (kicker) --- */
-.tt-kicker{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.16em;
+.tt-kicker{font-family:var(--mono);font-size:var(--fs-micro);font-weight:500;letter-spacing:var(--ls-kicker);
   text-transform:uppercase;color:var(--bordo);margin-bottom:var(--s2)}
 .tt-dark .tt-kicker{color:var(--dk-acento)}
 
 /* --- títulos --- */
 .tt-display{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:-.005em;
-  line-height:1.08;font-size:clamp(28px,3.9vw,45px)}
-.tt-h2{font-family:var(--serif);font-weight:600;line-height:1.14;letter-spacing:-.015em;
-  font-size:clamp(27px,3.4vw,38px);margin-bottom:14px}
-.tt-h3{font-family:var(--serif);font-weight:600;line-height:1.14;letter-spacing:-.015em;font-size:18px}
-.tt-lead{font-size:16.5px;color:var(--muted);max-width:44em}
+  line-height:var(--lh-display);font-size:var(--fs-display)}
+.tt-h2{font-family:var(--serif);font-weight:600;line-height:var(--lh-titulo);letter-spacing:var(--ls-titulo);
+  font-size:var(--fs-h2);margin-bottom:14px}
+.tt-h3{font-family:var(--serif);font-weight:600;line-height:var(--lh-titulo);letter-spacing:var(--ls-titulo);font-size:var(--fs-h3)}
+.tt-lead{font-size:var(--fs-lead);color:var(--muted);max-width:44em}
 
 /* --- botones --- */
-.tt-btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;
+.tt-btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:var(--fs-ui);text-decoration:none;
   border-radius:99px;padding:13px 26px;min-height:44px;border:1px solid transparent;cursor:pointer;
   transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),background var(--t) var(--ease)}
 .tt-btn--primary{background:var(--bordo);color:#fff;border-color:var(--bordo)}
@@ -40,7 +40,7 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 .tt-btn--dark{background:var(--dk-acento);border-color:var(--dk-acento);color:var(--sobre-acento)}
 .tt-btn--dark:hover{background:var(--dk-acento-hover);transform:translateY(-1px)}
 .tt-btn[disabled]{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
-.tt-link{font-weight:600;font-size:15px;text-decoration:none;color:var(--bordo);padding:10px 4px;border-radius:6px}
+.tt-link{font-weight:600;font-size:var(--fs-ui);text-decoration:none;color:var(--bordo);padding:10px 4px;border-radius:6px}
 .tt-link:hover{text-decoration:underline;text-underline-offset:4px}
 .tt-link:focus-visible{outline:2px solid var(--bordo);outline-offset:3px}
 
@@ -48,30 +48,30 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 .tt-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s3);
   transition:border-color var(--t) var(--ease),transform var(--t) var(--ease),box-shadow var(--t) var(--ease)}
 .tt-card:hover{border-color:var(--bordo-claro);transform:translateY(-2px);box-shadow:var(--shadow)}
-.tt-card p{font-size:14.5px;color:var(--muted);margin-top:6px}
+.tt-card p{font-size:var(--fs-sm);color:var(--muted);margin-top:6px}
 
 /* --- tarjeta insignia (un solo uso por página) --- */
 .tt-feature{background:linear-gradient(120deg,var(--bordo-tinte),var(--surface) 78%);
   border:1px solid var(--bordo-borde);border-radius:var(--radius);padding:var(--s4);
   display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
 .tt-feature > img,.tt-feature > svg{margin-top:6px}
-.tt-tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;
+.tt-tag{display:inline-block;font-family:var(--mono);font-size:var(--fs-nano);font-weight:500;letter-spacing:var(--ls-tag);
   text-transform:uppercase;color:#fff;background:var(--bordo);border-radius:99px;padding:5px 12px}
 
 /* --- clima oscuro --- */
 .tt-dark{background:var(--dk-bg);color:var(--dk-text)}
 .tt-panel{background:var(--dk-surface);border:1px solid var(--dk-border);border-radius:var(--radius);padding:var(--s3)}
-.tt-panel__label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dk-muted)}
-.tt-stat{background:var(--dk-surface2);border:1px solid var(--dk-border);border-radius:10px;padding:16px 14px}
-.tt-stat__n{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:500;
+.tt-panel__label{font-family:var(--mono);font-size:var(--fs-tabla);letter-spacing:var(--ls-tag);text-transform:uppercase;color:var(--dk-muted)}
+.tt-stat{background:var(--dk-surface2);border:1px solid var(--dk-border);border-radius:var(--radius-sm);padding:16px 14px}
+.tt-stat__n{font-family:var(--mono);font-variant-numeric:var(--num);font-weight:500;
   font-size:clamp(20px,2.4vw,28px);letter-spacing:-.01em}
-.tt-stat__l{font-size:12.5px;color:var(--dk-muted);margin-top:5px}
+.tt-stat__l{font-size:var(--fs-mini);color:var(--dk-muted);margin-top:5px}
 .tt-pipe{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--mono);
-  font-size:11.5px;letter-spacing:.06em;color:var(--dk-muted)}
+  font-size:var(--fs-micro);letter-spacing:.06em;color:var(--dk-muted)}
 .tt-pipe span{background:var(--dk-surface);border:1px solid var(--dk-border);border-radius:99px;padding:7px 14px}
 .tt-pipe b{color:var(--dk-acento);font-weight:500}
-.tt-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--dk-muted)}
+.tt-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:var(--fs-nano);
+  letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--dk-muted)}
 .tt-live i{width:7px;height:7px;border-radius:50%;background:var(--live);animation:tt-pulse 2.4s infinite}
 @keyframes tt-pulse{0%{box-shadow:0 0 0 0 rgba(111,208,140,.55)}70%{box-shadow:0 0 0 8px rgba(111,208,140,0)}100%{box-shadow:0 0 0 0 rgba(111,208,140,0)}}
 
@@ -80,12 +80,12 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 .tt-divider--out{height:104px;background:linear-gradient(to bottom,var(--dk-bg),var(--bg))}
 
 /* --- formularios --- */
-.tt-label{font-size:13px;font-weight:600;display:block;margin-bottom:6px}
-.tt-input{width:100%;font-family:var(--sans);font-size:15px;padding:12px 14px;border:1px solid var(--border-fuerte);
-  border-radius:10px;background:var(--bg);color:var(--text);
+.tt-label{font-size:var(--fs-xs);font-weight:600;display:block;margin-bottom:6px}
+.tt-input{width:100%;font-family:var(--sans);font-size:var(--fs-ui);padding:12px 14px;border:1px solid var(--border-fuerte);
+  border-radius:var(--radius-sm);background:var(--bg);color:var(--text);
   transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
 .tt-input:focus{outline:none;border-color:var(--bordo);box-shadow:0 0 0 3px var(--bordo-tinte)}
-.tt-msg{font-size:14.5px;padding:12px 16px;border-radius:10px}
+.tt-msg{font-size:var(--fs-sm);padding:12px 16px;border-radius:var(--radius-sm)}
 .tt-msg--ok{background:var(--ok-bg);border:1px solid var(--ok-borde);color:var(--ok-text)}
 .tt-msg--err{background:var(--err-bg);border:1px solid var(--err-borde);color:var(--err-text)}
 
@@ -93,7 +93,7 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 .tt-nav{max-width:var(--navw);margin:0 auto;padding:8px 8px 8px 18px;display:flex;align-items:center;gap:var(--s2);
   background:rgba(253,251,247,.88);backdrop-filter:blur(12px);border:1px solid var(--border);
   border-radius:99px;box-shadow:var(--shadow)}
-.tt-brand{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:15px;
+.tt-brand{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:var(--fs-ui);
   letter-spacing:.09em;text-decoration:none;white-space:nowrap}
 
 /* --- accesibilidad --- */
@@ -106,7 +106,7 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 
 /* --- selector de idioma --- */
 .tt-lang{display:flex;border:1px solid var(--border);border-radius:99px;overflow:hidden;background:var(--bg)}
-.tt-lang button{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;padding:7px 10px;
+.tt-lang button{font-family:var(--mono);font-size:var(--fs-micro);font-weight:500;letter-spacing:.08em;padding:7px 10px;
   border:0;background:transparent;color:var(--muted);cursor:pointer;
   transition:background var(--t) var(--ease),color var(--t) var(--ease)}
 .tt-lang button[aria-pressed="true"]{background:var(--bordo);color:#fff}
@@ -134,15 +134,15 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
   background:linear-gradient(to top,color-mix(in srgb,var(--dk-acento) 35%,transparent),var(--dk-acento))}
 .tt-cov:hover span{opacity:.55}
 .tt-cov span:hover{opacity:1}
-.tt-cov-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;
+.tt-cov-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:var(--fs-tabla);
   color:var(--dk-muted);margin-top:8px}
 
 /* --- medidor (clima oscuro) --- */
 .tt-gauge{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%}
 .tt-gauge svg{width:150px;height:auto}
-.tt-gauge__val{font-family:var(--mono);font-size:30px;font-weight:500;margin-top:14px;letter-spacing:-.02em}
-.tt-gauge__cap{font-size:12.5px;color:var(--dk-muted);margin-top:4px;max-width:20em}
-.tt-gauge__note{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+.tt-gauge__val{font-family:var(--mono);font-size:var(--fs-medidor);font-weight:500;margin-top:14px;letter-spacing:-.02em}
+.tt-gauge__cap{font-size:var(--fs-mini);color:var(--dk-muted);margin-top:4px;max-width:20em}
+.tt-gauge__note{font-family:var(--mono);font-size:var(--fs-nota);letter-spacing:var(--ls-mono);text-transform:uppercase;
   color:var(--dk-muted);opacity:.7;margin-top:10px}
 
 /* --- logotipo: el mínimo lo hace cumplir el componente --- */
@@ -158,10 +158,10 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 
 /* --- lista de alcance: qué incluye un servicio --- */
 .tt-inc{margin-top:var(--s3);border-top:1px solid var(--bordo-borde);padding-top:var(--s3)}
-.tt-inc__t{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;
+.tt-inc__t{font-family:var(--mono);font-size:var(--fs-nano);font-weight:500;letter-spacing:var(--ls-tag);
   text-transform:uppercase;color:var(--bordo);margin-bottom:12px}
 .tt-inc ul{list-style:none;display:grid;gap:10px;max-width:50em;margin:0;padding:0}
-.tt-inc li{font-size:14.5px;color:var(--muted);padding-left:18px;position:relative}
+.tt-inc li{font-size:var(--fs-sm);color:var(--muted);padding-left:18px;position:relative}
 .tt-inc li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--bordo-claro)}
 
 /* --- pasos numerados: secuencia, no opciones --- */
@@ -170,6 +170,96 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 .tt-pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
 @media(max-width:840px){.tt-pasos{grid-template-columns:1fr;gap:var(--s3)}}
 .tt-paso{border-top:2px solid var(--bordo);padding-top:14px}
-.tt-paso__n{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;font-weight:500;
-  letter-spacing:.1em;color:var(--bordo);display:block;margin-bottom:10px}
-.tt-paso p{font-size:14.5px;color:var(--muted);margin-top:6px}
+.tt-paso__n{font-family:var(--mono);font-variant-numeric:var(--num);font-size:var(--fs-xs);font-weight:500;
+  letter-spacing:var(--ls-mono);color:var(--bordo);display:block;margin-bottom:10px}
+.tt-paso p{font-size:var(--fs-sm);color:var(--muted);margin-top:6px}
+
+/* ============================================================
+   Incorporados al portear la maqueta de Nosotros
+   ============================================================ */
+
+/* --- perfil de equipo --- */
+.tt-perfil{display:grid;grid-template-columns:120px 200px 1fr;gap:var(--s4);align-items:start;
+  padding:var(--s5) 0;border-top:1px solid var(--border)}
+.tt-perfil__foto{aspect-ratio:1;background:var(--surface);border:1px solid var(--border-fuerte);border-radius:var(--radius-sm)}
+.tt-perfil__tercio{font-family:var(--mono);font-size:var(--fs-nano);font-weight:500;letter-spacing:var(--ls-tag);
+  text-transform:uppercase;color:var(--bordo);margin-bottom:12px}
+.tt-perfil__nombre{font-family:var(--serif);font-weight:600;font-size:var(--fs-nombre);line-height:var(--lh-titulo);letter-spacing:var(--ls-titulo)}
+.tt-perfil__rol{font-size:var(--fs-lead);color:var(--muted);margin-top:4px}
+.tt-meta{margin-top:var(--s3);display:grid;gap:14px;max-width:44em}
+.tt-meta dt{font-family:var(--mono);font-size:var(--fs-nano);font-weight:500;letter-spacing:var(--ls-tag);
+  text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.tt-meta dd{font-size:var(--fs-sm);color:var(--text)}
+/* la línea propia: cita del propio perfil, no testimonial de un tercero */
+.tt-linea{font-family:var(--serif);font-size:var(--fs-cita);line-height:var(--lh-lead);color:var(--text);max-width:34em;
+  margin-top:var(--s3);padding-left:var(--s2);border-left:2px solid var(--bordo-borde)}
+@media(max-width:900px){.tt-perfil{grid-template-columns:1fr;gap:var(--s3)}.tt-perfil__foto{max-width:200px}}
+
+/* --- cierre de marca: la firma al pie de una página --- */
+.tt-lockup{display:flex;flex-direction:column;align-items:center;text-align:center;
+  border-top:1px solid var(--border);margin-top:var(--s5);padding:var(--s6) 0 var(--s4)}
+.tt-lockup img{width:min(190px,44vw);height:auto}
+.tt-lockup__n{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  font-size:clamp(26px,4.6vw,48px);margin-top:var(--s3);line-height:1}
+
+/* ============================================================
+   Incorporados al portear la página de producto (Nowcast)
+   ============================================================ */
+
+/* --- navegación sobre clima oscuro --- */
+.tt-nav--dark{background:rgba(22,28,39,.86);border-color:var(--dk-border);box-shadow:none}
+.tt-nav--dark .tt-brand{color:var(--dk-text)}
+
+/* --- grilla técnica de fondo --- */
+.tt-dark-grid{position:relative}
+.tt-dark-grid::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--dk-grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--dk-grid) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(900px 460px at 70% 20%,#000,transparent 78%)}
+.tt-dark-grid > *{position:relative}
+
+/* --- utilidades de estructura --- */
+.tt-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s2)}
+@media(max-width:560px){.tt-stats{grid-template-columns:1fr}}
+.tt-rule{height:1px;background:var(--border)}
+.tt-dark .tt-rule{background:var(--dk-border)}
+
+/* --- medidor: el abanico ES la escala ---
+   Los tres tercios se llenan en orden y cada uno vale 33,3%. El llenado
+   dentro de un tercio es angular, no un salto. Los tercios vacíos quedan
+   en tinte: el logo se tiene que reconocer aunque el valor sea bajo.
+   Los arcos los genera gauge.js con la geometría real de la marca. */
+.tt-gauge__bg{fill:color-mix(in srgb,var(--bordo) 13%,transparent);
+  stroke:var(--border-fuerte);stroke-width:5;stroke-linejoin:round}
+.tt-gauge__fill{fill:var(--bordo);stroke:var(--bordo);stroke-width:5;stroke-linejoin:round;
+  transition:d var(--t) var(--ease)}
+.tt-dark .tt-gauge__bg{fill:rgba(212,103,127,.13);stroke:var(--dk-border)}
+.tt-dark .tt-gauge__fill{fill:var(--dk-acento);stroke:var(--dk-acento)}
+.tt-dark .tt-gauge__val,.tt-dark .tt-gauge__cap,.tt-dark .tt-gauge__note{color:var(--dk-text)}
+.tt-dark .tt-gauge__cap,.tt-dark .tt-gauge__note{color:var(--dk-muted)}
+
+/* --- tabla de proyectos en seguimiento --- */
+.tt-rows{display:grid;gap:1px;background:var(--dk-border);border:1px solid var(--dk-border);
+  border-radius:var(--radius-sm);overflow:hidden}
+.tt-row{display:grid;grid-template-columns:1fr auto auto;gap:var(--s2);align-items:center;
+  background:var(--dk-surface2);padding:13px 14px}
+.tt-row b{font-weight:500;font-size:var(--fs-sm)}
+.tt-row em{font-style:normal;font-family:var(--mono);font-size:var(--fs-micro);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--dk-muted)}
+.tt-row i{font-style:normal;font-family:var(--mono);font-variant-numeric:var(--num);
+  font-size:var(--fs-base);color:var(--dk-acento);min-width:3.5em;text-align:right}
+
+/* --- variantes de clima oscuro para los componentes existentes --- */
+.tt-dark .tt-h2,.tt-dark .tt-h3{color:var(--dk-text)}
+.tt-dark .tt-lead{color:var(--dk-muted)}
+.tt-dark .tt-link{color:var(--dk-acento)}
+.tt-dark .tt-label{color:var(--dk-text)}
+.tt-dark .tt-input{background:var(--dk-surface2);border-color:var(--dk-border);color:var(--dk-text)}
+.tt-dark .tt-input:focus{border-color:var(--dk-acento);box-shadow:0 0 0 3px rgba(212,103,127,.18)}
+.tt-dark .tt-lang{background:transparent;border-color:var(--dk-border)}
+.tt-dark .tt-lang button{color:var(--dk-muted)}
+.tt-dark .tt-lang button[aria-pressed="true"]{background:var(--dk-acento);color:var(--sobre-acento)}
+.tt-dark .tt-card{background:var(--dk-surface);border-color:var(--dk-border)}
+.tt-dark .tt-card:hover{border-color:var(--dk-acento)}
+.tt-dark .tt-card p{color:var(--dk-muted)}

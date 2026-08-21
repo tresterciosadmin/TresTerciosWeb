@@ -35,7 +35,9 @@ design-system/
 
 ## Los principios, en orden de importancia
 
-**1. Un sistema, no decisiones sueltas.** Ningún componente inventa un color, un espaciado o una sombra. Si algo hace falta y no está en los tokens, el problema es el componente, no los tokens.
+**1. Un sistema, no decisiones sueltas.** Ningún componente inventa un color, un espaciado, un tamaño de letra ni una sombra. Si algo hace falta y no está en los tokens, el problema es el componente, no los tokens.
+
+Desde la v1.1 los tamaños tipográficos también son tokens: `--fs-nano` a `--fs-display`, más interlineados (`--lh-*`) y tracking (`--ls-*`). No se escriben tamaños en píxeles dentro de un componente. La escala no se inventó: son los valores que el sistema ya venía usando, nombrados.
 
 **2. Dos climas, un solo sistema.** El clima claro es institucional: fondo papel, bordó como único acento, serif en los títulos. El clima oscuro se usa exclusivamente para la sección de producto (Nowcast) y comparte las mismas familias tipográficas y la misma escala. Lo que cambia es la superficie, no el sistema. La transición entre ambos es siempre un par de degradés —entrada y salida— sin ningún elemento gráfico encima.
 
@@ -67,7 +69,7 @@ design-system/
 
 **Registro comercial, no técnico.** Se dice *Base de Datos, votos analizados, monitoreo continuo, alerta temprana, proyecto*. No se dice *base canónica, votos nominales, embudo, pipeline* ni *expediente* como término técnico. Por eso el componente de los pasos del método se llama `recorrido` y no `pipeline`.
 
-**Frases cortas con un dato adentro.** El patrón es promesa + prueba: *"Un sistema que estima la probabilidad de que un proyecto se convierta en ley. No es una promesa: la base ya existe."* O beneficio + momento: *"qué proyectos avanzan, qué normas cambian y cómo te afectan — antes de que sea noticia."*
+**Frases cortas con un dato adentro.** El patrón es promesa + prueba: *"Seguimos todos los días lo que se mueve en el Congreso y en los organismos que regulan tu actividad, y te avisamos cuando algo te toca."* O beneficio + momento: *"qué proyectos avanzan, qué normas cambian y cómo te afectan — antes de que sea noticia."*
 
 **Casing.** Los títulos display se escriben en oración normal y las mayúsculas las pone el CSS. Los títulos de sección van en capitalización de oración: *"Una oferta con centro"*, no *"Una Oferta Con Centro"*. Las pastillas del método van en minúscula.
 
@@ -91,4 +93,4 @@ No hay familia de íconos, ni fuente de íconos, ni sprite. **Si una pieza nueva
 
 Al agregar un componente: crear su carpeta con `example.html` y `README.md`, sumar sus clases a `components.css` y registrarlo en `components/manifest.json`.
 
-**Versión 1.0.0** · agosto 2026
+**Versión 1.1.0** · agosto 2026

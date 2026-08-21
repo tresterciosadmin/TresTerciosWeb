@@ -89,6 +89,23 @@
       "example": "pasos/example.html"
     },
     {
+      "name": "perfil",
+      "title": "Perfil de equipo",
+      "group": "Contenido",
+      "description": "Una persona del equipo: logo del tercio, foto, nombre, rol, formación, trayectoria y su línea propia.",
+      "classes": [
+        "tt-perfil",
+        "tt-perfil__foto",
+        "tt-perfil__tercio",
+        "tt-perfil__nombre",
+        "tt-perfil__rol",
+        "tt-meta",
+        "tt-linea"
+      ],
+      "path": "/design-system/components/perfil/",
+      "example": "perfil/example.html"
+    },
+    {
       "name": "section-header",
       "title": "Encabezado de sección",
       "description": "Antetítulo en monoespaciada, título en serif y bajada. Abre toda sección de contenido.",
@@ -114,18 +131,33 @@
       "example": "coverage-bars/example.html"
     },
     {
+      "name": "filas",
+      "title": "Filas de seguimiento",
+      "group": "Datos",
+      "description": "Lista compacta de proyectos con su estado y su probabilidad.",
+      "classes": [
+        "tt-rows",
+        "tt-row"
+      ],
+      "path": "/design-system/components/filas/",
+      "example": "filas/example.html"
+    },
+    {
       "name": "gauge",
       "title": "Medidor",
       "group": "Datos",
-      "description": "Una probabilidad, construida con el propio abanico de la marca.",
+      "description": "Medidor construido con el abanico de la marca: se llena por tercios según el porcentaje.",
       "classes": [
         "tt-gauge",
+        "tt-gauge__bg",
+        "tt-gauge__fill",
         "tt-gauge__val",
         "tt-gauge__cap",
         "tt-gauge__note"
       ],
       "path": "/design-system/components/gauge/",
-      "example": "gauge/example.html"
+      "example": "gauge/example.html",
+      "script": "/design-system/components/gauge/gauge.js"
     },
     {
       "name": "panel",
@@ -163,6 +195,17 @@
       "path": "/design-system/components/stat/",
       "example": "stat/example.html",
       "group": "Datos"
+    },
+    {
+      "name": "dark-grid",
+      "title": "Grilla técnica",
+      "group": "Estructura",
+      "description": "Fondo de grilla con máscara radial para las zonas de clima oscuro.",
+      "classes": [
+        "tt-dark-grid"
+      ],
+      "path": "/design-system/components/dark-grid/",
+      "example": "dark-grid/example.html"
     },
     {
       "name": "divider",
@@ -214,6 +257,18 @@
       "example": "form-message/example.html"
     },
     {
+      "name": "lockup",
+      "title": "Cierre de marca",
+      "group": "Marca",
+      "description": "La firma al pie de una página: el abanico y el nombre en grande. Cierra sin prometer nada.",
+      "classes": [
+        "tt-lockup",
+        "tt-lockup__n"
+      ],
+      "path": "/design-system/components/lockup/",
+      "example": "lockup/example.html"
+    },
+    {
       "name": "logo",
       "title": "Logotipo",
       "group": "Marca",
@@ -246,6 +301,17 @@
       "path": "/design-system/components/nav/",
       "example": "nav/example.html",
       "group": "Navegación"
+    },
+    {
+      "name": "nav-dark",
+      "title": "Navegación oscura",
+      "group": "Navegación",
+      "description": "La pastilla de navegación sobre clima oscuro, con el logo en negativo.",
+      "classes": [
+        "tt-nav--dark"
+      ],
+      "path": "/design-system/components/nav-dark/",
+      "example": "nav-dark/example.html"
     }
   ],
   "cardMarker": "<!-- @dsCard group=\"…\" --> en la primera línea de cada .html"

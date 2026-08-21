@@ -1,12 +1,12 @@
 {
   "$schema": "https://tr.designtokens.org/format/",
-  "$description": "Tres Tercios — sistema de diseño. Fuente de verdad: el bloque :root de index.html.",
+  "$description": "Tres Tercios — sistema de diseño v1.1. Fuente de verdad: el bloque :root de index.html.",
   "color": {
     "brand": {
       "bordo": {
         "$type": "color",
         "$value": "#7D1F30",
-        "$description": "Color principal de marca, tomado del logotipo. Acento único del clima claro.",
+        "$description": "Color principal de marca. Acento único del clima claro.",
         "$extensions": {
           "tresTercios.cssVar": "--bordo"
         }
@@ -14,7 +14,7 @@
       "bordoOscuro": {
         "$type": "color",
         "$value": "#5E1724",
-        "$description": "Estado hover y presión de los elementos en bordó.",
+        "$description": "Hover y presión.",
         "$extensions": {
           "tresTercios.cssVar": "--bordo-oscuro"
         }
@@ -22,7 +22,7 @@
       "bordoClaro": {
         "$type": "color",
         "$value": "#C4526A",
-        "$description": "Acento intermedio para bordes y detalles.",
+        "$description": "Acento intermedio.",
         "$extensions": {
           "tresTercios.cssVar": "--bordo-claro"
         }
@@ -30,7 +30,7 @@
       "bordoTinte": {
         "$type": "color",
         "$value": "#F4EAEB",
-        "$description": "Tinte suave: halo del hero, anillo de foco, tarjeta insignia.",
+        "$description": "Halo del hero, anillo de foco, tarjeta insignia.",
         "$extensions": {
           "tresTercios.cssVar": "--bordo-tinte"
         }
@@ -38,7 +38,7 @@
       "bordoBorde": {
         "$type": "color",
         "$value": "#E4CFD2",
-        "$description": "Borde de las superficies tintadas.",
+        "$description": "Borde de superficies tintadas.",
         "$extensions": {
           "tresTercios.cssVar": "--bordo-borde"
         }
@@ -48,7 +48,7 @@
       "papel": {
         "$type": "color",
         "$value": "#F7F3EC",
-        "$description": "Fondo base de todo el clima claro. No cambia entre secciones.",
+        "$description": "Fondo base del clima claro. No cambia entre secciones.",
         "$extensions": {
           "tresTercios.cssVar": "--bg"
         }
@@ -56,7 +56,7 @@
       "arena": {
         "$type": "color",
         "$value": "#EFE9DF",
-        "$description": "Arena. Reservado a la zona de cierre (newsletter y footer).",
+        "$description": "Reservado a la zona de cierre.",
         "$extensions": {
           "tresTercios.cssVar": "--bg-2"
         }
@@ -64,7 +64,7 @@
       "elevada": {
         "$type": "color",
         "$value": "#FDFBF7",
-        "$description": "Superficie de tarjetas y formularios.",
+        "$description": "Tarjetas y formularios.",
         "$extensions": {
           "tresTercios.cssVar": "--surface"
         }
@@ -80,7 +80,7 @@
       "bordeFuerte": {
         "$type": "color",
         "$value": "#CFC5B4",
-        "$description": "Bordes de campos de formulario y controles.",
+        "$description": "Campos y controles.",
         "$extensions": {
           "tresTercios.cssVar": "--border-fuerte"
         }
@@ -90,7 +90,7 @@
       "tinta": {
         "$type": "color",
         "$value": "#191817",
-        "$description": "Texto principal sobre clima claro.",
+        "$description": "Texto principal.",
         "$extensions": {
           "tresTercios.cssVar": "--text"
         }
@@ -98,7 +98,7 @@
       "gris": {
         "$type": "color",
         "$value": "#5C564D",
-        "$description": "Texto secundario sobre clima claro.",
+        "$description": "Texto secundario.",
         "$extensions": {
           "tresTercios.cssVar": "--muted"
         }
@@ -108,7 +108,7 @@
       "noche": {
         "$type": "color",
         "$value": "#0E1219",
-        "$description": "Fondo del clima oscuro (sección de producto).",
+        "$description": "Fondo del clima oscuro.",
         "$extensions": {
           "tresTercios.cssVar": "--dk-bg"
         }
@@ -116,7 +116,7 @@
       "panel": {
         "$type": "color",
         "$value": "#161C27",
-        "$description": "Panel sobre fondo oscuro.",
+        "$description": "Panel sobre oscuro.",
         "$extensions": {
           "tresTercios.cssVar": "--dk-surface"
         }
@@ -124,7 +124,7 @@
       "panelElevado": {
         "$type": "color",
         "$value": "#1E2634",
-        "$description": "Segundo nivel de elevación sobre oscuro.",
+        "$description": "Segundo nivel de elevación.",
         "$extensions": {
           "tresTercios.cssVar": "--dk-surface2"
         }
@@ -156,7 +156,7 @@
       "textoSecundario": {
         "$type": "color",
         "$value": "#94A1B5",
-        "$description": "Texto secundario sobre oscuro.",
+        "$description": "Texto de apoyo sobre oscuro.",
         "$extensions": {
           "tresTercios.cssVar": "--dk-muted"
         }
@@ -164,7 +164,7 @@
       "acento": {
         "$type": "color",
         "$value": "#D4677F",
-        "$description": "Bordó iluminado. Único acento válido sobre fondo oscuro.",
+        "$description": "Único acento válido sobre fondo oscuro.",
         "$extensions": {
           "tresTercios.cssVar": "--dk-acento"
         }
@@ -172,7 +172,7 @@
       "acentoHover": {
         "$type": "color",
         "$value": "#E07A91",
-        "$description": "Hover del acento sobre oscuro.",
+        "$description": "Hover del acento oscuro.",
         "$extensions": {
           "tresTercios.cssVar": "--dk-acento-hover"
         }
@@ -180,7 +180,7 @@
       "sobreAcento": {
         "$type": "color",
         "$value": "#170A0E",
-        "$description": "Texto sobre el acento iluminado. Contraste verificado.",
+        "$description": "Texto sobre el acento iluminado.",
         "$extensions": {
           "tresTercios.cssVar": "--sobre-acento"
         }
@@ -258,7 +258,7 @@
       "sans": {
         "$type": "fontFamily",
         "$value": "'Inter',-apple-system,'Segoe UI',sans-serif",
-        "$description": "Texto, interfaz y títulos display en mayúsculas. Inter.",
+        "$description": "Texto, interfaz y display. Inter.",
         "$extensions": {
           "tresTercios.cssVar": "--sans"
         }
@@ -266,10 +266,264 @@
       "mono": {
         "$type": "fontFamily",
         "$value": "'IBM Plex Mono',ui-monospace,monospace",
-        "$description": "Cifras, antetítulos y etiquetas de datos. IBM Plex Mono.",
+        "$description": "Cifras, antetítulos y etiquetas. IBM Plex Mono.",
         "$extensions": {
           "tresTercios.cssVar": "--mono"
         }
+      }
+    },
+    "size": {
+      "nano": {
+        "$type": "dimension",
+        "$value": "10.5px",
+        "$description": "10,5 px. Etiquetas mono, tag, nota.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-nano"
+        }
+      },
+      "micro": {
+        "$type": "dimension",
+        "$value": "11.5px",
+        "$description": "11,5 px. Antetítulo y pastillas del recorrido.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-micro"
+        }
+      },
+      "mini": {
+        "$type": "dimension",
+        "$value": "12.5px",
+        "$description": "12,5 px. Etiqueta de cifra, pie del medidor.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-mini"
+        }
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "13px",
+        "$description": "13 px. Etiqueta de formulario.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-xs"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "14.5px",
+        "$description": "14,5 px. Texto de tarjeta y de lista.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-sm"
+        }
+      },
+      "ui": {
+        "$type": "dimension",
+        "$value": "15px",
+        "$description": "15 px. Botones y enlaces.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-ui"
+        }
+      },
+      "base": {
+        "$type": "dimension",
+        "$value": "16px",
+        "$description": "16 px. Cuerpo.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-base"
+        }
+      },
+      "lead": {
+        "$type": "dimension",
+        "$value": "16.5px",
+        "$description": "16,5 px. Bajada de sección.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-lead"
+        }
+      },
+      "leadLg": {
+        "$type": "dimension",
+        "$value": "17.5px",
+        "$description": "17,5 px. Bajada del hero.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-lead-lg"
+        }
+      },
+      "h3": {
+        "$type": "dimension",
+        "$value": "18px",
+        "$description": "18 px. Título de tarjeta.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-h3"
+        }
+      },
+      "nav": {
+        "$type": "dimension",
+        "$value": "14px",
+        "$description": "14 px. Enlaces de navegación.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-nav"
+        }
+      },
+      "tabla": {
+        "$type": "dimension",
+        "$value": "11px",
+        "$description": "11 px. Etiqueta de panel y eje de la franja.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-tabla"
+        }
+      },
+      "cita": {
+        "$type": "dimension",
+        "$value": "17px",
+        "$description": "17 px. La línea propia de un perfil.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-cita"
+        }
+      },
+      "medidor": {
+        "$type": "dimension",
+        "$value": "30px",
+        "$description": "30 px. La cifra del medidor.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-medidor"
+        }
+      },
+      "nota": {
+        "$type": "dimension",
+        "$value": "10px",
+        "$description": "10 px. Nota al pie del medidor.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-nota"
+        }
+      },
+      "legal": {
+        "$type": "dimension",
+        "$value": "13.5px",
+        "$description": "13,5 px. Footer y letra chica.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-legal"
+        }
+      },
+      "after": {
+        "$type": "dimension",
+        "$value": "15.5px",
+        "$description": "15,5 px. Párrafo de cierre de bloque.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-after"
+        }
+      },
+      "h2Sm": {
+        "$type": "dimension",
+        "$value": "24px",
+        "$description": "24 px. Título de modal y de bloque menor.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-h2-sm"
+        }
+      },
+      "insignia": {
+        "$type": "dimension",
+        "$value": "25px",
+        "$description": "25 px. Título de la tarjeta insignia.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-insignia"
+        }
+      },
+      "nombre": {
+        "$type": "dimension",
+        "$value": "27px",
+        "$description": "27 px. Nombre de perfil.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-nombre"
+        }
+      },
+      "h2": {
+        "$type": "dimension",
+        "$value": "clamp(27px,3.4vw,38px)",
+        "$description": "Título de sección, fluido.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-h2"
+        }
+      },
+      "display": {
+        "$type": "dimension",
+        "$value": "clamp(28px,3.9vw,45px)",
+        "$description": "Título display del hero, fluido.",
+        "$extensions": {
+          "tresTercios.cssVar": "--fs-display"
+        }
+      }
+    },
+    "lineHeight": {
+      "titulo": {
+        "$type": "number",
+        "$value": "1.14",
+        "$description": "Títulos.",
+        "$extensions": {
+          "tresTercios.cssVar": "--lh-titulo"
+        }
+      },
+      "display": {
+        "$type": "number",
+        "$value": "1.08",
+        "$description": "Display.",
+        "$extensions": {
+          "tresTercios.cssVar": "--lh-display"
+        }
+      },
+      "lead": {
+        "$type": "number",
+        "$value": "1.5",
+        "$description": "Bajadas y citas.",
+        "$extensions": {
+          "tresTercios.cssVar": "--lh-lead"
+        }
+      },
+      "body": {
+        "$type": "number",
+        "$value": "1.6",
+        "$description": "Cuerpo.",
+        "$extensions": {
+          "tresTercios.cssVar": "--lh-body"
+        }
+      }
+    },
+    "letterSpacing": {
+      "titulo": {
+        "$type": "dimension",
+        "$value": "-.015em",
+        "$description": "Títulos serif.",
+        "$extensions": {
+          "tresTercios.cssVar": "--ls-titulo"
+        }
+      },
+      "tag": {
+        "$type": "dimension",
+        "$value": ".14em",
+        "$description": "Etiquetas en mayúsculas.",
+        "$extensions": {
+          "tresTercios.cssVar": "--ls-tag"
+        }
+      },
+      "kicker": {
+        "$type": "dimension",
+        "$value": ".16em",
+        "$description": "Antetítulos.",
+        "$extensions": {
+          "tresTercios.cssVar": "--ls-kicker"
+        }
+      },
+      "mono": {
+        "$type": "dimension",
+        "$value": ".1em",
+        "$description": "Cifras y pastillas.",
+        "$extensions": {
+          "tresTercios.cssVar": "--ls-mono"
+        }
+      }
+    },
+    "numeric": {
+      "$type": "other",
+      "$value": "tabular-nums",
+      "$description": "Cifras tabulares: obligatorio en todo número.",
+      "$extensions": {
+        "tresTercios.cssVar": "--num"
       }
     }
   },
@@ -278,7 +532,7 @@
       "1": {
         "$type": "dimension",
         "$value": "8px",
-        "$description": "8 px. Unidad base de la escala.",
+        "$description": "8 px. Unidad base.",
         "$extensions": {
           "tresTercios.cssVar": "--s1"
         }
@@ -294,7 +548,7 @@
       "3": {
         "$type": "dimension",
         "$value": "24px",
-        "$description": "24 px. Padding estándar de tarjeta.",
+        "$description": "24 px. Padding de tarjeta.",
         "$extensions": {
           "tresTercios.cssVar": "--s3"
         }
@@ -318,7 +572,7 @@
       "6": {
         "$type": "dimension",
         "$value": "96px",
-        "$description": "96 px. Padding vertical de sección.",
+        "$description": "96 px. Padding de sección.",
         "$extensions": {
           "tresTercios.cssVar": "--s6"
         }
@@ -328,9 +582,17 @@
       "default": {
         "$type": "dimension",
         "$value": "14px",
-        "$description": "Radio de tarjetas y paneles. Pastillas y botones usan 99px.",
+        "$description": "Tarjetas y paneles.",
         "$extensions": {
           "tresTercios.cssVar": "--radius"
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "10px",
+        "$description": "Campos y cifras.",
+        "$extensions": {
+          "tresTercios.cssVar": "--radius-sm"
         }
       }
     },
@@ -346,7 +608,7 @@
       "nav": {
         "$type": "dimension",
         "$value": "780px",
-        "$description": "Ancho de la pastilla de navegación. Deliberadamente menor que el contenido.",
+        "$description": "Ancho de la navegación, menor a propósito.",
         "$extensions": {
           "tresTercios.cssVar": "--navw"
         }
@@ -357,7 +619,7 @@
     "default": {
       "$type": "shadow",
       "$value": "0 1px 2px rgba(25,24,23,.04),0 10px 30px rgba(25,24,23,.07)",
-      "$description": "Sombra única del sistema. No existen otros niveles.",
+      "$description": "Sombra única del sistema.",
       "$extensions": {
         "tresTercios.cssVar": "--shadow"
       }
@@ -368,7 +630,7 @@
       "default": {
         "$type": "cubicBezier",
         "$value": "cubic-bezier(.2,.7,.3,1)",
-        "$description": "Curva única para toda micro-interacción.",
+        "$description": "Curva única.",
         "$extensions": {
           "tresTercios.cssVar": "--ease"
         }
@@ -378,7 +640,7 @@
       "default": {
         "$type": "duration",
         "$value": "220ms",
-        "$description": "Duración única: 220 ms.",
+        "$description": "220 ms.",
         "$extensions": {
           "tresTercios.cssVar": "--t"
         }

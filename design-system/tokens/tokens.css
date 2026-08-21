@@ -1,49 +1,80 @@
-/* Tres Tercios — tokens
-   Generado desde el bloque :root de index.html. No editar a mano:
-   si un token cambia, cambia primero en el sitio y se regenera este archivo. */
+/* Tres Tercios — tokens v1.1
+   Generado desde el bloque :root de index.html. No editar a mano. */
 :root{
-  --bordo: #7D1F30;                                       /* Color principal de marca, tomado del logotipo. Acento único del clima claro. */
-  --bordo-oscuro: #5E1724;                                /* Estado hover y presión de los elementos en bordó. */
-  --bordo-claro: #C4526A;                                 /* Acento intermedio para bordes y detalles. */
-  --bordo-tinte: #F4EAEB;                                 /* Tinte suave: halo del hero, anillo de foco, tarjeta insignia. */
-  --bordo-borde: #E4CFD2;                                 /* Borde de las superficies tintadas. */
-  --bg: #F7F3EC;                                          /* Fondo base de todo el clima claro. No cambia entre secciones. */
-  --bg-2: #EFE9DF;                                        /* Arena. Reservado a la zona de cierre (newsletter y footer). */
-  --surface: #FDFBF7;                                     /* Superficie de tarjetas y formularios. */
-  --border: #E0D8CB;                                      /* Filetes y separadores. */
-  --border-fuerte: #CFC5B4;                               /* Bordes de campos de formulario y controles. */
-  --text: #191817;                                        /* Texto principal sobre clima claro. */
-  --muted: #5C564D;                                       /* Texto secundario sobre clima claro. */
-  --dk-bg: #0E1219;                                       /* Fondo del clima oscuro (sección de producto). */
-  --dk-surface: #161C27;                                  /* Panel sobre fondo oscuro. */
-  --dk-surface2: #1E2634;                                 /* Segundo nivel de elevación sobre oscuro. */
-  --dk-border: rgba(255,255,255,.10);                     /* Borde sobre oscuro. */
-  --dk-grid: rgba(255,255,255,.045);                      /* Grilla técnica de fondo. */
-  --dk-text: #EDF1F7;                                     /* Texto principal sobre oscuro. */
-  --dk-muted: #94A1B5;                                    /* Texto secundario sobre oscuro. */
-  --dk-acento: #D4677F;                                   /* Bordó iluminado. Único acento válido sobre fondo oscuro. */
-  --dk-acento-hover: #E07A91;                             /* Hover del acento sobre oscuro. */
-  --sobre-acento: #170A0E;                                /* Texto sobre el acento iluminado. Contraste verificado. */
-  --ok-bg: #E9F1DC;                                       /* Fondo del mensaje de éxito. */
-  --ok-borde: #B3D189;                                    /* Borde del mensaje de éxito. */
-  --ok-text: #2C4E10;                                     /* Texto del mensaje de éxito. */
-  --err-bg: #F8E3E3;                                      /* Fondo del mensaje de error. */
-  --err-borde: #E2A0A0;                                   /* Borde del mensaje de error. */
-  --err-text: #751919;                                    /* Texto del mensaje de error. */
-  --live: #6FD08C;                                        /* Indicador de dato en actualización continua. */
-  --serif: 'Source Serif 4',Georgia,serif;                /* Títulos de sección. Source Serif 4. */
-  --sans: 'Inter',-apple-system,'Segoe UI',sans-serif;    /* Texto, interfaz y títulos display en mayúsculas. Inter. */
-  --mono: 'IBM Plex Mono',ui-monospace,monospace;         /* Cifras, antetítulos y etiquetas de datos. IBM Plex Mono. */
-  --s1: 8px;                                              /* 8 px. Unidad base de la escala. */
-  --s2: 16px;                                             /* 16 px. */
-  --s3: 24px;                                             /* 24 px. Padding estándar de tarjeta. */
-  --s4: 40px;                                             /* 40 px. Padding de tarjeta grande. */
-  --s5: 64px;                                             /* 64 px. */
-  --s6: 96px;                                             /* 96 px. Padding vertical de sección. */
-  --radius: 14px;                                         /* Radio de tarjetas y paneles. Pastillas y botones usan 99px. */
-  --maxw: 1080px;                                         /* Ancho máximo del contenido. */
-  --navw: 780px;                                          /* Ancho de la pastilla de navegación. Deliberadamente menor que el contenido. */
-  --shadow: 0 1px 2px rgba(25,24,23,.04),0 10px 30px rgba(25,24,23,.07);/* Sombra única del sistema. No existen otros niveles. */
-  --ease: cubic-bezier(.2,.7,.3,1);                       /* Curva única para toda micro-interacción. */
-  --t: 220ms;                                             /* Duración única: 220 ms. */
+  --bordo: #7D1F30;                                           /* Color principal de marca. Acento único del clima claro. */
+  --bordo-oscuro: #5E1724;                                    /* Hover y presión. */
+  --bordo-claro: #C4526A;                                     /* Acento intermedio. */
+  --bordo-tinte: #F4EAEB;                                     /* Halo del hero, anillo de foco, tarjeta insignia. */
+  --bordo-borde: #E4CFD2;                                     /* Borde de superficies tintadas. */
+  --bg: #F7F3EC;                                              /* Fondo base del clima claro. No cambia entre secciones. */
+  --bg-2: #EFE9DF;                                            /* Reservado a la zona de cierre. */
+  --surface: #FDFBF7;                                         /* Tarjetas y formularios. */
+  --border: #E0D8CB;                                          /* Filetes y separadores. */
+  --border-fuerte: #CFC5B4;                                   /* Campos y controles. */
+  --text: #191817;                                            /* Texto principal. */
+  --muted: #5C564D;                                           /* Texto secundario. */
+  --dk-bg: #0E1219;                                           /* Fondo del clima oscuro. */
+  --dk-surface: #161C27;                                      /* Panel sobre oscuro. */
+  --dk-surface2: #1E2634;                                     /* Segundo nivel de elevación. */
+  --dk-border: rgba(255,255,255,.10);                         /* Borde sobre oscuro. */
+  --dk-grid: rgba(255,255,255,.045);                          /* Grilla técnica de fondo. */
+  --dk-text: #EDF1F7;                                         /* Texto principal sobre oscuro. */
+  --dk-muted: #94A1B5;                                        /* Texto de apoyo sobre oscuro. */
+  --dk-acento: #D4677F;                                       /* Único acento válido sobre fondo oscuro. */
+  --dk-acento-hover: #E07A91;                                 /* Hover del acento oscuro. */
+  --sobre-acento: #170A0E;                                    /* Texto sobre el acento iluminado. */
+  --ok-bg: #E9F1DC;                                           /* Fondo del mensaje de éxito. */
+  --ok-borde: #B3D189;                                        /* Borde del mensaje de éxito. */
+  --ok-text: #2C4E10;                                         /* Texto del mensaje de éxito. */
+  --err-bg: #F8E3E3;                                          /* Fondo del mensaje de error. */
+  --err-borde: #E2A0A0;                                       /* Borde del mensaje de error. */
+  --err-text: #751919;                                        /* Texto del mensaje de error. */
+  --live: #6FD08C;                                            /* Indicador de dato en actualización continua. */
+  --serif: 'Source Serif 4',Georgia,serif;                    /* Títulos de sección. Source Serif 4. */
+  --sans: 'Inter',-apple-system,'Segoe UI',sans-serif;        /* Texto, interfaz y display. Inter. */
+  --mono: 'IBM Plex Mono',ui-monospace,monospace;             /* Cifras, antetítulos y etiquetas. IBM Plex Mono. */
+  --fs-nano: 10.5px;                                          /* 10,5 px. Etiquetas mono, tag, nota. */
+  --fs-micro: 11.5px;                                         /* 11,5 px. Antetítulo y pastillas del recorrido. */
+  --fs-mini: 12.5px;                                          /* 12,5 px. Etiqueta de cifra, pie del medidor. */
+  --fs-xs: 13px;                                              /* 13 px. Etiqueta de formulario. */
+  --fs-sm: 14.5px;                                            /* 14,5 px. Texto de tarjeta y de lista. */
+  --fs-ui: 15px;                                              /* 15 px. Botones y enlaces. */
+  --fs-base: 16px;                                            /* 16 px. Cuerpo. */
+  --fs-lead: 16.5px;                                          /* 16,5 px. Bajada de sección. */
+  --fs-lead-lg: 17.5px;                                       /* 17,5 px. Bajada del hero. */
+  --fs-h3: 18px;                                              /* 18 px. Título de tarjeta. */
+  --fs-nav: 14px;                                             /* 14 px. Enlaces de navegación. */
+  --fs-tabla: 11px;                                           /* 11 px. Etiqueta de panel y eje de la franja. */
+  --fs-cita: 17px;                                            /* 17 px. La línea propia de un perfil. */
+  --fs-medidor: 30px;                                         /* 30 px. La cifra del medidor. */
+  --fs-nota: 10px;                                            /* 10 px. Nota al pie del medidor. */
+  --fs-legal: 13.5px;                                         /* 13,5 px. Footer y letra chica. */
+  --fs-after: 15.5px;                                         /* 15,5 px. Párrafo de cierre de bloque. */
+  --fs-h2-sm: 24px;                                           /* 24 px. Título de modal y de bloque menor. */
+  --fs-insignia: 25px;                                        /* 25 px. Título de la tarjeta insignia. */
+  --fs-nombre: 27px;                                          /* 27 px. Nombre de perfil. */
+  --fs-h2: clamp(27px,3.4vw,38px);                            /* Título de sección, fluido. */
+  --fs-display: clamp(28px,3.9vw,45px);                       /* Título display del hero, fluido. */
+  --lh-titulo: 1.14;                                          /* Títulos. */
+  --lh-display: 1.08;                                         /* Display. */
+  --lh-lead: 1.5;                                             /* Bajadas y citas. */
+  --lh-body: 1.6;                                             /* Cuerpo. */
+  --ls-titulo: -.015em;                                       /* Títulos serif. */
+  --ls-tag: .14em;                                            /* Etiquetas en mayúsculas. */
+  --ls-kicker: .16em;                                         /* Antetítulos. */
+  --ls-mono: .1em;                                            /* Cifras y pastillas. */
+  --num: tabular-nums;                                        /* Cifras tabulares: obligatorio en todo número. */
+  --s1: 8px;                                                  /* 8 px. Unidad base. */
+  --s2: 16px;                                                 /* 16 px. */
+  --s3: 24px;                                                 /* 24 px. Padding de tarjeta. */
+  --s4: 40px;                                                 /* 40 px. Padding de tarjeta grande. */
+  --s5: 64px;                                                 /* 64 px. */
+  --s6: 96px;                                                 /* 96 px. Padding de sección. */
+  --radius: 14px;                                             /* Tarjetas y paneles. */
+  --radius-sm: 10px;                                          /* Campos y cifras. */
+  --maxw: 1080px;                                             /* Ancho máximo del contenido. */
+  --navw: 780px;                                              /* Ancho de la navegación, menor a propósito. */
+  --shadow: 0 1px 2px rgba(25,24,23,.04),0 10px 30px rgba(25,24,23,.07);/* Sombra única del sistema. */
+  --ease: cubic-bezier(.2,.7,.3,1);                           /* Curva única. */
+  --t: 220ms;                                                 /* 220 ms. */
 }
