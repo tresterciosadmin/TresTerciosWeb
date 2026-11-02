@@ -2,7 +2,7 @@
 
 Sistema de diseño de **Tres Tercios**, consultora de asuntos públicos. Pensado para que cualquiera —persona o modelo— construya piezas nuevas que se vean parte de la marca sin tener que adivinar.
 
-**Sitio de referencia:** https://tresterciosadmin.github.io/TresTerciosWeb/
+**Sitio de referencia:** https://tresterciosconsultores.com/
 
 ---
 
