@@ -171,6 +171,7 @@
   </div>
 </section>
 
+<script src="design-system/components/lang.js"></script>
 <script>
 /* ES y EN lado a lado, clave por clave: la misma regla que index.html.
    Ningún texto se publica sin actualizar los dos valores. */
@@ -228,7 +229,8 @@ const I18N = {
   'cta': {es:'Pedir una reunión', en:'Request a meeting'},
 };
 
-function setLang(l){
+/* aplicarLang pinta la página; setLang es lo que llaman los botones ES / EN y además guarda la elección. */
+function aplicarLang(l){
   document.documentElement.lang = l;
   document.getElementById('btn-es').setAttribute('aria-pressed', l==='es');
   document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
@@ -237,6 +239,9 @@ function setLang(l){
     if(I18N[k]) el.textContent = I18N[k][l];
   });
 }
+function setLang(l){ aplicarLang(l); ttLang.guardar(l); }
+/* El idioma guardado (tt-lang) se aplica acá, apenas existen los nodos [data-i18n]; sin nada guardado, ES. */
+ttLang.iniciar(aplicarLang);
 </script>
 <script src="design-system/components/servicios.js" defer></script>
 </body>

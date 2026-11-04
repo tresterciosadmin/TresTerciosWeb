@@ -663,6 +663,7 @@ footer a:hover{color:var(--bordo)}
   </div>
 </dialog>
 
+<script src="design-system/components/lang.js"></script>
 <script>
 /* ============================================================
    I18N — UNA SOLA FUENTE DE VERDAD (premortem #3)
@@ -805,7 +806,8 @@ let LANG = 'es';
 const NUM = {st1:1016632, st2:6231};
 const fmt = n => LANG==='es' ? n.toLocaleString('es-AR') : n.toLocaleString('en-US');
 
-function setLang(l){
+/* aplicarLang pinta la página; setLang es lo que llaman los botones ES / EN y además guarda la elección. */
+function aplicarLang(l){
   LANG = l;
   document.documentElement.lang = l;
   document.getElementById('btn-es').setAttribute('aria-pressed', l==='es');
@@ -817,6 +819,9 @@ function setLang(l){
   document.getElementById('st1').textContent = fmt(NUM.st1);
   document.getElementById('st2').textContent = fmt(NUM.st2);
 }
+function setLang(l){ aplicarLang(l); ttLang.guardar(l); }
+/* El idioma guardado (tt-lang) se aplica acá, apenas existen los nodos [data-i18n]; sin nada guardado, ES. */
+ttLang.iniciar(aplicarLang);
 
 /* ---- carrusel del hero: el abanico acompaña a cada tercio ---- */
 /* s0 = logo original; después se va llenando un tercio por slide */
