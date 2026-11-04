@@ -4,17 +4,26 @@
 <meta charset="UTF-8">
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tres Tercios — Servicios</title>
-<meta name="robots" content="noindex">
-<!-- MAQUETA. No está enlazada desde el sitio ni indexada.
-     Porteada desde Claude Design al lenguaje del repo: sin React, sin bundle,
+<title>Servicios — Tres Tercios</title>
+<meta name="description" content="Inteligencia legislativa y regulatoria, asuntos públicos, análisis político y macro, y comunicación estratégica para empresas que operan en entornos regulados.">
+<meta name="theme-color" content="#7D1F30">
+<!-- Porteada desde Claude Design al lenguaje del repo: sin React, sin bundle,
      solo los tokens y la biblioteca del sistema de diseño. -->
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://tresterciosconsultores.com/servicios.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tres Tercios">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://tresterciosconsultores.com/servicios.html">
+<meta property="og:title" content="Servicios — Tres Tercios">
+<meta property="og:description" content="Inteligencia legislativa y regulatoria en el centro; alrededor, las capacidades para convertirla en decisiones.">
+<meta property="og:image" content="https://tresterciosconsultores.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../design-system/tokens/tokens.css">
-<link rel="stylesheet" href="../design-system/components/components.css">
+<link rel="stylesheet" href="design-system/tokens/tokens.css">
+<link rel="stylesheet" href="design-system/components/components.css">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   .tt-brand{text-decoration:none}
@@ -34,15 +43,15 @@
 
 <nav aria-label="Principal">
   <div class="tt-nav">
-    <a class="tt-brand" href="../index.html">
-      <img class="tt-logo" src="../design-system/assets/logo.svg" alt="" width="38">
+    <a class="tt-brand" href="index.html">
+      <img class="tt-logo" src="design-system/assets/logo.svg" alt="" width="38">
       <span>TRES TERCIOS</span>
     </a>
     <div class="nav-links">
-      <a href="#servicios" data-i18n="nav.serv">Servicios</a>
-      <a href="../index.html#nowcast">Nowcast</a>
-      <a href="../index.html#equipo" data-i18n="nav.equipo">Equipo</a>
-      <a href="../index.html#contacto" data-i18n="nav.contacto">Contacto</a>
+      <a href="servicios.html" aria-current="page" data-i18n="nav.serv">Servicios</a>
+      <a href="nowcast-legislativo.html">Nowcast</a>
+      <a href="index.html#equipo" data-i18n="nav.equipo">Equipo</a>
+      <a href="index.html#contacto" data-i18n="nav.contacto">Contacto</a>
       <div class="tt-lang" role="group" aria-label="Idioma / Language">
         <button id="btn-es" aria-pressed="true" onclick="setLang('es')">ES</button>
         <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
@@ -59,7 +68,7 @@
     <p class="tt-lead" data-i18n="lead">Inteligencia legislativa y regulatoria en el centro; alrededor, las capacidades para convertirla en decisiones.</p>
 
     <div class="tt-insignia" data-insignia>
-      <img class="tt-logo" src="../design-system/assets/logo.svg" alt="" width="150">
+      <img class="tt-logo" src="design-system/assets/logo.svg" alt="" width="150">
       <div>
         <span class="tt-insignia__tag" data-i18n="ins.tag">Oferta insignia</span>
         <h3 class="tt-insignia__h" data-i18n="a1.h">Inteligencia legislativa y regulatoria</h3>
@@ -155,7 +164,7 @@
         </div>
       </div>
       <div style="margin-top:var(--s4)">
-        <a class="tt-btn tt-btn--primary" href="../index.html#contacto" data-i18n="cta">Pedir una reunión</a>
+        <a class="tt-btn tt-btn--primary" href="index.html#contacto" data-i18n="cta">Pedir una reunión</a>
       </div>
     </div>
 
@@ -229,6 +238,6 @@ function setLang(l){
   });
 }
 </script>
-<script src="../design-system/components/servicios.js" defer></script>
+<script src="design-system/components/servicios.js" defer></script>
 </body>
 </html>

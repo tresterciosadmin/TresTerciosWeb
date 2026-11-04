@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /maquetas/
+
+Sitemap: https://tresterciosconsultores.com/sitemap.xml

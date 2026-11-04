@@ -343,8 +343,8 @@ footer a:hover{color:var(--bordo)}
   <div class="nav-in">
     <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><span>TRES TERCIOS</span></a>
     <div class="nav-links">
-      <a href="#servicios" data-i18n="nav.serv">Servicios</a>
-      <a href="#nowcast">Nowcast</a>
+      <a href="servicios.html" data-i18n="nav.serv">Servicios</a>
+      <a href="nowcast-legislativo.html">Nowcast</a>
       <a href="#equipo" data-i18n="nav.equipo">Equipo</a>
       <a class="always" href="#contacto" data-i18n="nav.contacto">Contacto</a>
       <div class="lang" role="group" aria-label="Idioma / Language">
@@ -383,7 +383,7 @@ footer a:hover{color:var(--bordo)}
   <div class="wrap hero-foot">
     <div class="cta-row">
       <a class="btn btn-primary" href="#contacto" data-i18n="hero.cta1">Conversemos</a>
-      <a class="link-arrow" href="#nowcast" data-i18n="hero.cta2">Conocer Nowcast Legislativo →</a>
+      <a class="link-arrow" href="nowcast-legislativo.html" data-i18n="hero.cta2">Conocer Nowcast Legislativo →</a>
     </div>
     <div class="car-nav">
       <div class="dots" role="tablist" aria-label="Ir a"></div>
@@ -478,6 +478,9 @@ footer a:hover{color:var(--bordo)}
         </div>
       </article>
     </div>
+    <div style="margin-top:var(--s4)">
+      <a class="link-arrow" href="servicios.html" data-i18n="serv.mas">Cómo trabajamos con vos →</a>
+    </div>
   </div>
 </section>
 
@@ -526,6 +529,7 @@ footer a:hover{color:var(--bordo)}
 
     <p class="after" data-i18n="now.p2">Sobre eso construimos el radar parlamentario que vas a consultar a diario: qué se mueve, qué se frena y qué te conviene mirar esta semana.</p>
     <a class="btn btn-glow" href="#contacto" onclick="prefillNowcast()" data-i18n="now.cta">Quiero acceso anticipado</a>
+    <a class="link-arrow" href="nowcast-legislativo.html" style="color:var(--dk-acento);margin-left:var(--s2)" data-i18n="now.mas">Conocer el producto →</a>
   </div>
 </section>
 
@@ -694,6 +698,7 @@ const I18N = {
   'serv.h2':    {es:'Una oferta con centro', en:'An offer with a core'},
   'serv.sub':   {es:'Inteligencia legislativa y regulatoria en el centro; alrededor, las capacidades para convertirla en decisiones.',
                  en:'Legislative and regulatory intelligence at the core; around it, the capabilities to turn it into decisions.'},
+  'serv.mas':   {es:'Cómo trabajamos con vos →', en:'How we work with you →'},
 
   'ins.tag': {es:'Oferta insignia', en:'Flagship'},
   'ins.of':  {es:'Qué ofrecemos', en:'What we offer'},
@@ -744,6 +749,7 @@ const I18N = {
   'now.p2':{es:'Sobre eso construimos el radar parlamentario que vas a consultar a diario: qué se mueve, qué se frena y qué te conviene mirar esta semana.',
             en:"On that foundation we're building the parliamentary radar you'll check daily: what's moving, what's stalling and what's worth watching this week."},
   'now.cta':{es:'Quiero acceso anticipado', en:'Request early access'},
+  'now.mas':{es:'Conocer el producto →', en:'See the product →'},
 
   'eq.kicker':{es:'Equipo', en:'Team'},
   'eq.h2':{es:'Tres politólogos, tres especialidades', en:'Three political scientists, three specialties'},
@@ -880,6 +886,8 @@ function prefillNowcast(){
   const t = document.getElementById('f-msj');
   if(t && !t.value) t.value = I18N['ct.prefill'][LANG];
 }
+/* El botón de acceso anticipado de nowcast-legislativo.html llega con ?interes=nowcast */
+if(new URLSearchParams(location.search).get('interes') === 'nowcast') prefillNowcast();
 
 /* ---- aviso de privacidad ---- */
 function openPriv(){ document.getElementById('priv').showModal(); }
