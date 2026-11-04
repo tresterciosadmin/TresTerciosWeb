@@ -50,6 +50,7 @@
 <!-- La biblioteca del sistema: el sitio la consume en vez de duplicarla.
      Los tokens siguen viviendo en el :root de abajo, que es la fuente de verdad. -->
 <link rel="stylesheet" href="design-system/components/components.css">
+<script src="design-system/components/lang.js"></script>
 <style>
 /* ============================================================
    SISTEMA DE DISEÑO — UNA SOLA FUENTE DE TOKENS, DOS CLIMAS
@@ -140,6 +141,9 @@ nav{position:sticky;top:0;z-index:50;padding:12px var(--s3) 0;background:linear-
 .lang button[aria-pressed="true"]{background:var(--bordo);color:#fff}
 .lang button:focus-visible{outline:2px solid var(--bordo);outline-offset:-2px}
 @media(max-width:820px){.nav-links a:not(.always){display:none}.nav-links{gap:14px}}
+/* en 375 px la pastilla no entraba y el selector de idioma quedaba cortado */
+@media(max-width:480px){nav{padding:12px var(--s1) 0}.nav-in{padding-left:14px;gap:var(--s1)}.nav-links{gap:10px}.lang button{padding:7px 8px}}
+@media(max-width:360px){.nav-links a.always{display:none}}   /* con 360 px no hay lugar: Contacto sigue en el botón del hero y en el pie */
 
 /* ---------- hero: logo a la izquierda, narrativa en carrusel ---------- */
 .hero{padding:var(--s5) 0 var(--s4);background:
@@ -226,10 +230,10 @@ nav{position:sticky;top:0;z-index:50;padding:12px var(--s3) 0;background:linear-
 .cov-bars{display:flex;gap:3px;align-items:flex-end;height:56px}
 .cov-bars span{flex:1;background:linear-gradient(to top,rgba(212,103,127,.35),var(--dk-acento));border-radius:2px 2px 0 0;opacity:.85;transition:opacity var(--t) var(--ease)}
 .cov-bars:hover span{opacity:.55}.cov-bars span:hover{opacity:1}
-.cov-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:var(--fs-tabla);color:var(--dk-muted);margin-top:8px}
+.cov-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-variant-numeric:var(--num);font-size:var(--fs-tabla);color:var(--dk-muted);margin-top:8px}
 .gauge{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%}
 .gauge svg{width:150px;height:auto}
-.gauge .val{font-family:var(--mono);font-size:var(--fs-medidor);font-weight:500;margin-top:14px;letter-spacing:-.02em}
+.gauge .val{font-family:var(--mono);font-variant-numeric:var(--num);font-size:var(--fs-medidor);font-weight:500;margin-top:14px;letter-spacing:-.02em}
 .gauge .cap{font-size:var(--fs-mini);color:var(--dk-muted);margin-top:4px;max-width:20em}
 .gauge .note{font-family:var(--mono);font-size:var(--fs-nota);letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--dk-muted);opacity:.7;margin-top:10px}
 .pipe{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:var(--s3);font-family:var(--mono);font-size:var(--fs-micro);letter-spacing:.06em;color:var(--dk-muted)}
@@ -264,7 +268,7 @@ textarea{min-height:118px;resize:vertical}
 #newsletter{background:linear-gradient(150deg,var(--bordo-tinte),var(--bg-2) 72%);border-top:1px solid var(--bordo-borde);padding:var(--s5) 0}
 .nl-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s5);align-items:center}
 @media(max-width:840px){.nl-grid{grid-template-columns:1fr;gap:var(--s3)}}
-#newsletter h2{font-size:clamp(24px,2.8vw,32px);margin-bottom:10px}
+#newsletter h2{font-size:var(--fs-h2-sm);margin-bottom:10px}
 #newsletter p{font-size:var(--fs-base);color:var(--muted);max-width:38em}
 .nl-form{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
 .nl-form input{flex:1;min-width:220px;background:var(--surface)}
@@ -278,7 +282,7 @@ dialog::backdrop{background:rgba(25,24,23,.55);backdrop-filter:blur(3px)}
 .modal h2{font-size:var(--fs-h2-sm);margin-bottom:6px}
 .modal h3{font-family:var(--sans);font-size:var(--fs-nav);font-weight:600;margin:var(--s3) 0 4px}
 .modal p{font-size:var(--fs-sm);color:var(--muted)}
-.modal .upd{font-family:var(--mono);font-size:var(--fs-tabla);letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--muted)}
+.modal .upd{font-family:var(--mono);font-variant-numeric:var(--num);font-size:var(--fs-tabla);letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--muted)}
 .modal-x{position:sticky;top:0;float:right;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);
   background:var(--bg);color:var(--text);font-size:var(--fs-h3);line-height:1;cursor:pointer;transition:background var(--t) var(--ease)}
 .modal-x:hover{background:var(--bordo);color:#fff;border-color:var(--bordo)}
@@ -295,53 +299,50 @@ footer a:hover{color:var(--bordo)}
 </head>
 <body>
 
-<!-- Logo Tres Tercios: abanico de tres tercios, el central pleno -->
+<!-- Logo Tres Tercios: abanico de base plana, el sector central pleno.
+     Geometría oficial del libro de marca (sección 3.2, assets/logo/*.svg): no se redibuja ni se retoca.
+     #logo = principal (desde 72 px). #logo-reducido = de 32 a 72 px: va en la navegación, a 38 px. -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="logo" viewBox="-4 -6 208 112">
-    <g stroke="var(--bordo)" stroke-width="5" stroke-linejoin="round">
-      <path fill="none" d="M1.5,82.6 A100,100 0 0 1 45.0,16.5 L79.1,68.3 A38,38 0 0 0 62.6,93.4 Z"/>
-      <path fill="var(--bordo)" d="M60.4,8.2 A100,100 0 0 1 139.6,8.2 L115.1,65.1 A38,38 0 0 0 84.9,65.1 Z"/>
-      <path fill="none" d="M155.0,16.5 A100,100 0 0 1 198.5,82.6 L137.4,93.4 A38,38 0 0 0 120.9,68.3 Z"/>
-    </g>
+  <defs>
+    <!-- sectores llenos (principal) -->
+    <path id="tt-s1" d="M0.03,97.56A100,100 0 0 1 46.71,15.38L81.44,63.86A36.95,36.95 0 0 0 63.09,97.56Z"/>
+    <path id="tt-s2" d="M50.51,13.11A100,100 0 0 1 149.49,13.11L114.58,61.85A36.95,36.95 0 0 0 85.42,61.85Z"/>
+    <path id="tt-s3" d="M199.97,97.56A100,100 0 0 0 153.29,15.38L118.56,63.86A36.95,36.95 0 0 1 136.91,97.56Z"/>
+    <!-- contornos (principal): el sector menos su borde interior -->
+    <path id="tt-c1" fill-rule="evenodd" d="M0.03,97.56A100,100 0 0 1 46.71,15.38L81.44,63.86A36.95,36.95 0 0 0 63.09,97.56ZM2.89,94.81A97.25,97.25 0 0 1 46.01,19.12L77.51,63.09A39.7,39.7 0 0 0 60.31,94.81Z"/>
+    <path id="tt-c2" fill-rule="evenodd" d="M50.51,13.11A100,100 0 0 1 149.49,13.11L114.58,61.85A36.95,36.95 0 0 0 85.42,61.85ZM54.55,14.03A97.25,97.25 0 0 1 145.45,14.03L113.59,58.51A39.7,39.7 0 0 0 86.41,58.51Z"/>
+    <path id="tt-c3" fill-rule="evenodd" d="M199.97,97.56A100,100 0 0 0 153.29,15.38L118.56,63.86A36.95,36.95 0 0 1 136.91,97.56ZM197.11,94.81A97.25,97.25 0 0 0 153.99,19.12L122.49,63.09A39.7,39.7 0 0 1 139.69,94.81Z"/>
+    <!-- versión reducida: trazo y canales reforzados -->
+    <path id="tt-rc1" fill-rule="evenodd" d="M0.03,97.56A100,100 0 0 1 45.69,16.03L80.4,64.49A36.95,36.95 0 0 0 63.09,97.56ZM5.08,92.76A95.2,95.2 0 0 1 44.52,22.64L73.7,63.38A41.75,41.75 0 0 0 58.36,92.76Z"/>
+    <path id="tt-rs2" d="M51.57,12.51A100,100 0 0 1 148.43,12.51L113.42,61.38A36.95,36.95 0 0 0 86.58,61.38Z"/>
+    <path id="tt-rc3" fill-rule="evenodd" d="M199.97,97.56A100,100 0 0 0 154.31,16.03L119.6,64.49A36.95,36.95 0 0 1 136.91,97.56ZM194.92,92.76A95.2,95.2 0 0 0 155.48,22.64L126.3,63.38A41.75,41.75 0 0 1 141.64,92.76Z"/>
+  </defs>
+  <symbol id="logo" viewBox="-4 -4 208 105.56">
+    <g fill="var(--bordo)"><use href="#tt-c1"/><use href="#tt-s2"/><use href="#tt-c3"/></g>
   </symbol>
-  <!-- estados del abanico: el tercio activo se llena, los otros quedan en tinte suave -->
-  <symbol id="fan-1" viewBox="-4 -6 208 112">
-    <g stroke="var(--bordo)" stroke-width="5" stroke-linejoin="round">
-      <path fill="var(--bordo)" d="M1.5,82.6 A100,100 0 0 1 45.0,16.5 L79.1,68.3 A38,38 0 0 0 62.6,93.4 Z"/>
-      <path fill="rgba(125,31,48,.15)" d="M60.4,8.2 A100,100 0 0 1 139.6,8.2 L115.1,65.1 A38,38 0 0 0 84.9,65.1 Z"/>
-      <path fill="rgba(125,31,48,.15)" d="M155.0,16.5 A100,100 0 0 1 198.5,82.6 L137.4,93.4 A38,38 0 0 0 120.9,68.3 Z"/>
-    </g>
+  <symbol id="logo-reducido" viewBox="-4 -4 208 105.56">
+    <g fill="var(--bordo)"><use href="#tt-rc1"/><use href="#tt-rs2"/><use href="#tt-rc3"/></g>
   </symbol>
-  <symbol id="fan-2" viewBox="-4 -6 208 112">
-    <g stroke="var(--bordo)" stroke-width="5" stroke-linejoin="round">
-      <path fill="rgba(125,31,48,.15)" d="M1.5,82.6 A100,100 0 0 1 45.0,16.5 L79.1,68.3 A38,38 0 0 0 62.6,93.4 Z"/>
-      <path fill="var(--bordo)" d="M60.4,8.2 A100,100 0 0 1 139.6,8.2 L115.1,65.1 A38,38 0 0 0 84.9,65.1 Z"/>
-      <path fill="rgba(125,31,48,.15)" d="M155.0,16.5 A100,100 0 0 1 198.5,82.6 L137.4,93.4 A38,38 0 0 0 120.9,68.3 Z"/>
-    </g>
+  <!-- estados del abanico: el tercio activo se llena, los otros quedan en tinte al 15 % con su contorno -->
+  <symbol id="fan-1" viewBox="-4 -4 208 105.56">
+    <g fill="var(--bordo)"><use href="#tt-s1"/><use href="#tt-s2" fill-opacity=".15"/><use href="#tt-s3" fill-opacity=".15"/><use href="#tt-c2"/><use href="#tt-c3"/></g>
   </symbol>
-  <symbol id="fan-3" viewBox="-4 -6 208 112">
-    <g stroke="var(--bordo)" stroke-width="5" stroke-linejoin="round">
-      <path fill="rgba(125,31,48,.15)" d="M1.5,82.6 A100,100 0 0 1 45.0,16.5 L79.1,68.3 A38,38 0 0 0 62.6,93.4 Z"/>
-      <path fill="rgba(125,31,48,.15)" d="M60.4,8.2 A100,100 0 0 1 139.6,8.2 L115.1,65.1 A38,38 0 0 0 84.9,65.1 Z"/>
-      <path fill="var(--bordo)" d="M155.0,16.5 A100,100 0 0 1 198.5,82.6 L137.4,93.4 A38,38 0 0 0 120.9,68.3 Z"/>
-    </g>
+  <symbol id="fan-2" viewBox="-4 -4 208 105.56">
+    <g fill="var(--bordo)"><use href="#tt-s1" fill-opacity=".15"/><use href="#tt-s2"/><use href="#tt-s3" fill-opacity=".15"/><use href="#tt-c1"/><use href="#tt-c3"/></g>
   </symbol>
-  <symbol id="gauge-fan" viewBox="-4 -6 208 112">
-    <g stroke="var(--dk-border)" stroke-width="5" stroke-linejoin="round" fill="none">
-      <path d="M1.5,82.6 A100,100 0 0 1 45.0,16.5 L79.1,68.3 A38,38 0 0 0 62.6,93.4 Z"/>
-      <path d="M60.4,8.2 A100,100 0 0 1 139.6,8.2 L115.1,65.1 A38,38 0 0 0 84.9,65.1 Z"/>
-      <path d="M155.0,16.5 A100,100 0 0 1 198.5,82.6 L137.4,93.4 A38,38 0 0 0 120.9,68.3 Z"/>
-    </g>
-    <g stroke="var(--dk-acento)" stroke-width="5" stroke-linejoin="round">
-      <path fill="rgba(212,103,127,.30)" d="M1.5,82.6 A100,100 0 0 1 45.0,16.5 L79.1,68.3 A38,38 0 0 0 62.6,93.4 Z"/>
-      <path fill="var(--dk-acento)" d="M60.4,8.2 A100,100 0 0 1 139.6,8.2 L115.1,65.1 A38,38 0 0 0 84.9,65.1 Z"/>
-    </g>
+  <symbol id="fan-3" viewBox="-4 -4 208 105.56">
+    <g fill="var(--bordo)"><use href="#tt-s1" fill-opacity=".15"/><use href="#tt-s2" fill-opacity=".15"/><use href="#tt-s3"/><use href="#tt-c1"/><use href="#tt-c2"/></g>
+  </symbol>
+  <!-- medidor del home, en clima oscuro: dos tercios llenos y el tercero vacío (esquema ilustrativo) -->
+  <symbol id="gauge-fan" viewBox="-4 -4 208 105.56">
+    <g fill="var(--dk-acento)"><use href="#tt-s1"/><use href="#tt-s2"/><use href="#tt-s3" fill-opacity=".13"/></g>
+    <use href="#tt-c3" fill="var(--dk-border)"/>
   </symbol>
 </svg>
 
 <nav aria-label="Principal">
   <div class="nav-in">
-    <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><span>TRES TERCIOS</span></a>
+    <a class="brand" href="#top"><svg viewBox="0 0 208 105.56" aria-hidden="true"><use href="#logo-reducido"/></svg><span>TRES TERCIOS</span></a>
     <div class="nav-links">
       <a href="servicios.html" data-i18n="nav.serv">Servicios</a>
       <a href="nowcast-legislativo.html">Nowcast</a>
@@ -357,7 +358,7 @@ footer a:hover{color:var(--bordo)}
 
 <header class="hero" id="top">
   <div class="wrap hero-in">
-    <div class="hero-logo"><svg id="hero-fan" role="img" aria-label="Tres Tercios"><use id="hero-use" href="#logo"/></svg></div>
+    <div class="hero-logo"><svg id="hero-fan" viewBox="0 0 208 105.56" role="img" aria-label="Tres Tercios"><use id="hero-use" href="#logo"/></svg></div>
     <div class="hero-copy">
       <p class="kicker" data-i18n="hero.kicker">Consultora de asuntos públicos</p>
       <div class="hslides" id="hslides" aria-roledescription="carrusel" aria-label="Tres tercios, un método">
@@ -402,84 +403,33 @@ footer a:hover{color:var(--bordo)}
     <p class="kicker" data-i18n="serv.kicker">Servicios</p>
     <h2 class="sec-h" data-i18n="serv.h2">Una oferta con centro</h2>
     <p class="sec-sub" data-i18n="serv.sub">Inteligencia legislativa y regulatoria en el centro; alrededor, las capacidades para convertirla en decisiones.</p>
-    <div class="tt-insignia" data-insignia>
+    <div class="tt-insignia" style="margin-top:var(--s4)">
       <img class="tt-logo" src="design-system/assets/logo.svg" alt="" width="150">
       <div>
         <span class="tt-insignia__tag" data-i18n="ins.tag">Oferta insignia</span>
         <h3 class="tt-insignia__h" data-i18n="a1.h">Inteligencia legislativa y regulatoria</h3>
-        <div class="tt-insignia__body">
-        <div class="tt-insignia__inner">
-<p class="tt-insignia__p" data-i18n="a1.d">Seguimos todos los días lo que se mueve en el Congreso y en los organismos que regulan tu actividad, y te avisamos cuando algo te toca.</p>
-                  <p class="tt-serv__sub" style="margin-top:0" data-i18n="ins.of">Qué ofrecemos</p>
-                  <ul class="tt-serv__list">
-                    <li data-i18n="a1.of1">Monitoreo de proyectos de ley y de normativa relevante para tu sector</li>
-                    <li data-i18n="a1.of2">Alertas cuando un expediente cambia de estado o entra en agenda</li>
-                    <li data-i18n="a1.of3">Lectura de escenarios: qué probabilidad real tiene de avanzar y qué actores lo definen</li>
-                    <li data-i18n="a1.of4">Consultas con el equipo cuando algo se acelera</li>
-                  </ul>
-        </div>
-      </div>
+        <p class="tt-insignia__p" data-i18n="a1.d">Seguimos todos los días lo que se mueve en el Congreso y en los organismos que regulan tu actividad, y te avisamos cuando algo te toca.</p>
       </div>
     </div>
-    
-    <div class="tt-servicios" style="margin-top:var(--s3)">
-      <article class="tt-serv" data-serv data-abierto="0" tabindex="0">
-        <div class="tt-serv__head">
-          <h3 class="tt-serv__h" data-i18n="a2.h">Asuntos públicos</h3>
-          <span class="tt-serv__ind" aria-hidden="true"></span>
-        </div>
-        <div class="tt-serv__body">
-          <div class="tt-serv__inner">
-            <p class="tt-serv__p" data-i18n="a2.d">Quién decide, quién influye, quién te conviene escuchar y en qué orden. Mapeo de actores, estrategia de relacionamiento y gestión de agenda ante el sector público.</p>
-            <p class="tt-serv__sub" data-i18n="a2.sub">Qué ofrecemos</p>
-            <ul class="tt-serv__list">
-              <li data-i18n="a2.of1">Mapa de actores con su posición, su interés y su capacidad de decidir</li>
-              <li data-i18n="a2.of2">Estrategia de relacionamiento con organismos, legisladores y cámaras</li>
-              <li data-i18n="a2.of3">Preparación de reuniones y documentos de posición</li>
-              <li data-i18n="a2.of4">Acompañamiento en audiencias públicas y consultas regulatorias</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-      <article class="tt-serv" data-serv data-abierto="0" tabindex="0">
-        <div class="tt-serv__head">
-          <h3 class="tt-serv__h" data-i18n="a3.h">Análisis político y macro</h3>
-          <span class="tt-serv__ind" aria-hidden="true"></span>
-        </div>
-        <div class="tt-serv__body">
-          <div class="tt-serv__inner">
-            <p class="tt-serv__p" data-i18n="a3.d">Coyuntura política y macroeconomía integradas en un solo informe, porque las decisiones de inversión no se toman mirando una sola de las dos.</p>
-            <p class="tt-serv__sub" data-i18n="a3.sub">Qué ofrecemos</p>
-            <ul class="tt-serv__list">
-              <li data-i18n="a3.of1">Informe de coyuntura con los hechos políticos que mueven variables económicas</li>
-              <li data-i18n="a3.of2">Escenarios con sus supuestos explícitos y qué los haría cambiar</li>
-              <li data-i18n="a3.of3">Lectura de riesgo político para decisiones de inversión</li>
-              <li data-i18n="a3.of4">Análisis a pedido sobre un hecho puntual</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-      <article class="tt-serv" data-serv data-abierto="0" tabindex="0">
-        <div class="tt-serv__head">
-          <h3 class="tt-serv__h" data-i18n="a4.h">Comunicación estratégica</h3>
-          <span class="tt-serv__ind" aria-hidden="true"></span>
-        </div>
-        <div class="tt-serv__body">
-          <div class="tt-serv__inner">
-            <p class="tt-serv__p" data-i18n="a4.d">Qué decir, cuándo y en qué términos cuando tu tema entra en agenda. Posicionamiento y mensajes para audiencias públicas, reguladores y prensa.</p>
-            <p class="tt-serv__sub" data-i18n="a4.sub">Qué ofrecemos</p>
-            <ul class="tt-serv__list">
-              <li data-i18n="a4.of1">Definición de posición y mensajes por audiencia</li>
-              <li data-i18n="a4.of2">Documentos de posición y materiales para reguladores</li>
-              <li data-i18n="a4.of3">Preparación de voceros para exposición pública</li>
-              <li data-i18n="a4.of4">Plan de respuesta para cuando el tema escala</li>
-            </ul>
-          </div>
-        </div>
-      </article>
+
+    <p class="tt-inc__t" style="margin-top:var(--s4)" data-i18n="serv.apoyo">Y alrededor, tres capacidades</p>
+    <div class="tt-grid-3">
+      <div class="tt-card">
+        <h3 class="tt-h3" data-i18n="a2.h">Asuntos públicos</h3>
+        <p data-i18n="a2.l">Quién decide, quién influye, quién te conviene escuchar y en qué orden.</p>
+      </div>
+      <div class="tt-card">
+        <h3 class="tt-h3" data-i18n="a3.h">Análisis político y macro</h3>
+        <p data-i18n="a3.l">Coyuntura política y macroeconomía integradas en un solo informe.</p>
+      </div>
+      <div class="tt-card">
+        <h3 class="tt-h3" data-i18n="a4.h">Comunicación estratégica</h3>
+        <p data-i18n="a4.l">Qué decir, cuándo y en qué términos cuando tu tema entra en agenda.</p>
+      </div>
     </div>
+
     <div style="margin-top:var(--s4)">
-      <a class="link-arrow" href="servicios.html" data-i18n="serv.mas">Cómo trabajamos con vos →</a>
+      <a class="link-arrow" href="servicios.html" data-i18n="serv.mas">Ver todos los servicios →</a>
     </div>
   </div>
 </section>
@@ -512,7 +462,7 @@ footer a:hover{color:var(--bordo)}
 
       <div class="panel">
         <div class="gauge">
-          <svg aria-hidden="true"><use href="#gauge-fan"/></svg>
+          <svg viewBox="0 0 208 105.56" aria-hidden="true"><use href="#gauge-fan"/></svg>
           <div class="val" id="gval">68%</div>
           <div class="cap" data-i18n="now.gauge">Probabilidad de que el proyecto se convierta en ley, actualizada a medida que avanza.</div>
           <div class="note" data-i18n="now.esq">esquema ilustrativo</div>
@@ -663,7 +613,6 @@ footer a:hover{color:var(--bordo)}
   </div>
 </dialog>
 
-<script src="design-system/components/lang.js"></script>
 <script>
 /* ============================================================
    I18N — UNA SOLA FUENTE DE VERDAD (premortem #3)
@@ -699,37 +648,18 @@ const I18N = {
   'serv.h2':    {es:'Una oferta con centro', en:'An offer with a core'},
   'serv.sub':   {es:'Inteligencia legislativa y regulatoria en el centro; alrededor, las capacidades para convertirla en decisiones.',
                  en:'Legislative and regulatory intelligence at the core; around it, the capabilities to turn it into decisions.'},
-  'serv.mas':   {es:'Cómo trabajamos con vos →', en:'How we work with you →'},
+  'serv.apoyo': {es:'Y alrededor, tres capacidades', en:'Around it, three capabilities'},
+  'serv.mas':   {es:'Ver todos los servicios →', en:'See all services →'},
 
   'ins.tag': {es:'Oferta insignia', en:'Flagship'},
-  'ins.of':  {es:'Qué ofrecemos', en:'What we offer'},
   'a1.h': {es:'Inteligencia legislativa y regulatoria', en:'Legislative & regulatory intelligence'},
   'a1.d': {es:'Seguimos todos los días lo que se mueve en el Congreso y en los organismos que regulan tu actividad, y te avisamos cuando algo te toca.', en:'Every day we follow what moves in Congress and in the bodies that regulate your activity, and we flag what touches you.'},
-  'a1.of1': {es:'Monitoreo de proyectos de ley y de normativa relevante para tu sector', en:'Monitoring of bills and regulation relevant to your sector'},
-  'a1.of2': {es:'Alertas cuando un expediente cambia de estado o entra en agenda', en:'Alerts when a bill changes status or reaches the agenda'},
-  'a1.of3': {es:'Lectura de escenarios: qué probabilidad real tiene de avanzar y qué actores lo definen', en:'Scenario reading: how likely it really is to advance and which actors decide it'},
-  'a1.of4': {es:'Consultas con el equipo cuando algo se acelera', en:'Access to the team when something speeds up'},
   'a2.h':   {es:'Asuntos públicos', en:'Public affairs'},
-  'a2.d':   {es:'Quién decide, quién influye, quién te conviene escuchar y en qué orden. Mapeo de actores, estrategia de relacionamiento y gestión de agenda ante el sector público.', en:'Who decides, who influences, who is worth listening to and in what order. Stakeholder mapping, engagement strategy and agenda management before the public sector.'},
-  'a2.sub': {es:'Qué ofrecemos', en:'What we offer'},
-  'a2.of1': {es:'Mapa de actores con su posición, su interés y su capacidad de decidir', en:"Stakeholder map with each actor's position, interest and power to decide"},
-  'a2.of2': {es:'Estrategia de relacionamiento con organismos, legisladores y cámaras', en:'Engagement strategy with agencies, legislators and business chambers'},
-  'a2.of3': {es:'Preparación de reuniones y documentos de posición', en:'Meeting preparation and position papers'},
-  'a2.of4': {es:'Acompañamiento en audiencias públicas y consultas regulatorias', en:'Support in public hearings and regulatory consultations'},
+  'a2.l':   {es:'Quién decide, quién influye, quién te conviene escuchar y en qué orden.', en:'Who decides, who influences, who is worth listening to and in what order.'},
   'a3.h':   {es:'Análisis político y macro', en:'Political & macro analysis'},
-  'a3.d':   {es:'Coyuntura política y macroeconomía integradas en un solo informe, porque las decisiones de inversión no se toman mirando una sola de las dos.', en:'Political and macroeconomic analysis in a single report, because investment decisions are not made looking at only one of the two.'},
-  'a3.sub': {es:'Qué ofrecemos', en:'What we offer'},
-  'a3.of1': {es:'Informe de coyuntura con los hechos políticos que mueven variables económicas', en:'Situation report on the political events that move economic variables'},
-  'a3.of2': {es:'Escenarios con sus supuestos explícitos y qué los haría cambiar', en:'Scenarios with explicit assumptions and what would change them'},
-  'a3.of3': {es:'Lectura de riesgo político para decisiones de inversión', en:'Political risk reading for investment decisions'},
-  'a3.of4': {es:'Análisis a pedido sobre un hecho puntual', en:'On-demand analysis of a specific event'},
+  'a3.l':   {es:'Coyuntura política y macroeconomía integradas en un solo informe.', en:'Political and macroeconomic analysis in a single report.'},
   'a4.h':   {es:'Comunicación estratégica', en:'Strategic communications'},
-  'a4.d':   {es:'Qué decir, cuándo y en qué términos cuando tu tema entra en agenda. Posicionamiento y mensajes para audiencias públicas, reguladores y prensa.', en:'What to say, when and in what terms when your issue reaches the agenda. Positioning and messaging for public audiences, regulators and the press.'},
-  'a4.sub': {es:'Qué ofrecemos', en:'What we offer'},
-  'a4.of1': {es:'Definición de posición y mensajes por audiencia', en:'Positioning and messages defined audience by audience'},
-  'a4.of2': {es:'Documentos de posición y materiales para reguladores', en:'Position papers and materials for regulators'},
-  'a4.of3': {es:'Preparación de voceros para exposición pública', en:'Spokesperson preparation for public exposure'},
-  'a4.of4': {es:'Plan de respuesta para cuando el tema escala', en:'A response plan for when the issue escalates'},
+  'a4.l':   {es:'Qué decir, cuándo y en qué términos cuando tu tema entra en agenda.', en:'What to say, when and in what terms when your issue reaches the agenda.'},
 
   'now.tag':{es:'Producto propio · en construcción', en:'Our product · in the making'},
   'now.p':  {es:'Un sistema que estima la probabilidad de que un proyecto se convierta en ley.',
@@ -824,7 +754,7 @@ function setLang(l){ aplicarLang(l); ttLang.guardar(l); }
 ttLang.iniciar(aplicarLang);
 
 /* ---- carrusel del hero: el abanico acompaña a cada tercio ---- */
-/* s0 = logo original; después se va llenando un tercio por slide */
+/* s0 = logo completo; después se va llenando un tercio por slide */
 const FANS = ['#logo','#fan-1','#fan-2','#fan-3'];
 const hslides = [...document.querySelectorAll('#hslides .hslide')];
 const dotsBox = document.querySelector('.dots');
@@ -937,6 +867,5 @@ wireForm('nl-form','nl-send','nl-status','nl.ok','nl.err','nl.cta');
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon='{"token": "PEGAR_TOKEN_ACA"}'></script>
 -->
-<script src="design-system/components/servicios.js" defer></script>
 </body>
 </html>

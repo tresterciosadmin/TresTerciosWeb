@@ -325,7 +325,7 @@
       "name": "logo",
       "title": "Logotipo",
       "group": "Marca",
-      "description": "Envoltorio del abanico. Hace cumplir el mínimo de 28 px.",
+      "description": "Envoltorio del abanico. Hace cumplir el mínimo de 32 px (versión reducida).",
       "classes": [
         "tt-logo"
       ],

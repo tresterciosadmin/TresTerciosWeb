@@ -8,7 +8,7 @@ Pastilla flotante, más angosta que el contenido para que la marca domine.
 ```html
 <nav>
   <div class="tt-nav">
-    <a class="tt-brand" href="#top"><img src="../../assets/logo.svg" alt="" width="38"><span>TRES TERCIOS</span></a>
+    <a class="tt-brand" href="#top"><img src="../../assets/logo-reducido.svg" alt="" width="38"><span>TRES TERCIOS</span></a>
     <!-- enlaces -->
   </div>
 </nav>

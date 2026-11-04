@@ -23,6 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="design-system/tokens/tokens.css">
 <link rel="stylesheet" href="design-system/components/components.css">
+<script src="design-system/components/lang.js"></script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--dk-bg);color:var(--dk-text)}
@@ -52,7 +53,7 @@
 <nav aria-label="Principal">
   <div class="tt-nav tt-nav--dark">
     <a class="tt-brand" href="index.html">
-      <img class="tt-logo" src="design-system/assets/logo-negativo.svg" alt="" width="38">
+      <img class="tt-logo" src="design-system/assets/logo-reducido-negativo.svg" alt="" width="38">
       <span>TRES TERCIOS</span>
     </a>
     <div class="nav-links">
@@ -97,7 +98,7 @@
     <div class="show">
       <div class="tt-panel" style="display:grid;place-items:center;padding:var(--s4)">
         <div class="tt-gauge">
-          <svg id="gauge" viewBox="-4 -6 208 112" style="width:230px;height:auto"></svg>
+          <svg id="gauge" viewBox="-4 -4 208 105.56" style="width:230px;height:auto"></svg>
           <div class="tt-gauge__val" id="gval">68%</div>
           <div class="tt-gauge__cap" data-i18n="g.cap">Probabilidad de que el proyecto se convierta en ley, actualizada a medida que avanza.</div>
         </div>
@@ -203,7 +204,6 @@
 </section>
 
 <script src="design-system/components/gauge/gauge.js"></script>
-<script src="design-system/components/lang.js"></script>
 <script>
 /* ES y EN lado a lado, clave por clave. */
 const I18N = {

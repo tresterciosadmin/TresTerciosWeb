@@ -59,8 +59,8 @@ Desde la v1.1 los tamaños tipográficos también son tokens: `--fs-nano` a `--f
 | Un solo acento de color por pieza | Si todo destaca, no destaca nada |
 | Nada de emojis como íconos | Rompen el trazo único y envejecen mal |
 | Nada de degradés violeta-celeste | Es el aspecto genérico de "IA" que la marca evita a propósito |
-| No se toca la geometría del logo | Tres tercios de 46,67°, separaciones de 10°, apertura total 160° |
-| Tamaño mínimo del logo: 28 px | Por debajo, las separaciones se cierran y se lee como una mancha |
+| No se toca la geometría del logo | Abanico de base plana: semicírculo de tres sectores con canales rectos. Se usan los SVG de `assets/`, no se redibuja |
+| Tamaño mínimo del logo: principal 72 px, reducida 32 px | Por debajo de cada mínimo se pasa a la versión siguiente; con el trazo fino, más chico se cierra y se lee como una mancha |
 | Área de resguardo: ½ del alto del logo | En los cuatro lados, libre de texto y de bordes |
 
 ## Voz y contenido

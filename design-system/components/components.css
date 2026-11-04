@@ -96,6 +96,10 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 .tt-brand{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:var(--fs-ui);
   letter-spacing:.09em;text-decoration:none;white-space:nowrap}
 
+/* --- idioma: sin parpadeo ES -> EN ---
+   lang.js marca <html> mientras el idioma guardado todavía no se aplicó. */
+html[data-lang-pendiente] body{visibility:hidden}
+
 /* --- accesibilidad --- */
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
@@ -134,19 +138,21 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
   background:linear-gradient(to top,color-mix(in srgb,var(--dk-acento) 35%,transparent),var(--dk-acento))}
 .tt-cov:hover span{opacity:.55}
 .tt-cov span:hover{opacity:1}
-.tt-cov-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-size:var(--fs-tabla);
+.tt-cov-ax{display:flex;justify-content:space-between;font-family:var(--mono);font-variant-numeric:var(--num);font-size:var(--fs-tabla);
   color:var(--dk-muted);margin-top:8px}
 
 /* --- medidor (clima oscuro) --- */
 .tt-gauge{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%}
 .tt-gauge svg{width:150px;height:auto}
-.tt-gauge__val{font-family:var(--mono);font-size:var(--fs-medidor);font-weight:500;margin-top:14px;letter-spacing:-.02em}
+.tt-gauge__val{font-family:var(--mono);font-variant-numeric:var(--num);font-size:var(--fs-medidor);font-weight:500;margin-top:14px;letter-spacing:-.02em}
 .tt-gauge__cap{font-size:var(--fs-mini);color:var(--dk-muted);margin-top:4px;max-width:20em}
 .tt-gauge__note{font-family:var(--mono);font-size:var(--fs-nota);letter-spacing:var(--ls-mono);text-transform:uppercase;
   color:var(--dk-muted);opacity:.7;margin-top:10px}
 
-/* --- logotipo: el mínimo lo hace cumplir el componente --- */
-.tt-logo{display:block;min-width:28px;height:auto}
+/* --- logotipo: el mínimo lo hace cumplir el componente ---
+   Libro de marca 3.4: principal desde 72 px, reducida de 32 a 72 px.
+   Por debajo de 32 px no va logo. */
+.tt-logo{display:block;min-width:32px;height:auto}
 
 /* ============================================================
    Incorporados al portear la maqueta de Servicios (Claude Design)
@@ -228,14 +234,15 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 /* --- medidor: el abanico ES la escala ---
    Los tres tercios se llenan en orden y cada uno vale 33,3%. El llenado
    dentro de un tercio es angular, no un salto. Los tercios vacíos quedan
-   en tinte: el logo se tiene que reconocer aunque el valor sea bajo.
-   Los arcos los genera gauge.js con la geometría real de la marca. */
-.tt-gauge__bg{fill:color-mix(in srgb,var(--bordo) 13%,transparent);
-  stroke:var(--border-fuerte);stroke-width:5;stroke-linejoin:round}
-.tt-gauge__fill{fill:var(--bordo);stroke:var(--bordo);stroke-width:5;stroke-linejoin:round;
-  transition:d var(--t) var(--ease)}
-.tt-dark .tt-gauge__bg{fill:rgba(212,103,127,.13);stroke:var(--dk-border)}
-.tt-dark .tt-gauge__fill{fill:var(--dk-acento);stroke:var(--dk-acento)}
+   en tinte con su contorno: el logo se tiene que reconocer aunque el valor
+   sea bajo. Los sectores los genera gauge.js con la geometría oficial del
+   logo (base plana): el contorno es parte de la forma, no un trazo. */
+.tt-gauge__bg{fill:color-mix(in srgb,var(--bordo) 13%,transparent)}
+.tt-gauge__ring{fill:var(--border-fuerte)}
+.tt-gauge__fill{fill:var(--bordo)}
+.tt-dark .tt-gauge__bg{fill:rgba(212,103,127,.13)}
+.tt-dark .tt-gauge__ring{fill:var(--dk-border)}
+.tt-dark .tt-gauge__fill{fill:var(--dk-acento)}
 .tt-dark .tt-gauge__val,.tt-dark .tt-gauge__cap,.tt-dark .tt-gauge__note{color:var(--dk-text)}
 .tt-dark .tt-gauge__cap,.tt-dark .tt-gauge__note{color:var(--dk-muted)}
 
@@ -252,7 +259,7 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 
 /* --- variantes de clima oscuro para los componentes existentes --- */
 .tt-dark .tt-h2,.tt-dark .tt-h3{color:var(--dk-text)}
-.tt-dark .tt-lead{color:var(--dk-muted)}
+.tt-dark .tt-lead{font-size:var(--fs-lead-lg);color:var(--dk-muted)}   /* bajada sobre oscuro: 17,5 px (libro 5.2) */
 .tt-dark .tt-link{color:var(--dk-acento)}
 .tt-dark .tt-label{color:var(--dk-text)}
 .tt-dark .tt-input{background:var(--dk-surface2);border-color:var(--dk-border);color:var(--dk-text)}
@@ -268,7 +275,7 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
    Novedades — tarjetas de artículo (queda lista, se activa al publicar)
    ============================================================ */
 .tt-novedad{display:grid;gap:10px;padding:var(--s3) 0;border-top:1px solid var(--border)}
-.tt-novedad__meta{font-family:var(--mono);font-size:var(--fs-nano);letter-spacing:var(--ls-tag);
+.tt-novedad__meta{font-family:var(--mono);font-variant-numeric:var(--num);font-size:var(--fs-nano);letter-spacing:var(--ls-tag);
   text-transform:uppercase;color:var(--muted)}
 .tt-novedad__t{font-family:var(--serif);font-weight:600;font-size:var(--fs-h3);line-height:var(--lh-titulo)}
 .tt-novedad__p{font-size:var(--fs-sm);color:var(--muted)}
@@ -290,9 +297,10 @@ a{color:inherit}   /* a nivel de elemento a propósito: cualquier clase de compo
 .tt-insignia__tag{display:inline-block;font-family:var(--mono);font-size:var(--fs-nano);font-weight:500;
   letter-spacing:var(--ls-tag);text-transform:uppercase;color:#fff;background:var(--bordo);
   border-radius:99px;padding:5px 12px;margin-bottom:var(--s2)}
-.tt-insignia__h{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3vw,34px);
+.tt-insignia__h{font-family:var(--serif);font-weight:600;font-size:var(--fs-insignia);
   line-height:var(--lh-titulo);letter-spacing:var(--ls-titulo);margin-bottom:12px}
 .tt-insignia__p{font-size:var(--fs-lead);color:var(--muted);max-width:44em;margin-bottom:var(--s3)}
+.tt-insignia__p:last-child{margin-bottom:0}   /* insignia sin lista de alcance, como en el resumen del home */
 @media(max-width:840px){
   .tt-insignia{grid-template-columns:1fr;gap:var(--s3);padding:var(--s4)}
   .tt-insignia > img,.tt-insignia > svg{width:96px}
