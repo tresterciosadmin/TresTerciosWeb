@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros — Tres Tercios</title>
+<meta name="description" content="Tres tercios, un método: análisis político, datos y estrategia. Cada decisión pública se lee desde tres ángulos que se exigen entre sí.">
+<meta name="theme-color" content="#7D1F30">
+<link rel="canonical" href="https://tresterciosconsultores.com/nosotros.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tres Tercios">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://tresterciosconsultores.com/nosotros.html">
+<meta property="og:title" content="Nosotros — Tres Tercios">
+<meta property="og:description" content="Tres tercios, un método: cada decisión pública se lee desde tres ángulos que se exigen entre sí.">
+<meta property="og:image" content="https://tresterciosconsultores.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system/tokens/tokens.css">
+<link rel="stylesheet" href="design-system/components/components.css">
+<script src="design-system/components/lang.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  .tt-brand{text-decoration:none}
+  .tt-brand img{display:block}
+  nav{position:sticky;top:0;z-index:50;padding:12px var(--s3) 0;
+    background:linear-gradient(to bottom,var(--bg) 62%,rgba(247,243,236,0))}
+  .nav-links{display:flex;gap:20px;margin-left:auto;align-items:center}
+  .nav-links a{text-decoration:none;font-size:var(--fs-nav);font-weight:500;color:var(--muted);
+    padding:6px 2px;transition:color var(--t) var(--ease)}
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--bordo)}
+  .nav-links a:focus-visible{outline:2px solid var(--bordo);outline-offset:3px;border-radius:4px}
+  @media(max-width:820px){.nav-links a:not(.always){display:none}.nav-links{gap:14px}}
+  @media(max-width:480px){nav{padding:12px var(--s1) 0}.tt-nav{padding-left:14px;gap:var(--s1)}.nav-links{gap:10px}.tt-lang button{padding:7px 8px}}
+  @media(max-width:360px){.nav-links a.always{display:none}}   /* con 360 px no hay lugar: Contacto sigue en el botón de cierre */
+  .equipo{margin-top:var(--s5);border-top:1px solid var(--border);padding-top:var(--s5)}
+  .equipo .tt-lead{margin-top:var(--s2)}
+</style>
+</head>
+<body class="tt-body">
+
+<nav aria-label="Principal">
+  <div class="tt-nav">
+    <a class="tt-brand" href="index.html">
+      <img class="tt-logo" src="design-system/assets/logo-reducido.svg" alt="" width="38">
+      <span>TRES TERCIOS</span>
+    </a>
+    <div class="nav-links">
+      <a href="servicios.html" data-i18n="nav.serv">Servicios</a>
+      <a href="nowcast-legislativo.html">Nowcast</a>
+      <a href="nosotros.html" aria-current="page" data-i18n="nav.nosotros">Nosotros</a>
+      <a class="always" href="contacto.html" data-i18n="nav.contacto">Contacto</a>
+      <div class="tt-lang" role="group" aria-label="Idioma / Language">
+        <button id="btn-es" aria-pressed="true" onclick="setLang('es')">ES</button>
+        <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="tt-section" id="nosotros">
+  <div class="tt-wrap">
+
+    <p class="tt-kicker" data-i18n="k">Nosotros</p>
+    <h2 class="tt-h2" data-i18n="h">Tres tercios, un método</h2>
+    <p class="tt-lead" data-i18n="lead">El nombre no es una metáfora. Es cómo trabajamos: cada decisión pública se lee desde tres ángulos que se exigen entre sí. Ninguno alcanza solo, y por eso somos tres.</p>
+
+    <div class="tt-grid-3" style="margin-top:var(--s4)">
+      <article class="tt-tercio">
+        <img class="tt-logo" src="design-system/assets/logo-tercio-1.svg" alt="" width="120">
+        <p class="tt-tercio__tag" data-i18n="t1.tag">Análisis político</p>
+        <p class="tt-tercio__linea" data-i18n="t1.linea">El proceso legislativo desde adentro: quién firma, qué comisión traba y qué se negocia antes del recinto.</p>
+      </article>
+      <article class="tt-tercio">
+        <img class="tt-logo" src="design-system/assets/logo-tercio-2.svg" alt="" width="120">
+        <p class="tt-tercio__tag" data-i18n="t2.tag">Datos y tecnología</p>
+        <p class="tt-tercio__linea" data-i18n="t2.linea">Los datos: la base del Congreso y la política convertida en probabilidades.</p>
+      </article>
+      <article class="tt-tercio">
+        <img class="tt-logo" src="design-system/assets/logo-tercio-3.svg" alt="" width="120">
+        <p class="tt-tercio__tag" data-i18n="t3.tag">Estrategia</p>
+        <p class="tt-tercio__linea" data-i18n="t3.linea">El número: qué le cuesta o qué le rinde a una empresa cada escenario.</p>
+      </article>
+    </div>
+
+    <div class="equipo">
+      <h3 class="tt-h3" data-i18n="eq.h">Tres politólogos, tres especialidades</h3>
+      <p class="tt-lead" data-i18n="eq.p">Formados en ciencia política, con experiencia en políticas públicas, asuntos públicos, macroeconomía, gestión financiera y análisis político. Una generación que creció con los datos y aprendió la política desde adentro.</p>
+    </div>
+
+    <div class="tt-lockup">
+      <img src="design-system/assets/logo.svg" alt="">
+      <span class="tt-lockup__n">Tres Tercios</span>
+    </div>
+
+    <div style="text-align:center;margin-top:var(--s2)">
+      <a class="tt-btn tt-btn--primary" href="contacto.html" data-i18n="cta">Conversemos</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ES y EN lado a lado, clave por clave: la misma regla que index.html.
+   Ningún texto se publica sin actualizar los dos valores. */
+const I18N = {
+  'nav.serv':     {es:'Servicios', en:'Services'},
+  'nav.nosotros': {es:'Nosotros', en:'About'},
+  'nav.contacto': {es:'Contacto', en:'Contact'},
+
+  'k':    {es:'Nosotros', en:'About'},
+  'h':    {es:'Tres tercios, un método', en:'Three thirds, one method'},
+  'lead': {es:'El nombre no es una metáfora. Es cómo trabajamos: cada decisión pública se lee desde tres ángulos que se exigen entre sí. Ninguno alcanza solo, y por eso somos tres.',
+           en:"The name isn't a metaphor. It's how we work: every public decision is read from three angles that keep each other honest. None is enough on its own, and that's why there are three of us."},
+
+  't1.tag':   {es:'Análisis político', en:'Political analysis'},
+  't1.linea': {es:'El proceso legislativo desde adentro: quién firma, qué comisión traba y qué se negocia antes del recinto.',
+               en:'The legislative process from the inside: who signs, which committee stalls it and what gets negotiated before it reaches the floor.'},
+  't2.tag':   {es:'Datos y tecnología', en:'Data & technology'},
+  't2.linea': {es:'Los datos: la base del Congreso y la política convertida en probabilidades.',
+               en:'The data: the Congress database and politics turned into probabilities.'},
+  't3.tag':   {es:'Estrategia', en:'Strategy'},
+  't3.linea': {es:'El número: qué le cuesta o qué le rinde a una empresa cada escenario.',
+               en:'The number: what each scenario costs or returns for a company.'},
+
+  'eq.h': {es:'Tres politólogos, tres especialidades', en:'Three political scientists, three specialties'},
+  'eq.p': {es:'Formados en ciencia política, con experiencia en políticas públicas, asuntos públicos, macroeconomía, gestión financiera y análisis político. Una generación que creció con los datos y aprendió la política desde adentro.',
+           en:'Trained in political science, with experience in public policy, public affairs, macroeconomics, financial management and political analysis. A generation that grew up with data and learned politics from the inside.'},
+
+  'cta':  {es:'Conversemos', en:"Let's talk"},
+};
+
+/* aplicarLang pinta la página; setLang es lo que llaman los botones ES / EN y además guarda la elección. */
+function aplicarLang(l){
+  document.documentElement.lang = l;
+  document.getElementById('btn-es').setAttribute('aria-pressed', l==='es');
+  document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(I18N[k]) el.textContent = I18N[k][l];
+  });
+}
+function setLang(l){ aplicarLang(l); ttLang.guardar(l); }
+/* El idioma guardado (tt-lang) se aplica acá, apenas existen los nodos [data-i18n]; sin nada guardado, ES. */
+ttLang.iniciar(aplicarLang);
+</script>
+</body>
+</html>

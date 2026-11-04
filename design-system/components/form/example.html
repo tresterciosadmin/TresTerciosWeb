@@ -1,0 +1,13 @@
+<!-- @dsCard group="Formularios" -->
+<!-- Formulario — Tres Tercios design system -->
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../components.css">
+
+<form class="tt-form" action="#" onsubmit="return false" style="max-width:520px">
+  <div class="tt-hp" aria-hidden="true"><label>No completar<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+  <div><label class="tt-label" for="f-nombre">Nombre</label><input class="tt-input" id="f-nombre" name="nombre" type="text" required autocomplete="name"></div>
+  <div><label class="tt-label" for="f-email">Email</label><input class="tt-input" id="f-email" name="_replyto" type="email" required autocomplete="email"></div>
+  <div><label class="tt-label" for="f-msj">Mensaje</label><textarea class="tt-input" id="f-msj" name="mensaje" required></textarea></div>
+  <div><button class="tt-btn tt-btn--primary" type="submit">Enviar</button></div>
+  <p class="tt-msg tt-msg--err" role="status">No se pudo enviar el formulario. Escribinos por LinkedIn mientras lo resolvemos.</p>
+</form>

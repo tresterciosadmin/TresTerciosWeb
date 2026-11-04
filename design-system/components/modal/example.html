@@ -1,0 +1,16 @@
+<!-- @dsCard group="Contenido" -->
+<!-- Aviso en ventana modal — Tres Tercios design system -->
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../components.css">
+
+<button type="button" class="tt-linkish" onclick="document.getElementById('priv').showModal()">Cómo tratamos tus datos</button>
+
+<dialog class="tt-modal" id="priv" aria-labelledby="priv-t">
+  <div class="tt-modal__box">
+    <button class="tt-modal__x" onclick="document.getElementById('priv').close()" aria-label="Cerrar">×</button>
+    <h2 class="tt-modal__h" id="priv-t">Cómo tratamos tus datos</h2>
+    <p class="tt-modal__upd">Actualizado: agosto 2026</p>
+    <h3 class="tt-modal__sub">Qué recolectamos</h3>
+    <p>Solo lo que nos dejás en los formularios.</p>
+  </div>
+</dialog>

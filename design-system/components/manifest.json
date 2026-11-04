@@ -365,6 +365,62 @@
       ],
       "path": "/design-system/components/nav-dark/",
       "example": "nav-dark/example.html"
+    },
+    {
+      "name": "form",
+      "title": "Formulario",
+      "group": "Formularios",
+      "description": "Contenedor del formulario de contacto: campos, trampa antispam y mensaje de resultado.",
+      "classes": [
+        "tt-form",
+        "tt-hp",
+        "tt-label",
+        "tt-input",
+        "tt-msg"
+      ],
+      "path": "/design-system/components/form/",
+      "example": "form/example.html"
+    },
+    {
+      "name": "split",
+      "title": "Dos columnas",
+      "group": "Estructura",
+      "description": "Texto a la izquierda y una pieza (un formulario, una tarjeta) a la derecha; colapsa a una columna en 840px.",
+      "classes": [
+        "tt-split"
+      ],
+      "path": "/design-system/components/split/",
+      "example": "split/example.html"
+    },
+    {
+      "name": "modal",
+      "title": "Aviso en ventana modal",
+      "group": "Contenido",
+      "description": "Aviso largo (privacidad) en un <dialog> nativo, con botón de cierre y enlace que lo abre.",
+      "classes": [
+        "tt-modal",
+        "tt-modal__box",
+        "tt-modal__h",
+        "tt-modal__sub",
+        "tt-modal__upd",
+        "tt-modal__x",
+        "tt-linkish"
+      ],
+      "path": "/design-system/components/modal/",
+      "example": "modal/example.html"
+    },
+    {
+      "name": "tercio",
+      "title": "Tercio",
+      "group": "Contenido",
+      "description": "Una especialidad de la firma: logo del tercio, nombre del ángulo y una línea de lo que aporta. Sin persona.",
+      "classes": [
+        "tt-tercio",
+        "tt-tercio__tag",
+        "tt-tercio__linea"
+      ],
+      "path": "/design-system/components/tercio/",
+      "example": "tercio/example.html"
     }
   ],
   "cardMarker": "<!-- @dsCard group=\"…\" --> en la primera línea de cada .html"

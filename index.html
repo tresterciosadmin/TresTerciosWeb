@@ -249,16 +249,9 @@ nav{position:sticky;top:0;z-index:50;padding:12px var(--s3) 0;background:linear-
 #equipo{background:var(--bg);padding-top:var(--s5)}
 #equipo .lead{font-size:var(--fs-lead);color:var(--muted);max-width:44em}
 
-/* ---------- contacto ---------- */
-#contacto{background:var(--bg);border-top:1px solid var(--border)}
-.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s5);margin-top:var(--s3)}
-@media(max-width:840px){.contact-grid{grid-template-columns:1fr;gap:var(--s4)}}
-form{display:grid;gap:14px}
-#contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s4);box-shadow:var(--shadow)}
 label{font-size:var(--fs-xs);font-weight:600;display:block;margin-bottom:6px}
-input,textarea{width:100%;font-family:var(--sans);font-size:var(--fs-ui);padding:12px 14px;border:1px solid var(--border-fuerte);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
-input:focus,textarea:focus{outline:none;border-color:var(--bordo);box-shadow:0 0 0 3px var(--bordo-tinte)}
-textarea{min-height:118px;resize:vertical}
+input{width:100%;font-family:var(--sans);font-size:var(--fs-ui);padding:12px 14px;border:1px solid var(--border-fuerte);border-radius:var(--radius-sm);background:var(--bg);color:var(--text);transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+input:focus{outline:none;border-color:var(--bordo);box-shadow:0 0 0 3px var(--bordo-tinte)}
 .form-msg{font-size:var(--fs-sm);padding:12px 16px;border-radius:var(--radius-sm);display:none}
 .form-msg.ok{display:block;background:var(--ok-bg);border:1px solid var(--ok-borde);color:var(--ok-text)}
 .form-msg.err{display:block;background:var(--err-bg);border:1px solid var(--err-borde);color:var(--err-text)}
@@ -346,8 +339,8 @@ footer a:hover{color:var(--bordo)}
     <div class="nav-links">
       <a href="servicios.html" data-i18n="nav.serv">Servicios</a>
       <a href="nowcast-legislativo.html">Nowcast</a>
-      <a href="#equipo" data-i18n="nav.equipo">Equipo</a>
-      <a class="always" href="#contacto" data-i18n="nav.contacto">Contacto</a>
+      <a href="nosotros.html" data-i18n="nav.nosotros">Nosotros</a>
+      <a class="always" href="contacto.html" data-i18n="nav.contacto">Contacto</a>
       <div class="lang" role="group" aria-label="Idioma / Language">
         <button id="btn-es" aria-pressed="true" onclick="setLang('es')">ES</button>
         <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
@@ -383,7 +376,7 @@ footer a:hover{color:var(--bordo)}
   </div>
   <div class="wrap hero-foot">
     <div class="cta-row">
-      <a class="btn btn-primary" href="#contacto" data-i18n="hero.cta1">Conversemos</a>
+      <a class="btn btn-primary" href="contacto.html" data-i18n="hero.cta1">Conversemos</a>
       <a class="link-arrow" href="nowcast-legislativo.html" data-i18n="hero.cta2">Conocer Nowcast Legislativo →</a>
     </div>
     <div class="car-nav">
@@ -478,7 +471,7 @@ footer a:hover{color:var(--bordo)}
     </div>
 
     <p class="after" data-i18n="now.p2">Sobre eso construimos el radar parlamentario que vas a consultar a diario: qué se mueve, qué se frena y qué te conviene mirar esta semana.</p>
-    <a class="btn btn-glow" href="#contacto" onclick="prefillNowcast()" data-i18n="now.cta">Quiero acceso anticipado</a>
+    <a class="btn btn-glow" href="contacto.html?interes=nowcast" data-i18n="now.cta">Quiero acceso anticipado</a>
     <a class="link-arrow" href="nowcast-legislativo.html" style="color:var(--dk-acento);margin-left:var(--s2)" data-i18n="now.mas">Conocer el producto →</a>
   </div>
 </section>
@@ -529,33 +522,8 @@ footer a:hover{color:var(--bordo)}
   <div class="wrap">
     <p class="kicker" data-i18n="eq.kicker">Equipo</p>
     <h2 class="sec-h" data-i18n="eq.h2">Tres politólogos, tres especialidades</h2>
-    <p class="lead" data-i18n="eq.p">Formados en ciencia política, con experiencia en políticas públicas, asuntos públicos, macroeconomía, gestión financiera y análisis político. Una generación que creció con los datos y aprendió la política desde adentro.</p>
-  </div>
-</section>
-
-<section id="contacto">
-  <div class="wrap">
-    <p class="kicker" data-i18n="ct.kicker">Contacto</p>
-    <div class="contact-grid">
-      <div>
-        <h2 class="sec-h" data-i18n="ct.h2">Conversemos</h2>
-        <p class="muted" data-i18n="ct.p">Contanos en qué entorno regulatorio opera tu empresa y qué necesitás anticipar.</p>
-      </div>
-      <!-- FORMULARIO (premortem #4):
-           1) Reemplazar TU_ID por el endpoint real de Formspree.
-           2) El mensaje de éxito SOLO aparece si el POST responde OK.
-           3) Honeypot antispam (_gotcha).
-           4) Protocolo: test end-to-end desde un mail externo el día 1 de cada mes y tras cada cambio. -->
-      <form id="contact-form" action="https://formspree.io/f/TU_ID" method="POST" novalidate>
-        <div class="hp" aria-hidden="true"><label>No completar<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
-        <div><label for="f-nombre" data-i18n="ct.nombre">Nombre</label><input id="f-nombre" name="nombre" type="text" required autocomplete="name"></div>
-        <div><label for="f-empresa" data-i18n="ct.empresa">Empresa</label><input id="f-empresa" name="empresa" type="text" autocomplete="organization"></div>
-        <div><label for="f-email">Email</label><input id="f-email" name="_replyto" type="email" required autocomplete="email"></div>
-        <div><label for="f-msj" data-i18n="ct.mensaje">Mensaje</label><textarea id="f-msj" name="mensaje" required></textarea></div>
-        <div><button class="btn btn-primary" type="submit" id="f-send" data-i18n="ct.enviar">Enviar</button></div>
-        <p class="form-msg" id="f-status" role="status"></p>
-      </form>
-    </div>
+    <p class="lead" data-i18n="eq.p">Formados en ciencia política, con experiencia en políticas públicas, asuntos públicos, macroeconomía, gestión financiera y análisis político.</p>
+    <p style="margin-top:var(--s2)"><a class="link-arrow" href="nosotros.html" data-i18n="eq.mas">Conocer al equipo →</a></p>
   </div>
 </section>
 
@@ -624,7 +592,7 @@ footer a:hover{color:var(--bordo)}
    ============================================================ */
 const I18N = {
   'nav.serv':    {es:'Servicios', en:'Services'},
-  'nav.equipo':  {es:'Equipo', en:'Team'},
+  'nav.nosotros':{es:'Nosotros', en:'About'},
   'nav.contacto':{es:'Contacto', en:'Contact'},
 
   'hero.kicker': {es:'Consultora de asuntos públicos', en:'Public affairs consultancy'},
@@ -684,23 +652,12 @@ const I18N = {
 
   'eq.kicker':{es:'Equipo', en:'Team'},
   'eq.h2':{es:'Tres politólogos, tres especialidades', en:'Three political scientists, three specialties'},
-  'eq.p': {es:'Formados en ciencia política, con experiencia en políticas públicas, asuntos públicos, macroeconomía, gestión financiera y análisis político. Una generación que creció con los datos y aprendió la política desde adentro.',
-           en:'Trained in political science, with experience in public policy, public affairs, macroeconomics, financial management and political analysis. A generation that grew up with data and learned politics from the inside.'},
+  'eq.p': {es:'Formados en ciencia política, con experiencia en políticas públicas, asuntos públicos, macroeconomía, gestión financiera y análisis político.',
+           en:'Trained in political science, with experience in public policy, public affairs, macroeconomics, financial management and political analysis.'},
+  'eq.mas':{es:'Conocer al equipo →', en:'Meet the team →'},
 
-  'ct.kicker':{es:'Contacto', en:'Contact'},
-  'ct.h2':{es:'Conversemos', en:"Let's talk"},
-  'ct.p': {es:'Contanos en qué entorno regulatorio opera tu empresa y qué necesitás anticipar.',
-           en:'Tell us which regulatory environment your company operates in and what you need to anticipate.'},
-  'ct.nombre':{es:'Nombre', en:'Name'},
-  'ct.empresa':{es:'Empresa', en:'Company'},
-  'ct.mensaje':{es:'Mensaje', en:'Message'},
-  'ct.enviar':{es:'Enviar', en:'Send'},
+  /* ct.enviando lo usa wireForm también para el newsletter; el resto de las claves de contacto viven en contacto.html */
   'ct.enviando':{es:'Enviando…', en:'Sending…'},
-  'ct.ok': {es:'Recibido. Te respondemos a la brevedad.', en:"Received. We'll get back to you shortly."},
-  'ct.err':{es:'No se pudo enviar el formulario. Escribinos por LinkedIn mientras lo resolvemos.',
-            en:'The form could not be sent. Reach us on LinkedIn while we fix it.'},
-  'ct.prefill':{es:'Hola, quiero acceso anticipado a Nowcast Legislativo.',
-                en:'Hi, I would like early access to Nowcast Legislativo.'},
 
   'nl.kicker':{es:'Newsletter', en:'Newsletter'},
   'nl.h':{es:'Lo que se mueve, cada semana', en:"What's moving, every week"},
@@ -817,13 +774,6 @@ const io = new IntersectionObserver((es)=>{
 },{threshold:.35});
 io.observe(document.querySelector('#nowcast .panel'));
 
-function prefillNowcast(){
-  const t = document.getElementById('f-msj');
-  if(t && !t.value) t.value = I18N['ct.prefill'][LANG];
-}
-/* El botón de acceso anticipado de nowcast-legislativo.html llega con ?interes=nowcast */
-if(new URLSearchParams(location.search).get('interes') === 'nowcast') prefillNowcast();
-
 /* ---- aviso de privacidad ---- */
 function openPriv(){ document.getElementById('priv').showModal(); }
 
@@ -851,7 +801,6 @@ function wireForm(formId, btnId, statusId, okKey, errKey, sendKey){
     }
   });
 }
-wireForm('contact-form','f-send','f-status','ct.ok','ct.err','ct.enviar');
 wireForm('nl-form','nl-send','nl-status','nl.ok','nl.err','nl.cta');
 </script>
 

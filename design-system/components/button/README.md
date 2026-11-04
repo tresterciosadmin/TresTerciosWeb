@@ -6,9 +6,9 @@ Acción principal. Un solo botón primario por pantalla; el resto va como enlace
 
 ## Ejemplo
 ```html
-<a class="tt-btn tt-btn--primary" href="#contacto">Conversemos</a>
+<a class="tt-btn tt-btn--primary" href="contacto.html">Conversemos</a>
 <a class="tt-link" href="#nowcast">Conocer Nowcast Legislativo →</a>
-<a class="tt-btn tt-btn--dark" href="#contacto">Quiero acceso anticipado</a>
+<a class="tt-btn tt-btn--dark" href="contacto.html?interes=nowcast">Quiero acceso anticipado</a>
 ```
 
 ## Regla

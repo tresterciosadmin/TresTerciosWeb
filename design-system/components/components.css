@@ -347,3 +347,47 @@ html[data-lang-pendiente] body{visibility:hidden}
   .tt-insignia__body{transition:none}
   .js .tt-insignia[data-abierto="0"] .tt-insignia__body{grid-template-rows:1fr;opacity:1}
 }
+
+/* ============================================================
+   Incorporados al sumar nosotros.html y contacto.html
+   ============================================================ */
+
+/* --- formulario completo: contenedor, trampa antispam y mensaje --- */
+.tt-form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:var(--s4)}
+.tt-form textarea.tt-input{min-height:118px;resize:vertical}
+.tt-form .tt-msg[hidden]{display:none}
+.tt-hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+
+/* --- dos columnas: texto a la izquierda, pieza a la derecha --- */
+.tt-split{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--s5);margin-top:var(--s3);align-items:start}
+@media(max-width:840px){.tt-split{grid-template-columns:1fr;gap:var(--s4)}}
+
+/* --- botón con aspecto de enlace (abre el aviso de privacidad) --- */
+.tt-linkish{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;
+  text-underline-offset:3px;cursor:pointer}
+.tt-linkish:hover{color:var(--bordo)}
+.tt-linkish:focus-visible{outline:2px solid var(--bordo);outline-offset:3px;border-radius:3px}
+
+/* --- aviso en ventana modal --- */
+.tt-modal{border:0;padding:0;background:transparent;max-width:min(660px,92vw)}
+.tt-modal::backdrop{background:rgba(25,24,23,.55);backdrop-filter:blur(3px)}
+.tt-modal__box{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:var(--s4);max-height:82vh;overflow:auto}
+.tt-modal__h{font-family:var(--serif);font-weight:600;font-size:var(--fs-h2-sm);line-height:var(--lh-titulo);
+  letter-spacing:var(--ls-titulo);margin-bottom:6px}
+.tt-modal__sub{font-family:var(--sans);font-size:var(--fs-nav);font-weight:600;margin:var(--s3) 0 4px}
+.tt-modal__box p{font-size:var(--fs-sm);color:var(--muted)}
+.tt-modal__upd{font-family:var(--mono);font-variant-numeric:var(--num);font-size:var(--fs-tabla);
+  letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--muted)}
+.tt-modal__x{position:sticky;top:0;float:right;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);
+  background:var(--bg);color:var(--text);font-size:var(--fs-h3);line-height:1;cursor:pointer;
+  transition:background var(--t) var(--ease)}
+.tt-modal__x:hover{background:var(--bordo);color:#fff;border-color:var(--bordo)}
+.tt-modal__x:focus-visible{outline:2px solid var(--bordo);outline-offset:2px}
+
+/* --- un tercio: especialidad de la firma, sin persona --- */
+.tt-tercio{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s4) var(--s3)}
+.tt-tercio__tag{font-family:var(--mono);font-size:var(--fs-nano);font-weight:500;letter-spacing:var(--ls-tag);
+  text-transform:uppercase;color:var(--bordo);margin:var(--s3) 0 12px}
+.tt-tercio__linea{font-family:var(--serif);font-size:var(--fs-cita);line-height:var(--lh-lead);color:var(--text)}

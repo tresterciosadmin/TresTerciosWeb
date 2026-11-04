@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Tres Tercios</title>
+<meta name="description" content="Contanos en qué entorno regulatorio opera tu empresa y qué necesitás anticipar. La primera conversación es para entender el problema, no para venderte nada.">
+<meta name="theme-color" content="#7D1F30">
+<link rel="canonical" href="https://tresterciosconsultores.com/contacto.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tres Tercios">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://tresterciosconsultores.com/contacto.html">
+<meta property="og:title" content="Contacto — Tres Tercios">
+<meta property="og:description" content="Contanos en qué entorno regulatorio opera tu empresa y qué necesitás anticipar.">
+<meta property="og:image" content="https://tresterciosconsultores.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system/tokens/tokens.css">
+<link rel="stylesheet" href="design-system/components/components.css">
+<script src="design-system/components/lang.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  .tt-brand{text-decoration:none}
+  .tt-brand img{display:block}
+  nav{position:sticky;top:0;z-index:50;padding:12px var(--s3) 0;
+    background:linear-gradient(to bottom,var(--bg) 62%,rgba(247,243,236,0))}
+  .nav-links{display:flex;gap:20px;margin-left:auto;align-items:center}
+  .nav-links a{text-decoration:none;font-size:var(--fs-nav);font-weight:500;color:var(--muted);
+    padding:6px 2px;transition:color var(--t) var(--ease)}
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--bordo)}
+  .nav-links a:focus-visible{outline:2px solid var(--bordo);outline-offset:3px;border-radius:4px}
+  @media(max-width:820px){.nav-links a:not(.always){display:none}.nav-links{gap:14px}}
+  @media(max-width:480px){nav{padding:12px var(--s1) 0}.tt-nav{padding-left:14px;gap:var(--s1)}.nav-links{gap:10px}.tt-lang button{padding:7px 8px}}
+  @media(max-width:360px){.nav-links a.always{display:none}}   /* con 360 px no hay lugar: ya estás en Contacto */
+  .directo{margin-top:var(--s4)}
+  .directo .tt-link{padding-left:0}
+  .legal{margin-top:var(--s2);font-size:var(--fs-legal);color:var(--muted)}
+</style>
+</head>
+<body class="tt-body">
+
+<nav aria-label="Principal">
+  <div class="tt-nav">
+    <a class="tt-brand" href="index.html">
+      <img class="tt-logo" src="design-system/assets/logo-reducido.svg" alt="" width="38">
+      <span>TRES TERCIOS</span>
+    </a>
+    <div class="nav-links">
+      <a href="servicios.html" data-i18n="nav.serv">Servicios</a>
+      <a href="nowcast-legislativo.html">Nowcast</a>
+      <a href="nosotros.html" data-i18n="nav.nosotros">Nosotros</a>
+      <a class="always" href="contacto.html" aria-current="page" data-i18n="nav.contacto">Contacto</a>
+      <div class="tt-lang" role="group" aria-label="Idioma / Language">
+        <button id="btn-es" aria-pressed="true" onclick="setLang('es')">ES</button>
+        <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="tt-section" id="contacto">
+  <div class="tt-wrap">
+
+    <p class="tt-kicker" data-i18n="k">Contacto</p>
+    <div class="tt-split">
+      <div>
+        <h2 class="tt-h2" data-i18n="h">Conversemos</h2>
+        <p class="tt-lead" data-i18n="lead">Contanos en qué entorno regulatorio opera tu empresa y qué necesitás anticipar.</p>
+        <dl class="tt-meta directo">
+          <div><dt data-i18n="ct.directo">Escribinos directamente</dt><dd><a class="tt-link" href="mailto:contacto@tresterciosconsultores.com">contacto@tresterciosconsultores.com</a></dd></div>
+        </dl>
+      </div>
+      <div>
+        <!-- FORMULARIO (premortem #4):
+             1) Reemplazar TU_ID por el endpoint real de Formspree.
+             2) El mensaje de éxito SOLO aparece si el POST responde OK.
+             3) Honeypot antispam (_gotcha).
+             4) Protocolo: test end-to-end desde un mail externo el día 1 de cada mes y tras cada cambio. -->
+        <form class="tt-form" id="contact-form" action="https://formspree.io/f/TU_ID" method="POST" novalidate>
+          <div class="tt-hp" aria-hidden="true"><label>No completar<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+          <div><label class="tt-label" for="f-nombre" data-i18n="ct.nombre">Nombre</label><input class="tt-input" id="f-nombre" name="nombre" type="text" required autocomplete="name"></div>
+          <div><label class="tt-label" for="f-empresa" data-i18n="ct.empresa">Empresa</label><input class="tt-input" id="f-empresa" name="empresa" type="text" autocomplete="organization"></div>
+          <div><label class="tt-label" for="f-email">Email</label><input class="tt-input" id="f-email" name="_replyto" type="email" required autocomplete="email"></div>
+          <div><label class="tt-label" for="f-msj" data-i18n="ct.mensaje">Mensaje</label><textarea class="tt-input" id="f-msj" name="mensaje" required></textarea></div>
+          <div><button class="tt-btn tt-btn--primary" type="submit" id="f-send" data-i18n="ct.enviar">Enviar</button></div>
+          <p class="tt-msg" id="f-status" role="status" hidden></p>
+        </form>
+        <p class="legal"><button type="button" class="tt-linkish" onclick="openPriv()" data-i18n="priv.link">Cómo tratamos tus datos</button></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Aviso de privacidad. Redactado para una web sin cookies ni perfilado;
+     si más adelante se suman analítica con cookies, remarketing o un CRM, hay que actualizarlo.
+     Conviene que lo revise un abogado antes de operar con clientes. -->
+<dialog class="tt-modal" id="priv" aria-labelledby="priv-t">
+  <div class="tt-modal__box">
+    <button class="tt-modal__x" onclick="document.getElementById('priv').close()" aria-label="Cerrar">×</button>
+    <h2 class="tt-modal__h" id="priv-t" data-i18n="priv.h">Cómo tratamos tus datos</h2>
+    <p class="tt-modal__upd" data-i18n="priv.upd">Actualizado: agosto 2026</p>
+    <h3 class="tt-modal__sub" data-i18n="priv.h1">Qué recolectamos</h3>
+    <p data-i18n="priv.p1">Solo lo que nos dejás en los formularios: en el de contacto, tu nombre, empresa, email y mensaje; en el newsletter, tu email. Nada más. No usamos cookies ni construimos perfiles de navegación.</p>
+    <h3 class="tt-modal__sub" data-i18n="priv.h2">Para qué lo usamos</h3>
+    <p data-i18n="priv.p2">Los datos del formulario de contacto se usan únicamente para responderte y evaluar un eventual trabajo en conjunto. El email del newsletter se usa solo para enviarte nuestros informes y novedades. No vendemos ni cedemos datos a terceros con fines comerciales.</p>
+    <h3 class="tt-modal__sub" data-i18n="priv.h3">Quién los procesa</h3>
+    <p data-i18n="priv.p3">Los formularios se procesan a través de Formspree, que reenvía los mensajes a nuestro correo, y el sitio se aloja en GitHub Pages. Ambos proveedores acceden a los datos solo para prestar ese servicio.</p>
+    <h3 class="tt-modal__sub" data-i18n="priv.h4">Cuánto los conservamos</h3>
+    <p data-i18n="priv.p4">Las consultas, mientras dure la relación o el interés comercial. La suscripción al newsletter, hasta que pidas la baja: cada envío incluye el enlace para hacerlo en un clic.</p>
+    <h3 class="tt-modal__sub" data-i18n="priv.h5">Tus derechos</h3>
+    <p data-i18n="priv.p5">Podés pedirnos en cualquier momento acceder a tus datos, corregirlos o eliminarlos, escribiéndonos por el formulario de contacto. En Argentina, la Ley 25.326 de Protección de los Datos Personales garantiza esos derechos y la Agencia de Acceso a la Información Pública es el organismo de control.</p>
+  </div>
+</dialog>
+
+<script>
+/* ES y EN lado a lado, clave por clave: la misma regla que index.html.
+   Ningún texto se publica sin actualizar los dos valores. */
+const I18N = {
+  'nav.serv':    {es:'Servicios', en:'Services'},
+  'nav.nosotros':{es:'Nosotros', en:'About'},
+  'nav.contacto':{es:'Contacto', en:'Contact'},
+
+  'k':   {es:'Contacto', en:'Contact'},
+  'h':   {es:'Conversemos', en:"Let's talk"},
+  'lead':{es:'Contanos en qué entorno regulatorio opera tu empresa y qué necesitás anticipar.',
+          en:'Tell us which regulatory environment your company operates in and what you need to anticipate.'},
+  'ct.directo':{es:'Escribinos directamente', en:'Write to us directly'},
+  'ct.nombre':{es:'Nombre', en:'Name'},
+  'ct.empresa':{es:'Empresa', en:'Company'},
+  'ct.mensaje':{es:'Mensaje', en:'Message'},
+  'ct.enviar':{es:'Enviar', en:'Send'},
+  'ct.enviando':{es:'Enviando…', en:'Sending…'},
+  'ct.ok': {es:'Recibido. Te respondemos a la brevedad.', en:"Received. We'll get back to you shortly."},
+  'ct.err':{es:'No se pudo enviar el formulario. Escribinos por LinkedIn mientras lo resolvemos.',
+            en:'The form could not be sent. Reach us on LinkedIn while we fix it.'},
+  'ct.prefill':{es:'Hola, quiero acceso anticipado a Nowcast Legislativo.',
+                en:'Hi, I would like early access to Nowcast Legislativo.'},
+
+  'priv.link':{es:'Cómo tratamos tus datos', en:'How we handle your data'},
+  'priv.h':{es:'Cómo tratamos tus datos', en:'How we handle your data'},
+  'priv.upd':{es:'Actualizado: agosto 2026', en:'Updated: August 2026'},
+  'priv.h1':{es:'Qué recolectamos', en:'What we collect'},
+  'priv.p1':{es:'Solo lo que nos dejás en los formularios: en el de contacto, tu nombre, empresa, email y mensaje; en el newsletter, tu email. Nada más. No usamos cookies ni construimos perfiles de navegación.',
+             en:'Only what you give us in the forms: name, company, email and message in the contact form; your email in the newsletter. Nothing else. We use no cookies and build no browsing profiles.'},
+  'priv.h2':{es:'Para qué lo usamos', en:'What we use it for'},
+  'priv.p2':{es:'Los datos del formulario de contacto se usan únicamente para responderte y evaluar un eventual trabajo en conjunto. El email del newsletter se usa solo para enviarte nuestros informes y novedades. No vendemos ni cedemos datos a terceros con fines comerciales.',
+             en:'Contact form data is used only to reply to you and assess possible work together. Newsletter emails are used only to send you our reports and updates. We neither sell nor share data with third parties for commercial purposes.'},
+  'priv.h3':{es:'Quién los procesa', en:'Who processes it'},
+  'priv.p3':{es:'Los formularios se procesan a través de Formspree, que reenvía los mensajes a nuestro correo, y el sitio se aloja en GitHub Pages. Ambos proveedores acceden a los datos solo para prestar ese servicio.',
+             en:'Forms are processed through Formspree, which forwards messages to our inbox, and the site is hosted on GitHub Pages. Both providers access the data solely to provide that service.'},
+  'priv.h4':{es:'Cuánto los conservamos', en:'How long we keep it'},
+  'priv.p4':{es:'Las consultas, mientras dure la relación o el interés comercial. La suscripción al newsletter, hasta que pidas la baja: cada envío incluye el enlace para hacerlo en un clic.',
+             en:'Enquiries, for as long as the relationship or commercial interest lasts. Newsletter subscriptions, until you unsubscribe: every email includes a one-click link.'},
+  'priv.h5':{es:'Tus derechos', en:'Your rights'},
+  'priv.p5':{es:'Podés pedirnos en cualquier momento acceder a tus datos, corregirlos o eliminarlos, escribiéndonos por el formulario de contacto. En Argentina, la Ley 25.326 de Protección de los Datos Personales garantiza esos derechos y la Agencia de Acceso a la Información Pública es el organismo de control.',
+             en:'You may ask us at any time to access, correct or delete your data through the contact form. In Argentina, Personal Data Protection Act 25.326 guarantees these rights and the Agency for Access to Public Information is the supervisory authority.'},
+};
+
+/* Idioma actual: lo fija aplicarLang, y lo leen el prefill y el envío. */
+let LANG = 'es';
+
+/* aplicarLang pinta la página; setLang es lo que llaman los botones ES / EN y además guarda la elección. */
+function aplicarLang(l){
+  const previo = LANG;
+  LANG = l;
+  document.documentElement.lang = l;
+  document.getElementById('btn-es').setAttribute('aria-pressed', l==='es');
+  document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(I18N[k]) el.textContent = I18N[k][l];
+  });
+  /* si el mensaje sigue siendo el que completamos nosotros, lo pasamos al idioma nuevo */
+  const t = document.getElementById('f-msj');
+  if(t && previo !== l && t.value === I18N['ct.prefill'][previo]) t.value = I18N['ct.prefill'][l];
+}
+function setLang(l){ aplicarLang(l); ttLang.guardar(l); }
+/* El idioma guardado (tt-lang) se aplica acá, apenas existen los nodos [data-i18n]; sin nada guardado, ES. */
+ttLang.iniciar(aplicarLang);
+
+/* ---- acceso anticipado: nowcast-legislativo.html llega con ?interes=nowcast ---- */
+function prefillNowcast(){
+  const t = document.getElementById('f-msj');
+  if(t && !t.value) t.value = I18N['ct.prefill'][LANG];
+}
+if(new URLSearchParams(location.search).get('interes') === 'nowcast') prefillNowcast();
+
+/* ---- aviso de privacidad ---- */
+function openPriv(){ document.getElementById('priv').showModal(); }
+
+/* ---- envío: éxito SOLO si el servidor responde OK (premortem #4) ---- */
+function wireForm(formId, btnId, statusId, okKey, errKey, sendKey){
+  const f = document.getElementById(formId);
+  if(f.action.includes('TU_ID')){
+    console.warn('[Tres Tercios] El formulario "'+formId+'" todavía apunta al endpoint de ejemplo. '+
+                 'Reemplazá TU_ID por el ID real de Formspree — hasta entonces no se envía nada.');
+  }
+  f.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const form = e.target, btn = document.getElementById(btnId), msg = document.getElementById(statusId);
+    msg.hidden = true; msg.className = 'tt-msg';
+    btn.disabled = true; btn.textContent = I18N['ct.enviando'][LANG];
+    try{
+      if(form.action.includes('TU_ID')) throw new Error('endpoint sin configurar');
+      const r = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
+      if(r.ok){ msg.textContent = I18N[okKey][LANG]; msg.classList.add('tt-msg--ok'); form.reset(); }
+      else { throw new Error('status '+r.status); }
+    }catch(err){
+      msg.textContent = I18N[errKey][LANG]; msg.classList.add('tt-msg--err');
+    }finally{
+      msg.hidden = false;
+      btn.disabled = false; btn.textContent = I18N[sendKey][LANG];
+    }
+  });
+}
+wireForm('contact-form','f-send','f-status','ct.ok','ct.err','ct.enviar');
+</script>
+</body>
+</html>
