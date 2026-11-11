@@ -10,7 +10,7 @@ Resumen: Home nueva (nov 2026) sobre el HTML de propuesta de Franco, con colores
 
 ## Qué hay
 - Portada «Otra forma de ver la política», sin logo de fondo (se probó una marca de agua y el cliente la descartó).
-- Carrusel del logo con los tres tercios (solo titular), como la home publicada.
+- Carrusel del logo con los tres tercios: titular y bajada de dos líneas, puntos bajo el logo y flechas al borde derecho.
 - Servicios: oferta insignia en bordó + tres filas.
 - Nowcast sobre Noche: etiqueta, título, frase «Un predictor de votaciones parlamentarias.» y cuatro pasos.
 - Nosotros: solo «Tres politólogos, un método.» y «Conocer al equipo →».
