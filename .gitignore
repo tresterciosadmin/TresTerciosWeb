@@ -1,6 +1,10 @@
 # Documentos internos: no se publican en GitHub Pages
-DISEÑO.md
-premortem-*
+
+
 *.docx
 .DS_Store
 Thumbs.db
+
+# Documentos internos: no se publican (viven en _diseno/)
+_diseno/DISEÑO.md
+_diseno/premortem/
