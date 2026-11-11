@@ -29,7 +29,7 @@ Medida sobre la maqueta a 1280 px, con los estilos calculados por el navegador. 
 ## Criterios (indicados por Franco el 2026-11-11)
 - Tipografía de la propuesta: Archivo (display, ancho condensado), Public Sans (texto), JetBrains Mono (antetítulos y cifras). **Desvío del libro v1.2 (§5)**: pendiente de actualizar el libro.
 - Fondo Arena `#EFE9DF` en todas las secciones; solo Nowcast va en Noche `#0E1219`, con transición de 104 px.
-- Bordó `#7D1F30` y logo oficial del libro (reducido en navegación y pie). Marca de agua del logo en la portada: bordó al 7 % (comparación en `captura-portada-con-logo.png` y `captura-portada-sin-logo.png`).
+- Bordó `#7D1F30` y logo oficial del libro (reducido en navegación y pie). Sin logo de fondo en la portada (descartado por el cliente).
 - Carrusel de los tres tercios: logo que se llena de a un tercio, solo el titular (como la home publicada).
 - Oferta insignia en bordó pleno. Botones y campos de esquina recta; filetes de tinta de 2 px.
 - Nowcast: título, frase y cuatro pasos. Nosotros: solo la frase y «Conocer al equipo →».

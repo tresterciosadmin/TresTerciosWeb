@@ -564,11 +564,9 @@ header{border-bottom:2px solid var(--tinta);background:var(--arena);position:rel
 .nav.abierto .menu-btn .barras i{opacity:0}
 .nav.abierto .menu-btn .barras::after{transform:translateY(-6px) rotate(-45deg)}
 
-/* Hero: el logo va de fondo, muy suave, a la izquierda de la frase */
+/* Hero */
 .hero-fondo{position:relative;overflow:hidden}
-.marca-agua{position:absolute;left:14vw;top:50%;transform:translateY(-50%);width:min(52vw,720px);height:auto;color:var(--bordo);opacity:.07;pointer-events:none}
-.sin-agua .marca-agua{display:none}
-.hero{position:relative;padding-top:72px}
+.sin-agua .hero{position:relative;padding-top:72px}
 .hero h1{margin:28px 0 0;font-family:var(--display);font-stretch:70%;font-weight:900;font-size:clamp(56px,11vw,176px);line-height:.86;letter-spacing:-.01em;text-transform:uppercase}
 .hero h1 .bd{color:var(--bordo)}
 .hero-pie{display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;justify-content:space-between;margin-top:48px;padding-bottom:56px}
@@ -689,8 +687,7 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
   .nav-links a{padding:14px 0;border-top:1px solid var(--tinta);font-size:17px}
   .nav-links .idioma{padding:6px 0;border-top:1px solid var(--tinta)}
   .nav-links a.btn{margin-top:12px;text-align:center;border:0;padding:16px 20px}
-  .marca-agua{width:90vw;left:12vw;opacity:.06}
-  .metodo .wrap{gap:24px 40px}
+    .metodo .wrap{gap:24px 40px}
 }
 @media (max-width:600px){
   .wrap{padding-inline:20px}
@@ -768,7 +765,6 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 <main id="top">
 
 <div class="hero-fondo" id="hero-fondo">
-<svg class="marca-agua" viewBox="-4 -4 208 105.56" aria-hidden="true" focusable="false"><use href="#logo"/></svg>
 <section class="wrap hero">
   <p class="kicker entra" data-i18n="hero.kicker">Consultora de asuntos públicos · Buenos Aires</p>
   <h1 class="entra d1"><span data-i18n="h1.a">Otra forma</span><br><span data-i18n="h1.b">de ver la</span> <span class="bd" data-i18n="h1.c">política.</span></h1>

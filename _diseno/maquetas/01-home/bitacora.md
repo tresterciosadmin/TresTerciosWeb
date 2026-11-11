@@ -3,13 +3,13 @@
 Resumen: Home nueva (nov 2026) sobre el HTML de propuesta de Franco, con colores y logo del libro de marca y fondo Arena.
 
 ## Buscar acá si
-- Ver cómo quedó → `maqueta.html` y las capturas (`captura-escritorio.png`, `captura-celular.png`, portada con y sin logo de fondo)
+- Ver cómo quedó → `maqueta.html` y las capturas (`captura-escritorio.png`, `captura-celular.png`, portada)
 - Qué estilo usa cada elemento → `matriz-de-estilos.md`
 - Cambiar la página real → repo `TresTerciosWeb`, rama `rediseno-web-v4`, `index.html`
 - El acordeón de los tres tercios (retirado de la home) → `../02-servicios/bloque-tres-tercios-acordeon.html`
 
 ## Qué hay
-- Portada «Otra forma de ver la política» con el logo muy suave de fondo, a la izquierda de la frase.
+- Portada «Otra forma de ver la política», sin logo de fondo (se probó una marca de agua y el cliente la descartó).
 - Carrusel del logo con los tres tercios (solo titular), como la home publicada.
 - Servicios: oferta insignia en bordó + tres filas.
 - Nowcast sobre Noche: etiqueta, título, frase «Un predictor de votaciones parlamentarias.» y cuatro pasos.
