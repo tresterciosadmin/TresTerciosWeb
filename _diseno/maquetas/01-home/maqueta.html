@@ -584,7 +584,7 @@ header{border-bottom:2px solid var(--tinta);background:var(--arena);position:rel
 .slide[data-on="1"]{opacity:1;transform:none;pointer-events:auto}
 .slide h2{margin:0;font-family:var(--display);font-stretch:72%;font-weight:900;font-size:clamp(44px,6.6vw,96px);line-height:.92;text-transform:uppercase}
 .slide p{margin:20px 0 0;max-width:34em;font-size:19px;line-height:1.5;color:var(--muted)}
-.dots{display:flex;gap:8px;margin-top:16px}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
 .dots button{width:40px;height:44px;border:0;padding:0;background:transparent;cursor:pointer;display:flex;align-items:center}
 .dots button::before{content:"";display:block;width:100%;height:4px;background:#C9BFAE;transition:background-color 220ms}
 .dots button[aria-selected="true"]::before{background:var(--bordo)}
@@ -633,6 +633,7 @@ header{border-bottom:2px solid var(--tinta);background:var(--arena);position:rel
 #equipo{padding-block:96px}
 .frase{margin:0;font-family:var(--display);font-stretch:75%;font-weight:900;font-size:clamp(38px,5.6vw,80px);line-height:1.08;letter-spacing:.005em;text-transform:uppercase;max-width:16em}
 .frase span{color:var(--bordo)}
+.frase .neg{color:var(--tinta)}
 #equipo .link-flecha{margin-top:40px}
 
 /* Contacto */
@@ -836,7 +837,7 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 <div class="divider-out" aria-hidden="true"></div>
 
 <section class="wrap" id="equipo">
-  <p class="frase" data-i18n="eq.frase">Tres politólogos, un método.</p>
+  <p class="frase"><span class="neg" data-i18n="eq.f1">Tres politólogos,</span> <span data-i18n="eq.f2">un método.</span></p>
   <a class="link-flecha" href="../04-nosotros/maqueta.html" data-i18n="eq.mas">Conocer al equipo →</a>
 </section>
 
@@ -850,7 +851,7 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
       <label for="nl-email" data-i18n="nl.label">Email</label>
       <div class="nl-linea">
         <input id="nl-email" name="_replyto" type="email" required autocomplete="email" placeholder="nombre@empresa.com">
-        <button class="btn btn-tinta" type="submit" id="nl-send" data-i18n="nl.cta">Suscribirme</button>
+        <button class="btn btn-bordo" type="submit" id="nl-send" data-i18n="nl.cta">Suscribirme</button>
       </div>
     </div>
     <p class="nl-legal"><button type="button" class="linkish" onclick="openPriv()" data-i18n="priv.link">Cómo tratamos tus datos</button></p>
@@ -955,7 +956,8 @@ const I18N = {
   'pipe.3':{es:'Alerta temprana', en:'Early warning'},
   'pipe.4':{es:'Recomendación', en:'Recommendation'},
 
-  'eq.frase':{es:'Tres politólogos, un método.', en:'Three political scientists, one method.'},
+  'eq.f1':{es:'Tres politólogos,', en:'Three political scientists,'},
+  'eq.f2':{es:'un método.', en:'one method.'},
   'eq.mas':{es:'Conocer al equipo →', en:'Meet the team →'},
 
   'nl.h':{es:'Newsletter semanal', en:'Weekly newsletter'},
