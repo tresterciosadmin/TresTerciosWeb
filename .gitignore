@@ -5,6 +5,3 @@
 .DS_Store
 Thumbs.db
 
-# Documentos internos: no se publican (viven en _diseno/)
-_diseno/DISEÑO.md
-_diseno/premortem/
