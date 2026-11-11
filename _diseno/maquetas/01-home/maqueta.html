@@ -545,14 +545,14 @@ input,textarea,button{font:inherit}
 .d1{animation-delay:100ms}.d2{animation-delay:200ms}.d3{animation-delay:300ms}
 
 /* Navegación */
-header{border-bottom:2px solid var(--tinta);background:var(--arena);position:relative;z-index:5}
-.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-block:14px}
+header{position:sticky;top:0;z-index:50;padding-top:12px}
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 32px;padding:6px 8px 6px 20px;background:rgba(239,233,223,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-radius:18px;box-shadow:0 1px 2px rgba(25,24,23,.04),0 10px 30px rgba(25,24,23,.07)}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--bordo);min-height:44px}
 .marca span{font-family:var(--display);font-stretch:75%;font-weight:900;font-size:24px;letter-spacing:.02em;text-transform:uppercase}
 .nav-links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 28px;font-weight:600;font-size:15px}
 .nav-links a{color:var(--tinta);text-decoration:none;padding:12px 0}
 .nav-links a:hover{color:var(--bordo)}
-.nav-links a.btn{color:var(--arena);padding:12px 20px}
+.nav-links a.btn{color:#fff;padding:12px 20px}
 .idioma{font-family:var(--mono);font-size:13px;color:var(--muted);display:inline-flex;align-items:center}
 .idioma button{border:0;background:transparent;color:var(--muted);padding:12px 6px;cursor:pointer;font-family:var(--mono);font-size:13px}
 .idioma button[aria-pressed="true"]{color:var(--tinta);font-weight:700}
@@ -566,7 +566,7 @@ header{border-bottom:2px solid var(--tinta);background:var(--arena);position:rel
 
 /* Hero */
 .hero-fondo{position:relative;overflow:hidden}
-.sin-agua .hero{position:relative;padding-top:72px}
+.hero{padding-top:72px}
 .hero h1{margin:28px 0 0;font-family:var(--display);font-stretch:70%;font-weight:900;font-size:clamp(56px,11vw,176px);line-height:.86;letter-spacing:-.01em;text-transform:uppercase}
 .hero h1 .bd{color:var(--bordo)}
 .hero-pie{display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-end;justify-content:space-between;margin-top:48px;padding-bottom:56px}
@@ -574,7 +574,7 @@ header{border-bottom:2px solid var(--tinta);background:var(--arena);position:rel
 .hero-acciones{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
 
 /* Tres tercios: el logo cambia con la flecha; titular y una bajada corta */
-.metodo{border-top:2px solid var(--tinta);border-bottom:2px solid var(--tinta)}
+.metodo{border-bottom:2px solid var(--tinta)}
 .metodo .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:32px 72px;padding-block:56px}
 .metodo-logo{flex:0 0 auto;width:min(260px,40vw);color:var(--bordo)}
 .metodo-logo svg{width:100%;height:auto;display:block;transition:opacity 220ms var(--ease)}
@@ -683,15 +683,18 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 .modal-x:hover{background:var(--bordo);color:#fff;border-color:var(--bordo)}
 
 @media (max-width:860px){
+  .nav{gap:0 12px}
   .menu-btn{display:inline-flex}
   .nav-links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding-bottom:8px}
   .nav.abierto .nav-links{display:flex}
   .nav-links a{padding:14px 0;border-top:1px solid var(--tinta);font-size:17px}
   .nav-links .idioma{padding:6px 0;border-top:1px solid var(--tinta)}
   .nav-links a.btn{margin-top:12px;text-align:center;border:0;padding:16px 20px}
+  .nav-links a:first-child{border-top:0}
     .metodo .wrap{gap:24px 40px}
 }
 @media (max-width:600px){
+  .marca{gap:8px}.marca span{font-size:19px}.marca svg{width:44px}
   .wrap{padding-inline:20px}
   .hero{padding-top:48px}
   .hero-pie p{font-size:19px}
@@ -748,7 +751,8 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 </svg>
 
 <header>
-<nav class="wrap nav" aria-label="Principal">
+<div class="wrap">
+<nav class="nav" aria-label="Principal">
   <a class="marca" href="#top" aria-label="Tres Tercios, inicio">
     <svg class="logo" width="52" height="28" aria-hidden="true"><use href="#logo-reducido"/></svg>
     <span>Tres Tercios</span>
@@ -759,9 +763,10 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
     <a href="../03-nowcast-legislativo/maqueta.html">Nowcast</a>
     <a href="../04-nosotros/maqueta.html" data-i18n="nav.nosotros">Nosotros</a>
     <span class="idioma" role="group" aria-label="Idioma / Language"><button id="btn-es" type="button" aria-pressed="true" onclick="setLang('es')">ES</button>/<button id="btn-en" type="button" aria-pressed="false" lang="en" onclick="setLang('en')">EN</button></span>
-    <a class="btn btn-tinta" href="../05-contacto/maqueta.html" data-i18n="nav.cta">Conversemos</a>
+    <a class="btn btn-bordo" href="../05-contacto/maqueta.html" data-i18n="nav.cta">Conversemos</a>
   </div>
 </nav>
+</div>
 </header>
 
 <main id="top">
