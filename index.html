@@ -81,10 +81,11 @@ input,textarea,button{font:inherit}
 .titulo{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase}
 .link-flecha{font-weight:700;color:var(--tinta);text-decoration-thickness:2px;text-underline-offset:6px;display:inline-block;padding:12px 0}
 .link-flecha:hover{color:var(--bordo)}
-.btn{display:inline-block;text-decoration:none;font-weight:700;padding:18px 28px;border:2px solid transparent;cursor:pointer;transition:background-color 220ms var(--ease),transform 220ms var(--ease),box-shadow 220ms var(--ease)}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:18px 28px;border:2px solid transparent;border-radius:10px;cursor:pointer;transition:background-color 220ms var(--ease),transform 220ms var(--ease),box-shadow 220ms var(--ease)}
 .btn-bordo{background:var(--bordo);color:#fff}
 .btn-bordo:hover{background:var(--bordo-oscuro);color:#fff;transform:translateY(-1px);box-shadow:var(--shadow-cta)}
 .btn-tinta{background:var(--tinta);color:var(--arena)}.btn-tinta:hover{background:#000;color:var(--arena)}
+.btn-linea{background:transparent;color:var(--tinta);border-color:var(--tinta)}.btn-linea:hover{background:var(--tinta);color:var(--arena)}
 .logo{display:block}
 
 @keyframes entra{from{opacity:0;transform:translateY(20px)}}
@@ -146,7 +147,8 @@ header{position:sticky;top:0;z-index:50;padding-top:12px}
 .seccion-cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 32px;margin-bottom:40px}
 .seccion-cab h2{font-stretch:72%;font-size:clamp(48px,6vw,88px);line-height:.9}
 .insignia{background:var(--bordo);color:#fff;padding:48px 40px;display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;align-items:flex-end}
-.insignia>div{flex:1 1 520px}
+.insignia>.ins-cuerpo{flex:1 1 520px;display:flex;gap:16px 32px}
+.insignia .num{flex:0 0 32px;font-family:var(--mono);font-weight:700;color:var(--bordo-tinte);padding-top:2px}
 .insignia .kicker{color:var(--bordo-tinte);margin-bottom:16px}
 .insignia h3{margin:0 0 16px;font-family:var(--display);font-stretch:78%;font-weight:900;font-size:clamp(36px,4.4vw,60px);line-height:.95;text-transform:uppercase}
 .insignia p{margin:0;font-size:19px;max-width:620px;color:var(--bordo-tinte)}
@@ -171,10 +173,39 @@ header{position:sticky;top:0;z-index:50;padding-top:12px}
 .nowcast h2{font-stretch:70%;font-size:clamp(56px,8vw,128px);line-height:.86}
 .nowcast h2 span{color:var(--acento)}
 .nowcast .bajada-1{margin:32px 0 0;max-width:720px;font-family:var(--display);font-stretch:85%;font-weight:700;font-size:30px;line-height:1.2}
+.nc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 72px;align-items:end}
 .pasos{max-width:560px;margin:48px 0 0;padding:0;list-style:none}
-.pasos li{display:flex;gap:20px;padding:18px 0;border-top:1px solid var(--dk-linea);font-weight:600}
+.pasos li{border-top:1px solid var(--dk-linea)}
 .pasos li:last-child{border-bottom:1px solid var(--dk-linea)}
-.pasos li span{font-family:var(--mono);font-weight:400;color:var(--acento)}
+.paso{display:flex;gap:20px;width:100%;padding:18px 0;border:0;background:transparent;color:var(--dk-text-2);font-weight:600;text-align:left;cursor:pointer;transition:color 220ms var(--ease)}
+.paso span{font-family:var(--mono);font-weight:400;color:var(--acento)}
+.paso b{font-weight:inherit;flex:1}
+.paso::after{content:"";width:8px;height:8px;margin:auto 0;border-radius:50%;background:transparent;transition:background-color 220ms}
+.paso:hover,.paso[aria-pressed="true"]{color:var(--dk-text)}
+.paso[aria-pressed="true"]::after{background:var(--acento)}
+.esquema{margin:0;background:var(--dk-surface,#161C27);border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:22px 22px 18px}
+.esq-cab{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dk-muted);margin-bottom:10px}
+.esq-nota{color:var(--acento)}
+.esquema svg{display:block;width:100%;height:auto;overflow:visible}
+.eje line{stroke:rgba(255,255,255,.07);stroke-width:1}
+.eje line.base{stroke:rgba(255,255,255,.22)}
+.eje text,.capa-3 text{font-family:var(--mono);font-size:12px;fill:var(--dk-muted)}
+.capa{opacity:.18;transition:opacity 420ms var(--ease)}
+.capa-1 circle{fill:var(--dk-text)}
+.capa-2 path{fill:none;stroke:var(--acento);stroke-width:3;stroke-linecap:round}
+.umbral{stroke:var(--dk-text);stroke-width:1.5;stroke-dasharray:6 6}
+.cruce{fill:var(--acento);stroke:var(--dk);stroke-width:3}
+.reco-linea{stroke:var(--acento);stroke-width:1.5;stroke-dasharray:3 4}
+.capa-4 rect{fill:var(--acento)}
+.capa-4 text{font-family:var(--sans);font-size:14px;font-weight:700;fill:var(--sobre-acento,#170A0E)}
+.esquema[data-paso="1"] .capa-1,.esquema[data-paso="2"] .capa-1,.esquema[data-paso="2"] .capa-2,.esquema[data-paso="3"] .capa-1,.esquema[data-paso="3"] .capa-2,.esquema[data-paso="3"] .capa-3,.esquema[data-paso="4"] .capa{opacity:1}
+.esquema[data-paso="1"] .capa-1 circle{animation:latido 2s ease-in-out infinite}
+.esquema[data-paso="1"] .capa-1 circle:nth-child(2n){animation-delay:.6s}
+.esquema[data-paso="1"] .capa-1 circle:nth-child(3n){animation-delay:1.2s}
+.esquema[data-paso="2"] .capa-2 path{stroke-dasharray:var(--len,700);stroke-dashoffset:var(--len,700);animation:dibuja 1.4s var(--ease) forwards}
+@keyframes dibuja{to{stroke-dashoffset:0}}
+.esquema[data-paso="3"] .cruce{animation:latido 1.4s ease-in-out infinite}
+.esq-texto{margin:12px 0 0;min-height:3em;font-size:16px;line-height:1.5;color:var(--dk-text-2)}
 
 /* Nosotros: solo la frase y el enlace */
 #equipo{padding-block:96px}
@@ -230,6 +261,7 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 .modal-x:hover{background:var(--bordo);color:#fff;border-color:var(--bordo)}
 
 @media (max-width:860px){
+  .nc-grid{grid-template-columns:minmax(0,1fr)}
   .nav{gap:0 12px}
   .menu-btn{display:inline-flex}
   .nav-links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding-bottom:8px}
@@ -247,6 +279,10 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
   .hero-pie p{font-size:19px}
   .seccion,#equipo{padding-block:72px}
   .nowcast{padding-block:48px 72px}
+  .esquema{padding:16px 14px 14px}
+  .eje text,.capa-3 text{font-size:15px}
+  .capa-4 text{font-size:21px}
+  .esq-texto{font-size:15px}
   .insignia{padding:32px 24px}
   .metodo .wrap{padding-block:40px}
   .contacto .wrap{padding-block:64px;gap:48px}
@@ -321,12 +357,12 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 <div class="hero-fondo" id="hero-fondo">
 <section class="wrap hero">
   <p class="kicker entra" data-i18n="hero.kicker">Consultora de asuntos públicos · Buenos Aires</p>
-  <h1 class="entra d1"><span data-i18n="h1.a">Otra forma</span><br><span data-i18n="h1.b">de ver la</span> <span class="bd" data-i18n="h1.c">política.</span></h1>
+  <h1 class="entra d1"><span data-i18n="h1.a">La política</span><br><span data-i18n="h1.b">en tu</span> <span class="bd" data-i18n="h1.c">negocio.</span></h1>
   <div class="hero-pie entra d2">
     <p data-i18n="hero.p">Inteligencia legislativa y regulatoria para empresas en entornos regulados. Detectamos qué proyectos avanzan y qué normas cambian antes de que sean noticia, y te avisamos cuando te afectan.</p>
     <div class="hero-acciones">
       <a class="btn btn-bordo" href="contacto.html" data-i18n="hero.cta1">Conversemos</a>
-      <a class="link-flecha" href="nowcast-legislativo.html" data-i18n="hero.cta2">Conocer Nowcast →</a>
+      <a class="btn btn-linea" href="nowcast-legislativo.html" data-i18n="hero.cta2">Conocer Nowcast →</a>
     </div>
   </div>
 </section>
@@ -358,10 +394,13 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
     <a class="link-flecha" href="servicios.html" data-i18n="serv.mas">Ver todos los servicios →</a>
   </div>
   <div class="insignia">
-    <div>
+    <div class="ins-cuerpo">
+      <span class="num">01</span>
+      <div>
       <p class="kicker" data-i18n="ins.tag">Oferta insignia</p>
       <h3 data-i18n="a1.h">Inteligencia legislativa y regulatoria</h3>
       <p data-i18n="a1.d">Seguimiento diario del Congreso y de los organismos que regulan tu actividad, con alertas cuando algo te toca.</p>
+      </div>
     </div>
     <a class="btn" href="contacto.html" data-i18n="ins.cta">Pedir una demo</a>
   </div>
@@ -375,21 +414,58 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 <div class="divider" aria-hidden="true"></div>
 <section class="oscuro" id="nowcast">
 <div class="wrap nowcast">
+ <div class="nc-grid">
+  <div>
   <p class="en-construccion"><i aria-hidden="true"></i><span data-i18n="now.tag">Producto en construcción</span></p>
   <h2 class="titulo"><span data-i18n="now.h1" style="color:inherit">Nowcast</span><br><span data-i18n="now.h2">Legislativo</span></h2>
   <p class="bajada-1" data-i18n="now.p">Un predictor de votaciones parlamentarias.</p>
-  <ol class="pasos">
-    <li><span>01</span><b data-i18n="pipe.1" style="font-weight:inherit">Monitoreo continuo</b></li>
-    <li><span>02</span><b data-i18n="pipe.2" style="font-weight:inherit">Análisis propio</b></li>
-    <li><span>03</span><b data-i18n="pipe.3" style="font-weight:inherit">Alerta temprana</b></li>
-    <li><span>04</span><b data-i18n="pipe.4" style="font-weight:inherit">Recomendación</b></li>
+  <ol class="pasos" id="pasos">
+    <li><button type="button" class="paso" data-paso="1" aria-pressed="true" aria-controls="esquema"><span>01</span><b data-i18n="pipe.1">Monitoreo continuo</b></button></li>
+    <li><button type="button" class="paso" data-paso="2" aria-pressed="false" aria-controls="esquema"><span>02</span><b data-i18n="pipe.2">Análisis propio</b></button></li>
+    <li><button type="button" class="paso" data-paso="3" aria-pressed="false" aria-controls="esquema"><span>03</span><b data-i18n="pipe.3">Alerta temprana</b></button></li>
+    <li><button type="button" class="paso" data-paso="4" aria-pressed="false" aria-controls="esquema"><span>04</span><b data-i18n="pipe.4">Recomendación</b></button></li>
   </ol>
+  </div>
+  <figure class="esquema" id="esquema" data-paso="1">
+    <figcaption class="esq-cab"><span data-i18n="esq.titulo">Recorrido de un proyecto</span><span class="esq-nota" data-i18n="esq.nota">Esquema ilustrativo · sin datos reales</span></figcaption>
+    <svg viewBox="0 0 560 330" role="img" aria-labelledby="esq-desc">
+      <desc id="esq-desc" data-i18n="esq.desc">Esquema: una curva de probabilidad que sube a lo largo del trámite de un proyecto, desde el ingreso hasta la sanción, con un umbral de alerta.</desc>
+      <g class="eje">
+        <line x1="40" y1="60" x2="540" y2="60"/><line x1="40" y1="140" x2="540" y2="140"/><line x1="40" y1="220" x2="540" y2="220"/><line x1="40" y1="280" x2="540" y2="280" class="base"/>
+        <text x="34" y="64" text-anchor="end" data-i18n="esq.alta">alta</text>
+        <text x="34" y="284" text-anchor="end" data-i18n="esq.baja">baja</text>
+        <text x="48" y="306" data-i18n="esq.e1">Ingreso</text>
+        <text x="165" y="306" text-anchor="middle" data-i18n="esq.e2">Comisión</text>
+        <text x="290" y="306" text-anchor="middle" data-i18n="esq.e3">Dictamen</text>
+        <text x="415" y="306" text-anchor="middle" data-i18n="esq.e4">Recinto</text>
+        <text x="540" y="306" text-anchor="end" data-i18n="esq.e5">Sanción</text>
+      </g>
+      <g class="capa capa-1">
+        <circle cx="62" cy="280" r="4"/><circle cx="118" cy="280" r="4"/><circle cx="150" cy="280" r="4"/><circle cx="206" cy="280" r="4"/><circle cx="262" cy="280" r="4"/><circle cx="300" cy="280" r="4"/><circle cx="352" cy="280" r="4"/><circle cx="398" cy="280" r="4"/><circle cx="448" cy="280" r="4"/><circle cx="500" cy="280" r="4"/>
+      </g>
+      <g class="capa capa-2">
+        <path id="curva" d="M48,250 C100,250 130,226 165,214 S240,190 290,168 S360,120 415,104 S500,80 532,74"/>
+      </g>
+      <g class="capa capa-3">
+        <line x1="40" y1="130" x2="540" y2="130" class="umbral"/>
+        <text x="48" y="122" data-i18n="esq.umbral">tu umbral de alerta</text>
+        <circle id="cruce" cx="335" cy="130" r="7" class="cruce"/>
+      </g>
+      <g class="capa capa-4">
+        <line id="reco-l" x1="335" y1="130" x2="335" y2="40" class="reco-linea"/>
+        <rect id="reco-r" x="215" y="18" width="240" height="34" rx="8"/>
+        <text id="reco-t" x="335" y="40" text-anchor="middle" data-i18n="esq.reco">Qué hacer y cuándo</text>
+      </g>
+    </svg>
+    <p class="esq-texto" id="esq-texto" aria-live="polite" data-i18n="esq.t1">Seguimos cada movimiento del proyecto: ingresos, giros, dictámenes y votaciones.</p>
+  </figure>
+ </div>
 </div>
 </section>
 <div class="divider-out" aria-hidden="true"></div>
 
 <section class="wrap" id="equipo">
-  <p class="frase"><span class="neg" data-i18n="eq.f1">Tres politólogos,</span> <span data-i18n="eq.f2">un método.</span></p>
+  <p class="frase"><span class="neg" data-i18n="eq.f1">Tres politólogos,</span> <span data-i18n="eq.f2">una estrategia.</span></p>
   <a class="link-flecha" href="nosotros.html" data-i18n="eq.mas">Conocer al equipo →</a>
 </section>
 
@@ -467,9 +543,9 @@ const I18N = {
   'nav.cta':{es:'Conversemos', en:"Let's talk"},
 
   'hero.kicker':{es:'Consultora de asuntos públicos · Buenos Aires', en:'Public affairs consultancy · Buenos Aires'},
-  'h1.a':{es:'Otra forma', en:'A new way'},
-  'h1.b':{es:'de ver la', en:'to see'},
-  'h1.c':{es:'política.', en:'politics.'},
+  'h1.a':{es:'La política', en:'Politics'},
+  'h1.b':{es:'en tu', en:'in your'},
+  'h1.c':{es:'negocio.', en:'business.'},
   'hero.p':{es:'Inteligencia legislativa y regulatoria para empresas en entornos regulados. Detectamos qué proyectos avanzan y qué normas cambian antes de que sean noticia, y te avisamos cuando te afectan.',
             en:'Legislative and regulatory intelligence for companies in regulated environments. We spot which bills advance and which rules change before they make the news, and we alert you when they affect you.'},
   'hero.cta1':{es:'Conversemos', en:"Let's talk"},
@@ -507,9 +583,25 @@ const I18N = {
   'pipe.2':{es:'Análisis propio', en:'Our own analysis'},
   'pipe.3':{es:'Alerta temprana', en:'Early warning'},
   'pipe.4':{es:'Recomendación', en:'Recommendation'},
+  'esq.titulo':{es:'Recorrido de un proyecto', en:'A bill\'s path'},
+  'esq.nota':{es:'Esquema ilustrativo · sin datos reales', en:'Illustrative sketch · no real data'},
+  'esq.desc':{es:'Esquema: una curva de probabilidad que sube a lo largo del trámite de un proyecto, desde el ingreso hasta la sanción, con un umbral de alerta.', en:'Sketch: a probability curve rising along a bill\'s path, from introduction to passage, with an alert threshold.'},
+  'esq.alta':{es:'alta', en:'high'},
+  'esq.baja':{es:'baja', en:'low'},
+  'esq.e1':{es:'Ingreso', en:'Introduced'},
+  'esq.e2':{es:'Comisión', en:'Committee'},
+  'esq.e3':{es:'Dictamen', en:'Report'},
+  'esq.e4':{es:'Recinto', en:'Floor'},
+  'esq.e5':{es:'Sanción', en:'Passed'},
+  'esq.umbral':{es:'tu umbral de alerta', en:'your alert threshold'},
+  'esq.reco':{es:'Qué hacer y cuándo', en:'What to do, and when'},
+  'esq.t1':{es:'Seguimos cada movimiento del proyecto: ingresos, giros, dictámenes y votaciones.', en:'We track every move of the bill: introductions, referrals, committee reports and votes.'},
+  'esq.t2':{es:'Con un modelo propio estimamos cómo cambia la probabilidad de que avance.', en:'Our own model estimates how its chances of moving forward change.'},
+  'esq.t3':{es:'Cuando cruza el umbral que te importa, te avisamos.', en:'When it crosses the threshold that matters to you, we alert you.'},
+  'esq.t4':{es:'Te decimos qué hacer y en qué momento.', en:'We tell you what to do, and when.'},
 
   'eq.f1':{es:'Tres politólogos,', en:'Three political scientists,'},
-  'eq.f2':{es:'un método.', en:'one method.'},
+  'eq.f2':{es:'una estrategia.', en:'one strategy.'},
   'eq.mas':{es:'Conocer al equipo →', en:'Meet the team →'},
 
   'nl.h':{es:'Newsletter semanal', en:'Weekly newsletter'},
@@ -594,6 +686,36 @@ const metodo = document.querySelector('.metodo');
 metodo.addEventListener('mouseenter', ()=>clearInterval(timer));
 metodo.addEventListener('mouseleave', restart);
 document.addEventListener('visibilitychange', ()=>{ if(document.hidden) clearInterval(timer); else restart(); });
+
+/* Esquema interactivo de Nowcast: cada paso ilumina su capa. Ilustrativo, sin datos. */
+const esquema = document.getElementById('esquema');
+const pasoBtns = [...document.querySelectorAll('#pasos .paso')];
+const curva = document.getElementById('curva');
+let pasoAct = 1, pasoTimer = null, pasoManual = false;
+(function ubicarCruce(){
+  const L = curva.getTotalLength(); esquema.style.setProperty('--len', Math.ceil(L));
+  let best = null;
+  for(let s=0; s<=L; s+=2){ const p = curva.getPointAtLength(s); if(!best || Math.abs(p.y-130) < Math.abs(best.y-130)) best = p; }
+  const x = Math.round(best.x);
+  document.getElementById('cruce').setAttribute('cx', x);
+  ['reco-l'].forEach(id=>{ const el=document.getElementById(id); el.setAttribute('x1',x); el.setAttribute('x2',x); });
+  document.getElementById('reco-r').setAttribute('x', x-120);
+  document.getElementById('reco-t').setAttribute('x', x);
+})();
+function verPaso(n){
+  pasoAct = n; esquema.dataset.paso = n;
+  pasoBtns.forEach(b=> b.setAttribute('aria-pressed', b.dataset.paso == n));
+  const t = document.getElementById('esq-texto');
+  t.setAttribute('data-i18n','esq.t'+n); t.textContent = I18N['esq.t'+n][LANG];
+}
+pasoBtns.forEach(b=>{
+  b.addEventListener('click', ()=>{ pasoManual = true; clearInterval(pasoTimer); verPaso(+b.dataset.paso); });
+  b.addEventListener('mouseenter', ()=>{ if(window.matchMedia('(hover:hover)').matches){ pasoManual = true; clearInterval(pasoTimer); verPaso(+b.dataset.paso); } });
+});
+function correrPasos(){ if(reduce || pasoManual) return; clearInterval(pasoTimer); pasoTimer = setInterval(()=> verPaso(pasoAct % 4 + 1), 3600); }
+if('IntersectionObserver' in window){
+  new IntersectionObserver(es=> es.forEach(e=>{ if(e.isIntersecting) correrPasos(); else clearInterval(pasoTimer); }), {threshold:.3}).observe(esquema);
+}
 
 /* El idioma guardado (tt-lang) se aplica apenas existen los nodos [data-i18n]; sin nada guardado, ES. */
 ttLang.iniciar(aplicarLang);
