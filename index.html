@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tres Tercios — Otra forma de ver el Congreso</title>
+<title>Tres Tercios — La política en tu negocio</title>
 <meta name="description" content="Consultora de asuntos públicos: inteligencia legislativa y regulatoria para empresas que operan en entornos regulados. Seguimiento parlamentario, rastreo normativo, asuntos públicos y análisis político y macro.">
 <meta name="author" content="Tres Tercios">
 <meta name="theme-color" content="#7D1F30">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="es_AR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://tresterciosconsultores.com/">
-<meta property="og:title" content="Tres Tercios — Otra forma de ver el Congreso">
+<meta property="og:title" content="Tres Tercios — La política en tu negocio">
 <meta property="og:description" content="Consultora de asuntos públicos. Inteligencia legislativa y regulatoria para empresas: qué proyectos avanzan, qué normas cambian y cómo te afectan, antes de que sea noticia.">
 <meta property="og:image" content="https://tresterciosconsultores.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -27,7 +27,7 @@
 <meta property="og:image:alt" content="Tres Tercios — consultora de asuntos públicos">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tres Tercios — Otra forma de ver el Congreso">
+<meta name="twitter:title" content="Tres Tercios — La política en tu negocio">
 <meta name="twitter:description" content="Consultora de asuntos públicos. Inteligencia legislativa y regulatoria para empresas.">
 <meta name="twitter:image" content="https://tresterciosconsultores.com/og-image.png">
 <script type="application/ld+json">
@@ -148,14 +148,14 @@ header{position:sticky;top:0;z-index:50;padding-top:12px}
 .seccion-cab h2{font-stretch:72%;font-size:clamp(48px,6vw,88px);line-height:.9}
 .insignia{background:var(--bordo);color:#fff;padding:48px 40px;display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between;align-items:flex-end}
 .insignia>.ins-cuerpo{flex:1 1 520px;display:flex;gap:16px 32px}
-.insignia .num{flex:0 0 32px;font-family:var(--mono);font-weight:700;color:var(--bordo-tinte);padding-top:2px}
+.insignia .num{flex:0 0 64px;font-family:var(--mono);font-weight:700;color:var(--bordo-tinte);padding-top:2px}
 .insignia .kicker{color:var(--bordo-tinte);margin-bottom:16px}
 .insignia h3{margin:0 0 16px;font-family:var(--display);font-stretch:78%;font-weight:900;font-size:clamp(36px,4.4vw,60px);line-height:.95;text-transform:uppercase}
 .insignia p{margin:0;font-size:19px;max-width:620px;color:var(--bordo-tinte)}
 .insignia .btn{background:var(--arena);color:var(--bordo);padding:16px 24px}
 .insignia .btn:hover{background:#fff}
 .filas{border-bottom:1px solid var(--tinta)}
-.fila{display:flex;flex-wrap:wrap;gap:8px 32px;padding:28px 0;border-top:1px solid var(--tinta)}
+.fila{display:flex;flex-wrap:wrap;gap:8px 32px;padding:28px 40px;border-top:1px solid var(--tinta)}
 .fila .num{flex:0 0 64px;font-family:var(--mono);font-weight:700;color:var(--bordo)}
 .fila h3{margin:0;flex:1 1 280px;font-family:var(--display);font-stretch:85%;font-weight:800;font-size:26px;text-transform:uppercase}
 .fila p{margin:0;flex:2 1 420px;color:var(--muted)}
@@ -284,6 +284,8 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
   .capa-4 text{font-size:21px}
   .esq-texto{font-size:15px}
   .insignia{padding:32px 24px}
+  .fila{padding-inline:24px}
+  .fila .num,.insignia .num{flex-basis:40px}
   .metodo .wrap{padding-block:40px}
   .contacto .wrap{padding-block:64px;gap:48px}
   .btn{width:100%;text-align:center}
@@ -465,7 +467,7 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 <div class="divider-out" aria-hidden="true"></div>
 
 <section class="wrap" id="equipo">
-  <p class="frase"><span class="neg" data-i18n="eq.f1">Tres politólogos,</span> <span data-i18n="eq.f2">una estrategia.</span></p>
+  <p class="frase"><span class="neg" data-i18n="eq.f1">Tres visiones,</span> <span data-i18n="eq.f2">un método.</span></p>
   <a class="link-flecha" href="nosotros.html" data-i18n="eq.mas">Conocer al equipo →</a>
 </section>
 
@@ -600,8 +602,8 @@ const I18N = {
   'esq.t3':{es:'Cuando cruza el umbral que te importa, te avisamos.', en:'When it crosses the threshold that matters to you, we alert you.'},
   'esq.t4':{es:'Te decimos qué hacer y en qué momento.', en:'We tell you what to do, and when.'},
 
-  'eq.f1':{es:'Tres politólogos,', en:'Three political scientists,'},
-  'eq.f2':{es:'una estrategia.', en:'one strategy.'},
+  'eq.f1':{es:'Tres visiones,', en:'Three perspectives,'},
+  'eq.f2':{es:'un método.', en:'one method.'},
   'eq.mas':{es:'Conocer al equipo →', en:'Meet the team →'},
 
   'nl.h':{es:'Newsletter semanal', en:'Weekly newsletter'},
