@@ -212,7 +212,6 @@ header{position:sticky;top:0;z-index:50;padding-top:12px}
 .frase{margin:0;font-family:var(--display);font-stretch:75%;font-weight:900;font-size:clamp(38px,5.6vw,80px);line-height:1.08;letter-spacing:.005em;text-transform:uppercase;max-width:16em}
 .frase span{color:var(--bordo)}
 .frase .neg{color:var(--tinta)}
-#equipo .link-flecha{margin-top:40px}
 
 /* Contacto */
 .contacto{border-top:2px solid var(--tinta)}
@@ -346,7 +345,6 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
   <div class="nav-links" id="nav-links">
     <a href="servicios.html" data-i18n="nav.serv">Servicios</a>
     <a href="nowcast-legislativo.html">Nowcast</a>
-    <a href="nosotros.html" data-i18n="nav.nosotros">Nosotros</a>
     <span class="idioma" role="group" aria-label="Idioma / Language"><button id="btn-es" type="button" aria-pressed="true" onclick="setLang('es')">ES</button>/<button id="btn-en" type="button" aria-pressed="false" lang="en" onclick="setLang('en')">EN</button></span>
     <a class="btn btn-bordo" href="contacto.html" data-i18n="nav.cta">Conversemos</a>
   </div>
@@ -468,7 +466,6 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 
 <section class="wrap" id="equipo">
   <p class="frase"><span class="neg" data-i18n="eq.f1">Tres visiones,</span> <span data-i18n="eq.f2">un método.</span></p>
-  <a class="link-flecha" href="nosotros.html" data-i18n="eq.mas">Conocer al equipo →</a>
 </section>
 
 <section class="contacto" id="contacto">
@@ -541,7 +538,6 @@ dialog::backdrop{background:rgba(25,24,23,.55)}
 const I18N = {
   'nav.menu':{es:'Menú', en:'Menu'},
   'nav.serv':{es:'Servicios', en:'Services'},
-  'nav.nosotros':{es:'Nosotros', en:'About'},
   'nav.cta':{es:'Conversemos', en:"Let's talk"},
 
   'hero.kicker':{es:'Consultora de asuntos públicos · Buenos Aires', en:'Public affairs consultancy · Buenos Aires'},
@@ -604,7 +600,6 @@ const I18N = {
 
   'eq.f1':{es:'Tres visiones,', en:'Three perspectives,'},
   'eq.f2':{es:'un método.', en:'one method.'},
-  'eq.mas':{es:'Conocer al equipo →', en:'Meet the team →'},
 
   'nl.h':{es:'Newsletter semanal', en:'Weekly newsletter'},
   'nl.p':{es:'Lo que cambió en tu sector, una vez por semana. Te das de baja cuando quieras.', en:'What changed in your sector, once a week. Unsubscribe whenever you like.'},
